@@ -1,0 +1,18 @@
+@mixin container {
+  min-width: $w_container_min;
+  max-width: $w_container_max;
+  margin: 0 auto;
+  padding-left: $offset_mobile;
+  padding-right: $offset_mobile;
+  outline: 1px solid bisque;
+
+  @media #{$tablet} {
+    padding-left: $offset_tablet;
+    padding-right: $offset_tablet;
+  }
+
+  @media #{$desktop} {
+    padding-left: $offset_desktop;
+    padding-right: $offset_desktop;
+  }
+}

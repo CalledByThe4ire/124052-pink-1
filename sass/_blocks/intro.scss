@@ -1,3 +1,78 @@
+$bg_intro:
+  $bg_base
+  url(../img/bg-back-mobile.jpg)
+  center / cover
+  no-repeat;
+
 .intro {
-  outline: 1px solid gainsboro;
+  color: $c_alt;
+  background: $bg_intro;
+  // в индексе-мобайл фон будет на обертке title-wrap, поэтому обнуляем бг
+  &--index {
+    background: none;
+  }
+
+  &__title-wrap {
+    @include container;
+    padding-top: 100px;
+    &--index {
+      padding-top: 90px;
+      padding-bottom: 310px;
+      background: $bg_intro;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    text-align: center;
+    outline: 1px solid white;
+  }
+
+  &__text-wrap {
+    @include container;
+  }
+}
+
+@media #{$tab-desk} {
+  .intro {
+    &--index {
+      background: $bg_intro;
+    }
+
+    &__title-wrap {
+      background: none;
+    }
+
+    &__title {
+      &--index {
+        width: $w_block;
+      }
+    }
+  }
+}
+
+@media #{$tablet} {
+  .intro {
+
+    &__title-wrap {
+      padding-top: 185px;
+      &--index {
+        padding-top: 215px;
+        padding-bottom: 0;
+      }
+    }
+  }
+}
+
+@media #{$desktop} {
+  .intro {
+
+    &__title-wrap {
+      padding-top: 195px;
+      &--index {
+        padding-top: 230px;
+        padding-bottom: 0;
+      }
+    }
+  }
 }

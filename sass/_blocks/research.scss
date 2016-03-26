@@ -1,0 +1,27 @@
+.research {
+  display: none;
+
+  &__title {
+    margin: 0;
+  }
+}
+
+@media #{$tab-desk} {
+  .research {
+    display: block;
+  }
+}
+
+@media #{$tablet} {
+  .research {
+    background-color: transparent;
+    padding-left: 310px;
+  }
+}
+
+@media #{$desktop} {
+  .research {
+    background-color: $bg_grey;
+    padding-left: 370px;
+  }
+}

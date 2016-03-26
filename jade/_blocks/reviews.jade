@@ -15,6 +15,28 @@ mixin reviews
       +e.controls
         each item, index in site.data.reviews
           +e.LABEL.control(for="review-" + (index + 1))
+      +e.arrows
+        +e.arrow--left
+        +e.arrow--right
       +e.slides
         each item in site.data.reviews
           +review(item)
+
+mixin slider-reviews-style
+  | .slider--reviews .slider__slides {
+  |   width: 300%;
+  | }
+  | .slider__input[id="review-1"]:checked ~ .slider__controls .slider__control[for="review-1"],
+  | .slider__input[id="review-2"]:checked ~ .slider__controls .slider__control[for="review-2"],
+  | .slider__input[id="review-3"]:checked ~ .slider__controls .slider__control[for="review-3"] {
+  |   border-color: #283645;
+  | }
+  | .slider__input[id="review-1"]:checked ~ .slider__slides {
+  |   transform: translate(0);
+  | }
+  | .slider__input[id="review-2"]:checked ~ .slider__slides {
+  |   transform: translate(-33.33%);
+  | }
+  | .slider__input[id="review-3"]:checked ~ .slider__slides {
+  |   transform: translate(-66.66%);
+  | }

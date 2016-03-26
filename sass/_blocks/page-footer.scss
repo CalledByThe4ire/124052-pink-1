@@ -1,0 +1,18 @@
+.page-footer {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+@media #{$mobile} {
+  .page-footer {
+    flex-direction: column;
+
+    &--hidden {
+      display: none;
+    }
+  }
+}
+// @media #{$tab-desk}
+// @media #{$tablet}
+// @media #{$desktop}

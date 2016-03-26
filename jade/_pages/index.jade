@@ -2,16 +2,33 @@ extends ../_layouts/base
 
 block variables
   - var isIndex = true
-  - var isNoFooter = true
+  - var isFooterMobileHidden = true
+
+block styles
+  // имеет смысл вынести на страницу логику слайдеров для удобного добавления слайдов
+  style
+    +slider-tariffs-style
+    +slider-reviews-style
 
 block content
   +b.intro--index
-    +e.H1.title Взгляните на жизнь иначе!
-  +download
+    +e.title-wrap--index
+      +e.H1.title--index Взгляните на&nbsp;жизнь иначе!
+    +download
+
+  .box
+    .container
+      h2.title
+        span Устали от&nbsp;серости мегаполиса?
+        span Нам есть, что вам предложить!
 
   .box.box--dark
     .container
       +features
+
+  .box.box--blink
+    .container
+      +research
 
   .box
     .container

@@ -4,52 +4,47 @@ block variables
 
 block content
   +b.intro
-    +e.H1.title Конкурс на самое безбашеное путешествие с Пинк
-  p.text Поделитесь своей историей и получите шанс выиграть ценный приз — 1000 миль на вашу бонусную карту!
+    +e.title-wrap
+      +e.H1.title Конкурс на самое безбашеное путешествие с Пинк
+    .box
+      +e.text-wrap
+        p.text Поделитесь своей историей и&nbsp;получите шанс выиграть ценный приз&nbsp;&mdash; 1000 миль на&nbsp;вашу бонусную карту!
 
   +b.FORM.form
-    .box
-      .container
-        +e.FIELDSET.fieldset
-          each item, index in site.data.form.fieldsName
-            +field(item, index)
+    .container
 
-    .box.box--dark
-      .container
-        +e.FIELDSET.fieldset
-          +e.P.title Ваши безбашенные достижения в путешествии
-          each item, index in site.data.form.radiosAchievement
-            +radio(item, index)
+      +e.FIELDSET.fieldset
+        each item, index in site.data.form.fieldsName
+          +field(item, index)
 
-    .box
-      .container
-        +e.FIELDSET.fieldset
-          each item, index in site.data.form.fieldsContact
-            +field(item, index)
+      +e.FIELDSET.fieldset
+        +e.P.title С&nbsp;каким приложением путешествовали?
+        each item, index in site.data.form.radiosOs
+          +radio(item, index)
 
-    .box.box--dark
-      .container
-        +e.FIELDSET.fieldset
-          +e.P.title С каким приложением путешествовали?
-          each item, index in site.data.form.checkboxesOs
-            +checkbox(item, index)
+      +e.FIELDSET.fieldset
+        each item, index in site.data.form.fieldsContact
+          +field(item, index)
 
-    .box
-      .container
-        +e.FIELDSET.fieldset
-          +e.LABEL.title(for="fs-text") Опишите свои эмоции
-          +e.TEXTAREA.textarea(
-            id="fs-text",
-            rows="5",
-            name="text",
-            placeholder="Можно прям в красках, не стесняясь в выражениях"
-            )
+      +e.FIELDSET.fieldset
+        +e.P.title Ваши безбашенные достижения в&nbsp;путешествии
+        each item, index in site.data.form.checkboxesAchievement
+          +checkbox(item, index)
 
-    +e.btn-wrap
-      +b.BUTTON.btn--form(type="submit") Отправить форму
-    +e.SMALL.disclaimer
-      +e.SPAN.asterisk *
-      | — обязательные поля
+      +e.FIELDSET.fieldset
+        +e.LABEL.title(for="fs-text") Опишите свои эмоции
+        +e.TEXTAREA.textarea(
+          id="fs-text",
+          rows="5",
+          name="text",
+          placeholder="Можно прям в красках, не стесняясь в выражениях"
+          )
+
+      +e.btn-wrap
+        +b.BUTTON.btn--form(type="submit") Отправить форму
+      +e.SMALL.disclaimer
+        +e.SPAN.asterisk *
+        | — обязательные поля
 
   +modal
   +modal-fail

@@ -19,32 +19,33 @@
 
 mixin editor
   +b.FORM.editor
-    +e.img-wrap
-      +e.IMG.img(
-        src="https://placebear.com/200/300",
-        alt="Ваша фотография",
-        title="Ваша фотография"
-        )
-    +e.tools
-      each item, index in toolsItems
-        +e.INPUT(
-          type="radio",
-          name="tool"
-          id="tool-" + item.name + (index + 1),
-          checked=item.isChecked
+    +e.inner
+      +e.img-wrap
+        +e.IMG.img(
+          src="https://placebear.com/200/300",
+          alt="Ваша фотография",
+          title="Ваша фотография"
           )
-        +e.LABEL(
-          class="__item--" + item.name,
-          for="tool-" + item.name + (index + 1)
-          )= item.title
-          +e.SVG.icon
-            use
 
-      each item in toolsItems
-        +e(class="control--" + item.name)
-          +e.scale
-            +e.toggle
+      +e.tools
+        each item in toolsItems
+          +e.tool
+            +e.INPUT.input(
+              type="radio",
+              name="tool"
+              id="tool-" + item.name,
+              checked=item.isChecked
+              )
+            +e.LABEL.label(
+              class="__item--" + item.name,
+              for="tool-" + item.name
+              )= item.title
+              +e.SVG.icon
+                use
+            +e(class="control--" + item.name)
+              +e.scale
+                +e.toggle
 
-    +e.btn-wrap
-      +b.BUTTON.btn--editor(type="submit") Запостить
-      +b.BUTTON.btn--editor(type="reset") Отмена
+        +e.btn-wrap
+          +b.BUTTON.btn--editor(type="submit") Запостить
+          +b.BUTTON.btn--editor(type="reset") Отмена

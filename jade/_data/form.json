@@ -35,7 +35,7 @@
     }
   ],
 
-  "checkboxesOs": [
+  "radiosOs": [
     {
       "label": "Pink для iOS",
       "name": "os",
@@ -56,7 +56,7 @@
     }
   ],
 
-  "radiosAchievement": [
+  "checkboxesAchievement": [
     {
       "label": "Сделал селфи с акулой",
       "name": "achievement",

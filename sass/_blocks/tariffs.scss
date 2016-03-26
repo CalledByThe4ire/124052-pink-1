@@ -1,0 +1,45 @@
+.tariffs {
+  td {
+    outline: 1px solid tomato;
+  }
+}
+
+@media #{$mobile} {
+  .tariffs {
+    margin-right: -($offset_mobile);
+    margin-left: -($offset_mobile);
+    &__table {
+      width: 100%;
+    }
+    th,
+    td {
+      width: 25%;
+    }
+
+    td:nth-child(n+2) {
+      position: relative;
+      text-align: right;
+      &::before {
+        content: attr(data-option);
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: inline-block;
+        padding-right: 10px;
+      }
+    }
+  }
+}
+
+@media #{$tab-desk} {
+  .tariffs {
+    &__table {
+      width: 100%;
+    }
+    td {
+      width: auto;
+    }
+  }
+}
+// @media #{$tablet}
+// @media #{$desktop}

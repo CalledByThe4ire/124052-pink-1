@@ -1,3 +1,5 @@
 .feed {
-  outline: 1px solid gainsboro;
+  &__grid {
+    @include grid;
+  }
 }

@@ -3,10 +3,6 @@ mixin logo(isImg)
   - var className = isIndex ? "text" : "link"
 
   +b.logo
-    +e.A(class="__" + className, href=href)
-
-      if (isImg)
-        +e.SVG.icon
-          use
-
-      | Pink
+    +e.A(class="__" + className, href=href) Pink
+      +e.SVG.icon-img
+        use

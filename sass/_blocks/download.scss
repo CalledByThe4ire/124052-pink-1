@@ -1,3 +1,26 @@
 .download {
-  outline: 1px solid gainsboro;
+  @include container;
+  background-color: $bg_dark;
+  color: $c_alt;
+  text-align: center;
+
+  &__inner {
+    max-width: $w_container_min;
+    margin: 0 auto;
+  }
+}
+
+// @media #{$mobile}
+// @media #{$tablet}
+// @media #{$desktop}
+
+@media #{$tab-desk} {
+  .download {
+    background-color: transparent;
+
+    &__inner {
+      width: $w_block;
+      margin: 0;
+    }
+  }
 }

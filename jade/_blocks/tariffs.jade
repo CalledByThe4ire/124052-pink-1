@@ -3,7 +3,7 @@ mixin tariffs
     //- slider-block starts
     +b.slider--tariffs
       //- создаем нужное количество управляющих элементов слайдера в зависимости от количества тарифов в tariffsList
-      each index in site.data.tariffs.tariffsList
+      each item, index in site.data.tariffs.tariffsList
         - var isChecked = false
         if index == 0
           - isChecked = true
@@ -14,7 +14,7 @@ mixin tariffs
           checked=isChecked
           )
       +e.controls
-        each index in site.data.tariffs.tariffsList
+        each item, index in site.data.tariffs.tariffsList
           +e.LABEL.control(for="tariff-" + (index + 1))
       +e.slides
         //- slider-content
@@ -37,10 +37,31 @@ mixin tariffs
                 td(data-option=item.optionName, data-tariff=val.tariffName)
                   //-  делаем проверку состояния услуги для привязки соответствующей иконки
                   if val.isValue
-                    | Есть
+                    span Есть
                     svg.icon--true
                       use
                   else
-                    | Нет
+                    span Нет
                     svg.icon--false
                       use
+
+mixin slider-tariffs-style
+  | @media (max-width: 699px) {
+  |   .slider--tariffs .slider__slides {
+  |     width: 400%;
+  |   }
+  |   .slider__input[id="tariff-1"]:checked ~ .slider__controls .slider__control[for="tariff-1"],
+  |   .slider__input[id="tariff-2"]:checked ~ .slider__controls .slider__control[for="tariff-2"],
+  |   .slider__input[id="tariff-3"]:checked ~ .slider__controls .slider__control[for="tariff-3"] {
+  |     border-color: #283645;
+  |   }
+  |   .slider__input[id="tariff-1"]:checked ~ .slider__slides {
+  |     transform: translate(-25%);
+  |   }
+  |   .slider__input[id="tariff-2"]:checked ~ .slider__slides {
+  |     transform: translate(-50%);
+  |   }
+  |   .slider__input[id="tariff-3"]:checked ~ .slider__slides {
+  |     transform: translate(-75%);
+  |   }
+  | }

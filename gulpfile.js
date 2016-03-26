@@ -6,9 +6,9 @@ var plumber = require("gulp-plumber");
 
 var postcss = require("gulp-postcss");
 var autoprefixer = require("autoprefixer");
-var reporter     = require('postcss-reporter');
-var syntax_scss  = require('postcss-scss');
-var stylelint    = require('stylelint');
+var reporter     = require("postcss-reporter");
+var syntax_scss  = require("postcss-scss");
+var stylelint    = require("stylelint");
 
 var server = require("browser-sync");
 var notify = require("gulp-notify");
@@ -16,6 +16,9 @@ var jade = require("gulp-jade");
 var fs = require("fs");
 var foldero = require("foldero");
 var dataPath = "jade/_data/";
+
+var uglify = require("gulp-uglify");
+var svg_sprite = require("gulp-svg-sprite");
 
 
 // sass
@@ -27,7 +30,7 @@ gulp.task("styletest", function() {
     })
   ];
 
-  return gulp.src(['sass/**/*.scss'])
+  return gulp.src(["!sass/_global/svg-sprite.scss", "sass/**/*.scss"])
     .pipe(plumber())
     .pipe(postcss(processors, {syntax: syntax_scss}))
 });
@@ -103,9 +106,61 @@ gulp.task("jade", function() {
     }));
 });
 
+// js
+gulp.task("js", function() {
+  gulp.src("js/***")
+  .pipe(plumber({
+    errorHandler: notify.onError("Error: <%= error.message %>")
+  }))
+  .pipe(uglify())
+  .pipe(gulp.dest("build/js"))
+  .pipe(server.reload({
+    stream: true
+  }))
+  .pipe(notify({
+    message:"JS complite: <%= file.relative %>!",
+    sound: "Pop"
+  }))
+});
+
+
+// img
+gulp.task("img", function() {
+  gulp.src("img/*/*.{jpg,png}")
+  .pipe(gulp.dest("build/img"))
+  .pipe(server.reload({
+    stream: true
+  }))
+});
+
+
+// svg
+gulp.task("svg", function() {
+  return gulp.src("img/svg-sprite/*.svg")
+  .pipe(svg_sprite({
+    mode: {
+      symbol: {
+        dest: ".",
+        dimensions: "%s",
+        sprite: "build/img/svg-sprite.svg",
+        example: false,
+        render: {scss: {dest: "sass/_global/svg-sprite.scss"}}
+      }
+    },
+    svg: {
+      xmlDeclaration: false,
+      doctypeDeclaration: false
+    }
+  }))
+  .pipe(gulp.dest("./"))
+  .pipe(server.reload({
+    stream: true
+  }))
+});
+
 
 // serve
-gulp.task("serve", ["style", "jade"], function() {
+gulp.task("serve", ["style", "jade", "js", "img", "svg"], function() {
   server.init({
     server: {
       baseDir: "build/"
@@ -115,6 +170,9 @@ gulp.task("serve", ["style", "jade"], function() {
     ui: false
   });
 
-  gulp.watch("sass/**/*.{scss,sass}", ["style"]);
+  gulp.watch("sass/*/*.{scss,sass}", ["style"]);
+  gulp.watch("js/*/*", ["js"]);
+  gulp.watch("img/svg-sprite/*/*.svg", ["svg"]);
+  gulp.watch("img/*/*.{jpg,png}", ["img"]);
   gulp.watch("jade/*/*", ["jade", server.reload]);
 });

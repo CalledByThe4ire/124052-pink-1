@@ -1,27 +1,27 @@
 -
   var navItems = [
     {
-      name: "Информация",
-      link: "info.html"
+      name: "Главная",
+      link: "index.html"
     },
     {
-      name: "Возможности",
-      link: "features.html"
+      name: "Фотографии",
+      link: "photo.html"
     },
     {
-      name: "Отзывы",
-      link: "reviews.html"
+      name: "Конкурс",
+      link: "form.html"
     },
     {
-      name: "Стоимость",
-      link: "price.html"
+      name: "HTML Academy",
+      link: "https://htmlacademy.ru"
     }
   ]
 
 mixin nav
-  +b.NAV.nav
+  +b.NAV.nav.js-nav
     +logo
-    +e.icon-menu
+    +e.icon-menu.js-toggle
     +e.UL.list
       each item in navItems
         +e.LI.item

@@ -5,7 +5,6 @@ include ../_blocks/copyright
 include ../_blocks/download
 include ../_blocks/editor
 include ../_blocks/features
-include ../_blocks/feed
 include ../_blocks/field
 include ../_blocks/logo
 include ../_blocks/modal
@@ -14,6 +13,7 @@ include ../_blocks/page-footer
 include ../_blocks/page-header
 include ../_blocks/post
 include ../_blocks/radio
+include ../_blocks/research
 include ../_blocks/reviews
 include ../_blocks/review
 include ../_blocks/socials
@@ -28,10 +28,11 @@ head
   title Pink
   meta(name='viewport', content='width=device-width, initial-scale=1.0')
   link(rel="stylesheet", href="css/style.css")
+  block styles
 
 body
   +page-header
   main.content
     block content
-  unless isNoFooter == true
+  .container
     +page-footer

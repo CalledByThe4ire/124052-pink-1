@@ -3,12 +3,16 @@ html {
 }
 
 *,
-*:before,
-*:after {
+*::before,
+*::after {
   box-sizing: inherit;
 }
 
 img {
   max-width: 100%;
   height: auto;
+}
+
+svg {
+  display: none;
 }
