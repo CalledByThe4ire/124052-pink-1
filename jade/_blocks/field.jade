@@ -1,0 +1,9 @@
+mixin field(item, index)
+  +b.field
+    +e.LABEL.label(for="form-"+item.name + (index + 1))= item.label
+    +e.INPUT.input(
+        type=item.inputType,
+        name="form-"+item.name,
+        id="form-"+item.name + (index + 1),
+        placeholder=item.placeholder
+        )

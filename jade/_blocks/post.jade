@@ -1,0 +1,22 @@
+mixin post(item)
+  +b.ARTICLE.post
+    +e.A.link(href=item.link)
+      if item.top
+        +e.IMG.img--top(
+          src=item.img,
+          alt=item.imgAlt,
+          title=item.imgAlt)
+      else
+        +e.IMG.img(
+          src=item.img
+          alt=item.imgAlt,
+          title=item.imgAlt)
+      +e.FOOTER.header
+        +e.CITE.author= item.author
+        +e.TIME.time(datetime=item.dateTime)= "(" + item.time + ")"
+      +e.P.text= item.text
+      +e.FOOTER.footer
+        +e.BUTTON(type="button").btn
+          +e.SVG.icon
+            use
+        +e.SPAN.likes= "Нравится: " + item.likes

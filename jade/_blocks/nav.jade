@@ -1,0 +1,28 @@
+-
+  var navItems = [
+    {
+      name: "Информация",
+      link: "info.html"
+    },
+    {
+      name: "Возможности",
+      link: "features.html"
+    },
+    {
+      name: "Отзывы",
+      link: "reviews.html"
+    },
+    {
+      name: "Стоимость",
+      link: "price.html"
+    }
+  ]
+
+mixin nav
+  +b.NAV.nav
+    +logo
+    +e.icon-menu
+    +e.UL.list
+      each item in navItems
+        +e.LI.item
+          +e.A.link(href=item.link) #{item.name}

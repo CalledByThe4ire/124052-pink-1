@@ -1,0 +1,97 @@
+{
+  "fieldsName": [
+    {
+      "label": "Имя:",
+      "inputType": "text",
+      "name": "user-name",
+      "placeholder": "Введите ваше имя"
+    },
+    {
+      "label": "Фамилия:",
+      "inputType": "text",
+      "name": "user-name",
+      "placeholder": "Укажите фамилию"
+    },
+    {
+      "label": "Отчество:",
+      "inputType": "text",
+      "name": "user-name",
+      "placeholder": "Ну и отчество тоже"
+    }
+  ],
+
+  "fieldsContact": [
+    {
+      "label": "Номерок телефончика:",
+      "inputType": "phone",
+      "name": "user-contact",
+      "placeholder": "Номер, пожалуйста"
+    },
+    {
+      "label": "Адресок почты:",
+      "inputType": "email",
+      "name": "user-contact",
+      "placeholder": "E-mail, пожалуйста"
+    }
+  ],
+
+  "checkboxesOs": [
+    {
+      "label": "Pink для iOS",
+      "name": "os",
+      "isChecked": "checked",
+      "isDisabled": false
+    },
+    {
+      "label": "Pink на Android",
+      "name": "os",
+      "isChecked": false,
+      "isDisabled": false
+    },
+    {
+      "label": "Windows Phone",
+      "name": "os",
+      "isChecked": false,
+      "isDisabled": false
+    }
+  ],
+
+  "radiosAchievement": [
+    {
+      "label": "Сделал селфи с акулой",
+      "name": "achievement",
+      "isChecked": "checked",
+      "isDisabled": false
+    },
+    {
+      "label": "Обгорел на пляже",
+      "name": "achievement",
+      "isChecked": false,
+      "isDisabled": "disabled"
+    },
+    {
+      "label": "Видел Чака Норриса",
+      "name": "achievement",
+      "isChecked": false,
+      "isDisabled": false
+    },
+    {
+      "label": "Накупил сувениров",
+      "name": "achievement",
+      "isChecked": false,
+      "isDisabled": false
+    },
+    {
+      "label": "Удержал башню",
+      "name": "achievement",
+      "isChecked": false,
+      "isDisabled": false
+    },
+    {
+      "label": "Разгромил отель",
+      "name": "achievement",
+      "isChecked": false,
+      "isDisabled": false
+    }
+  ]
+}

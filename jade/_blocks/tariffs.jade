@@ -1,0 +1,46 @@
+mixin tariffs
+  +b.SECTION.tariffs
+    //- slider-block starts
+    +b.slider--tariffs
+      //- создаем нужное количество управляющих элементов слайдера в зависимости от количества тарифов в tariffsList
+      each index in site.data.tariffs.tariffsList
+        - var isChecked = false
+        if index == 0
+          - isChecked = true
+        +e.INPUT.input(
+          id="tariff-" + (index + 1),
+          type="radio",
+          name="tariffs",
+          checked=isChecked
+          )
+      +e.controls
+        each index in site.data.tariffs.tariffsList
+          +e.LABEL.control(for="tariff-" + (index + 1))
+      +e.slides
+        //- slider-content
+        table.tariffs__table
+          tr
+            //- по сути пустой th на макете
+            th Услуги / Тарифы
+            //- обращаемся к tariffsList, чтобы вытащить имена тарифов
+            each item in site.data.tariffs.tariffsList
+              th
+                span.tariffs__name= item.tariffName
+                span.tariffs__price= item.tariffPrice
+          //- формируем остальные ряды таблицы, каждая услуга в массиве options = 1 ряд
+          each item in site.data.tariffs.options
+            tr
+              //- в первую ячейку добавляем название услуги
+              td= item.optionName
+              //- формируем ячейки таблицы с состоянием услуг из options -> optionValues. Из родительского массива options вытягиваем название услуги, и записываем в data-option. data-tariff нужен для удобства и наглядности
+              each val in item.optionValues
+                td(data-option=item.optionName, data-tariff=val.tariffName)
+                  //-  делаем проверку состояния услуги для привязки соответствующей иконки
+                  if val.isValue
+                    | Есть
+                    svg.icon--true
+                      use
+                  else
+                    | Нет
+                    svg.icon--false
+                      use

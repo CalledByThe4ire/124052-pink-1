@@ -1,0 +1,26 @@
+extends ../_layouts/base
+
+block variables
+  - var isIndex = true
+  - var isNoFooter = true
+
+block content
+  +b.intro--index
+    +e.H1.title Взгляните на жизнь иначе!
+  +download
+
+  .box.box--dark
+    .container
+      +features
+
+  .box
+    .container
+      +reviews
+
+  .box.box--dark
+    .container
+      +tariffs
+
+  .box
+    .container
+      +contacts

@@ -1,0 +1,12 @@
+mixin logo(isImg)
+  - var href = isIndex ? false : "index.html"
+  - var className = isIndex ? "text" : "link"
+
+  +b.logo
+    +e.A(class="__" + className, href=href)
+
+      if (isImg)
+        +e.SVG.icon
+          use
+
+      | Pink

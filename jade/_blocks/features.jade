@@ -1,0 +1,9 @@
+mixin features
+  +b.SECTION.features
+      +e.H2.title
+       +e.SPAN Устали от серости мегаполиса?
+       +e.SPAN Нам есть, что вам предложить!
+    each item in site.data.features
+      +e.item
+        +e.H3.sub-title #{item.title}
+        +e.P.text #{item.text}

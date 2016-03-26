@@ -1,0 +1,20 @@
+mixin reviews
+  +b.SECTION.reviews
+    //- slider-block starts
+    +b.slider--reviews
+      each item, index in site.data.reviews
+        - var isChecked = false
+        if index == 0
+          - isChecked = true
+        +e.INPUT.input(
+          id="review-" + (index + 1),
+          type="radio",
+          name="reviews",
+          checked=isChecked
+          )
+      +e.controls
+        each item, index in site.data.reviews
+          +e.LABEL.control(for="review-" + (index + 1))
+      +e.slides
+        each item in site.data.reviews
+          +review(item)

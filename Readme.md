@@ -1,7 +1,7 @@
 # Личный проект «Пинк» [![Build status][travis-image]][travis-url] [![Dependency status][dependency-image]][dependency-url]
 
-* Студент: [Яна Крикливая](https://up.htmlacademy.ru/adaptive/6/user/124052).
-* Наставник: `Неизвестно`.
+* Студент: [Яна Крикливая](https://up.htmlacademy.ru/adaptive/6/user/124052)
+* Наставник: [Андрей Алексеев](https://htmlacademy.ru/profile/id4596)
 
 ---
 
