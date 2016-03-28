@@ -45,23 +45,24 @@ mixin tariffs
                     svg.icon--false
                       use
 
-mixin slider-tariffs-style
-  | @media (max-width: 699px) {
-  |   .slider--tariffs .slider__slides {
-  |     width: 400%;
-  |   }
-  |   .slider__input[id="tariff-1"]:checked ~ .slider__controls .slider__control[for="tariff-1"],
-  |   .slider__input[id="tariff-2"]:checked ~ .slider__controls .slider__control[for="tariff-2"],
-  |   .slider__input[id="tariff-3"]:checked ~ .slider__controls .slider__control[for="tariff-3"] {
-  |     border-color: #283645;
-  |   }
-  |   .slider__input[id="tariff-1"]:checked ~ .slider__slides {
-  |     transform: translate(-25%);
-  |   }
-  |   .slider__input[id="tariff-2"]:checked ~ .slider__slides {
-  |     transform: translate(-50%);
-  |   }
-  |   .slider__input[id="tariff-3"]:checked ~ .slider__slides {
-  |     transform: translate(-75%);
-  |   }
-  | }
+mixin style-tariffs
+  style.
+    @media (max-width: 699px) {
+     .slider--tariffs .slider__slides {
+       width: 300%;
+     }
+     .slider__input[id="tariff-1"]:checked ~ .slider__controls .slider__control[for="tariff-1"],
+     .slider__input[id="tariff-2"]:checked ~ .slider__controls .slider__control[for="tariff-2"],
+     .slider__input[id="tariff-3"]:checked ~ .slider__controls .slider__control[for="tariff-3"] {
+       border-color: #283645;
+     }
+     .slider__input[id="tariff-1"]:checked ~ .slider__slides {
+       transform: translate(0%);
+     }
+     .slider__input[id="tariff-2"]:checked ~ .slider__slides {
+       transform: translate(-33.33%);
+     }
+     .slider__input[id="tariff-3"]:checked ~ .slider__slides {
+       transform: translate(-66.66%);
+     }
+    }

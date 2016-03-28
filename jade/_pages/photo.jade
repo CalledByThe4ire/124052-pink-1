@@ -19,7 +19,8 @@ block content
       +e.grid
         each item in site.data.feed
           if !item.top
-            +post(item)
+            +e.col
+              +post(item)
 
   .container
     p.text Затмите их всех! Выкладывайте все, что накопилось в телефоне!

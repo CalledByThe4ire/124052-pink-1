@@ -42,10 +42,10 @@
 @mixin col {
   display: flex;
   flex-direction: column;
-  width: $w_block - $gutter;
-  // margin: 0 auto;
+  width: $w_block;
   padding-left: $gutter / 2;
   padding-right: $gutter / 2;
+  // margin: 0 auto;
 
   @media #{$tab-desk} {
     width: $w_block + $gutter;

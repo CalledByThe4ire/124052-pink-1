@@ -1,6 +1,4 @@
 .post {
-  @include col;
-
   &__img-wrap {
     display: flex;
     height: 175px;
@@ -8,7 +6,6 @@
   }
 
   &__img {
-    width: $w_block - $gutter;
     margin: 0 auto;
   }
 
@@ -34,9 +31,12 @@
 @media #{$tab-desk} {
   .post {
 
+    &__img {
+      width: 100%;
+    }
+
     &--top {
       display: block;
-      width: 100%;
       padding: 0;
     }
 

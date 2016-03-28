@@ -3,7 +3,11 @@
   background-color: $bg_grey;
 
   &__inner {
-    @include grid;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: - $gutter / 2;
+    margin-right: - $gutter / 2;
     flex-direction: column;
   }
 
@@ -87,8 +91,7 @@
 @media #{$tablet} {
   .editor {
     &__tools {
-      width: 295px;
-      margin-right: 0;
+      padding-left: 40px;
     }
   }
 }
@@ -96,9 +99,9 @@
 @media #{$desktop} {
   .editor {
     &__tools {
-      width: 410px;
       margin-left: 0;
       padding-left: 0;
+      padding-right: 70px;
     }
   }
 }

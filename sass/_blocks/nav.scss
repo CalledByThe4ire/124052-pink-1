@@ -1,7 +1,7 @@
 .nav {
   @include container;
   position: relative;
-  background-color: $c_base;
+  background-color: $bg_base;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -13,12 +13,6 @@
     margin: 0;
     padding: 0;
     text-align: center;
-    // &--closed {
-    //   display: none;
-    // }
-    // &--opened {
-    //   display: flex;
-    // }
   }
 
   &__item {
@@ -30,36 +24,7 @@
     color: $c_alt;
   }
 
-  &__icon-menu {
-    // position: relative;
-    // width: 50px;
-    // height: 24px;
-    // font-size: 0;
-    // cursor: pointer;
-    // &--closed::before {
-    //   content: "";
-    //   position: absolute;
-    //   top: 0;
-    //   right: 0;
-    //   width: 50px;
-    //   height: 4px;
-    //   background-color: $c_alt;
-    //   box-shadow:
-    //     0 10px 0 0 $c_alt,
-    //     0 20px 0 0 $c_alt;
-    // }
-    // &--opened::before,
-    // &--opened::after {
-    //   content: "";
-    //   position: absolute;
-    //   top: 0;
-    //   right: 0;
-    //   width: 4px;
-    //   height: 20px;
-    //   background-color: $c_alt;
-    // }
-  }
-  //  closed nav
+  //  CLOSED NAV
   &--closed {
     position: fixed;
     top: 0;
@@ -94,7 +59,7 @@
     display: none;
   }
 
-  // opened nav
+  // OPENED NAV
   &--opened &__list {
     display: flex;
   }
@@ -145,9 +110,6 @@
     &__list {
       flex-direction: row;
       width: auto;
-      // &--closed {
-      //   display: flex;
-      // }
     }
 
     &__icon-menu {

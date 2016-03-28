@@ -21,48 +21,6 @@ var uglify = require("gulp-uglify");
 var svg_sprite = require("gulp-svg-sprite");
 
 
-// sass
-gulp.task("styletest", function() {
-  var processors = [
-    stylelint(),
-    reporter({
-      throwError: true
-    })
-  ];
-
-  return gulp.src(["!sass/_global/svg-sprite.scss", "sass/**/*.scss"])
-    .pipe(plumber())
-    .pipe(postcss(processors, {syntax: syntax_scss}))
-});
-
-
-gulp.task("style", ["styletest"], function() {
-  gulp.src("sass/style.scss")
-    .pipe(plumber({
-      errorHandler: notify.onError("Error:  <%= error.message %>")
-    }))
-    .pipe(sass())
-    .pipe(postcss([
-      autoprefixer({
-        browsers: [
-          "last 1 version",
-          "last 2 Chrome versions",
-          "last 2 Firefox versions",
-          "last 2 Opera versions",
-          "last 2 Edge versions"
-        ]
-      })
-    ]))
-    .pipe(gulp.dest("build/css"))
-    .pipe(server.reload({
-      stream: true
-    }))
-    .pipe(notify({
-      message: "jade up!",
-      sound: "Pop"
-    }));
-});
-
 // jade
 gulp.task("jade", function() {
   var siteData = {};
@@ -159,8 +117,60 @@ gulp.task("svg", function() {
 });
 
 
+// sass
+gulp.task("styletest", function() {
+  var processors = [
+    stylelint(),
+    reporter({
+      throwError: true
+    })
+  ];
+
+  return gulp.src(["!sass/_global/svg-sprite.scss", "sass/**/*.scss"])
+    .pipe(plumber())
+    .pipe(postcss(processors, {syntax: syntax_scss}))
+});
+
+// font
+gulp.task("font", function() {
+  gulp.src("fonts/*/*")
+  .pipe(gulp.dest("build/fonts"))
+  .pipe(server.reload({
+    stream: true
+  }))
+});
+
+
+gulp.task("style", ["styletest"], function() {
+  gulp.src("sass/style.scss")
+    .pipe(plumber({
+      errorHandler: notify.onError("Error:  <%= error.message %>")
+    }))
+    .pipe(sass())
+    .pipe(postcss([
+      autoprefixer({
+        browsers: [
+          "last 1 version",
+          "last 2 Chrome versions",
+          "last 2 Firefox versions",
+          "last 2 Opera versions",
+          "last 2 Edge versions"
+        ]
+      })
+    ]))
+    .pipe(gulp.dest("build/css"))
+    .pipe(server.reload({
+      stream: true
+    }))
+    .pipe(notify({
+      message: "Style up!",
+      sound: "Pop"
+    }));
+});
+
+
 // serve
-gulp.task("serve", ["style", "jade", "js", "img", "svg"], function() {
+gulp.task("serve", ["jade", "js", "img", "svg", "font", "style"], function() {
   server.init({
     server: {
       baseDir: "build/"
@@ -170,9 +180,10 @@ gulp.task("serve", ["style", "jade", "js", "img", "svg"], function() {
     ui: false
   });
 
-  gulp.watch("sass/*/*.{scss,sass}", ["style"]);
   gulp.watch("js/*/*", ["js"]);
   gulp.watch("img/svg-sprite/*/*.svg", ["svg"]);
   gulp.watch("img/*/*.{jpg,png}", ["img"]);
+  gulp.watch("fonts/*/*", ["font"]);
+  gulp.watch("sass/*/*.{scss,sass}", ["style"]);
   gulp.watch("jade/*/*", ["jade", server.reload]);
 });

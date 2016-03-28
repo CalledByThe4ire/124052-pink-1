@@ -16,7 +16,12 @@
       width: 25%;
     }
 
-    td:nth-child(n+2) {
+    th:first-of-type,
+    td:first-of-type {
+      display: none;
+    }
+
+    td {
       position: relative;
       text-align: right;
       &::before {

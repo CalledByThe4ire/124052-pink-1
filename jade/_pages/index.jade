@@ -3,12 +3,10 @@ extends ../_layouts/base
 block variables
   - var isIndex = true
   - var isFooterMobileHidden = true
-
-block styles
-  // имеет смысл вынести на страницу логику слайдеров для удобного добавления слайдов
-  style
-    +slider-tariffs-style
-    +slider-reviews-style
+  
+append style
+  +style-reviews
+  +style-tariffs
 
 block content
   +b.intro--index
