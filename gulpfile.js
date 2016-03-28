@@ -66,7 +66,7 @@ gulp.task("jade", function() {
 
 // js
 gulp.task("js", function() {
-  gulp.src("js/***")
+  gulp.src("js/*.js")
   .pipe(plumber({
     errorHandler: notify.onError("Error: <%= error.message %>")
   }))
@@ -180,7 +180,7 @@ gulp.task("serve", ["jade", "js", "img", "svg", "font", "style"], function() {
     ui: false
   });
 
-  gulp.watch("js/*/*", ["js"]);
+  gulp.watch("js/*.js", ["js", server.reload]);
   gulp.watch("img/svg-sprite/*/*.svg", ["svg"]);
   gulp.watch("img/*/*.{jpg,png}", ["img"]);
   gulp.watch("fonts/*/*", ["font"]);
