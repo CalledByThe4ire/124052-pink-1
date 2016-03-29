@@ -1,3 +1,68 @@
 .form {
-  outline: 1px solid gainsboro;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media #{$mobile} {
+  .form {
+    margin-left: - $offset_mobile;
+    margin-right: - $offset_mobile;
+
+    &__fieldset {
+      width: 100%;
+      margin: 0;
+      border: none;
+      padding-left: $offset_mobile;
+      padding-right: $offset_mobile;
+
+      &--name {
+        order: 1;
+      }
+
+      &--os {
+        order: 4;
+        background-color: $bg_grey;
+      }
+
+      &--contact {
+        order: 3;
+      }
+
+      &--achieve {
+        order: 2;
+        background-color: $bg_grey;
+      }
+
+      &--text {
+        order: 5;
+      }
+    }
+
+    &__btn-wrap {
+      order: 6;
+    }
+
+    &__disclaimer {
+      order: 7;
+    }
+  }
+}
+// @media #{$tab-desk}
+// @media #{$tablet}
+@media #{$desktop} {
+  .form {
+
+    &__fieldset {
+
+      &--name {
+        width: 50%;
+        padding-right: 0;
+      }
+
+      &--os {
+        width: 50%;
+        padding-left: 0;
+      }
+    }
+  }
 }

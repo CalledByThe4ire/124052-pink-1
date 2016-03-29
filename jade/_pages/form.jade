@@ -10,28 +10,27 @@ block content
       +e.text-wrap
         p.text Поделитесь своей историей и&nbsp;получите шанс выиграть ценный приз&nbsp;&mdash; 1000 миль на&nbsp;вашу бонусную карту!
 
-  +b.FORM.form
-    .container
-
-      +e.FIELDSET.fieldset
+  .container
+    +b.FORM.form
+      +e.FIELDSET.fieldset--name
         each item, index in site.data.form.fieldsName
           +field(item, index)
 
-      +e.FIELDSET.fieldset
+      +e.FIELDSET.fieldset--os
         +e.P.title С&nbsp;каким приложением путешествовали?
         each item, index in site.data.form.radiosOs
           +radio(item, index)
 
-      +e.FIELDSET.fieldset
+      +e.FIELDSET.fieldset--contact
         each item, index in site.data.form.fieldsContact
           +field(item, index)
 
-      +e.FIELDSET.fieldset
+      +e.FIELDSET.fieldset--achieve
         +e.P.title Ваши безбашенные достижения в&nbsp;путешествии
         each item, index in site.data.form.checkboxesAchievement
           +checkbox(item, index)
 
-      +e.FIELDSET.fieldset
+      +e.FIELDSET.fieldset--text
         +e.LABEL.title(for="fs-text") Опишите свои эмоции
         +e.TEXTAREA.textarea(
           id="fs-text",
