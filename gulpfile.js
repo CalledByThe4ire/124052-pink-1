@@ -84,7 +84,7 @@ gulp.task("js", function() {
 
 // img
 gulp.task("img", function() {
-  gulp.src(["img/icons/*.svg", "img/**/*.{jpg,png}"])
+  gulp.src(["img/*.svg", "img/**/*.{jpg,png}"])
   .pipe(gulp.dest("build/img"))
   .pipe(server.reload({
     stream: true
@@ -94,7 +94,7 @@ gulp.task("img", function() {
 
 // svg
 gulp.task("svg", function() {
-  return gulp.src(["!img/icons/*.svg", "img/**/*.svg"])
+  return gulp.src("img/svg-sprite/*.svg")
   .pipe(svg_sprite({
     mode: {
       symbol: {
