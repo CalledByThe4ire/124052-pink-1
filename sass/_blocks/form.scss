@@ -1,17 +1,22 @@
 .form {
   display: flex;
   flex-wrap: wrap;
+
+  &__fieldset {
+    width: 100%;
+    margin: 0;
+    border: none;
+    outline: 1px solid tomato;
+  }
 }
 
 @media #{$mobile} {
   .form {
+    flex-direction: column;
     margin-left: - $offset_mobile;
     margin-right: - $offset_mobile;
 
     &__fieldset {
-      width: 100%;
-      margin: 0;
-      border: none;
       padding-left: $offset_mobile;
       padding-right: $offset_mobile;
 
@@ -40,10 +45,14 @@
 
     &__btn-wrap {
       order: 6;
+      padding-left: $offset_mobile;
+      padding-right: $offset_mobile;
     }
 
     &__disclaimer {
       order: 7;
+      padding-left: $offset_mobile;
+      padding-right: $offset_mobile;
     }
   }
 }

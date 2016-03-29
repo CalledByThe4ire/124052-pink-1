@@ -23,23 +23,26 @@ function handleMenu(nav, togglers) {
 
 ymaps.ready(init);
   var myMap;
+  var map = document.getElementById("map");
+  var latitude = map.getAttribute("data-latitude");
+  var longitude = map.getAttribute("data-longitude");
 
   function init() {
     myMap = new ymaps.Map("map", {
-        center: [59.938429885190054, 30.32991749740603],
+        center: [latitude, longitude],
         zoom: [16],
         controls: []
       }),
       myMap.behaviors.disable("scrollZoom");
     myMap.controls.add("zoomControl");
 
-    myPlacemark = new ymaps.Placemark([59.93866675783276,30.32307250000002], {
+    myPlacemark = new ymaps.Placemark([latitude, longitude], {
       hintContent: "г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8",
     }, {
       iconLayout: "default#image",
       iconImageHref: "./img/icon-map-marker.svg",
-      iconImageSize: [218, 142],
-      iconImageOffset: [-38, -125]
+      iconImageSize: [20, 20],
+      iconImageOffset: [0, 0]
     });
 
     myMap.geoObjects.add(myPlacemark);

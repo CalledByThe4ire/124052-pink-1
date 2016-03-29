@@ -1,4 +1,8 @@
 .post {
+  width: $w_block;
+  padding-left: $gutter / 2;
+  padding-right: $gutter / 2;
+
   &__img-wrap {
     display: flex;
     height: 175px;
@@ -6,7 +10,8 @@
   }
 
   &__img {
-    margin: 0 auto;
+    width: $w_block;
+    // margin: 0 auto;
   }
 
   &__content-wrap {
@@ -15,6 +20,7 @@
 
   &--top {
     width: 100%;
+    padding: 0;
   }
 
   &--top &__img-wrap {
@@ -30,13 +36,14 @@
 
 @media #{$tab-desk} {
   .post {
+    width: $w_block + $gutter;
 
     &__img {
-      width: 100%;
+      width: $w_block + $gutter;
     }
 
     &--top {
-      display: block;
+      width: 100%;
       padding: 0;
     }
 

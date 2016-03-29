@@ -71,7 +71,11 @@
     }
 
     &__img-wrap {
-      @include col-fluid(6);
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      padding-left: $gutter / 2;
+      padding-right: $gutter / 2;
     }
 
     &__img {
@@ -79,7 +83,11 @@
     }
 
     &__tools {
-      @include col-fluid(6);
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      padding-left: $gutter / 2;
+      padding-right: $gutter / 2;
     }
 
     &__btn-wrap {
