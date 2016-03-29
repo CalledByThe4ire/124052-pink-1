@@ -66,7 +66,7 @@ gulp.task("jade", function() {
 
 // js
 gulp.task("js", function() {
-  gulp.src("js/*.js")
+  gulp.src("js/**/*.js")
   .pipe(plumber({
     errorHandler: notify.onError("Error: <%= error.message %>")
   }))
@@ -84,7 +84,7 @@ gulp.task("js", function() {
 
 // img
 gulp.task("img", function() {
-  gulp.src("img/*/*.{jpg,png}")
+  gulp.src(["img/icons/*.svg", "img/**/*.{jpg,png}"])
   .pipe(gulp.dest("build/img"))
   .pipe(server.reload({
     stream: true
@@ -94,7 +94,7 @@ gulp.task("img", function() {
 
 // svg
 gulp.task("svg", function() {
-  return gulp.src("img/svg-sprite/*.svg")
+  return gulp.src(["!img/icons/*.svg", "img/**/*.svg"])
   .pipe(svg_sprite({
     mode: {
       symbol: {
@@ -117,6 +117,16 @@ gulp.task("svg", function() {
 });
 
 
+// font
+gulp.task("font", function() {
+  gulp.src("fonts/**/*.{woff,woff2}")
+  .pipe(gulp.dest("build/fonts"))
+  .pipe(server.reload({
+    stream: true
+  }))
+});
+
+
 // sass
 gulp.task("styletest", function() {
   var processors = [
@@ -130,16 +140,6 @@ gulp.task("styletest", function() {
     .pipe(plumber())
     .pipe(postcss(processors, {syntax: syntax_scss}))
 });
-
-// font
-gulp.task("font", function() {
-  gulp.src("fonts/*/*")
-  .pipe(gulp.dest("build/fonts"))
-  .pipe(server.reload({
-    stream: true
-  }))
-});
-
 
 gulp.task("style", ["styletest"], function() {
   gulp.src("sass/style.scss")
@@ -180,10 +180,10 @@ gulp.task("serve", ["jade", "js", "img", "svg", "font", "style"], function() {
     ui: false
   });
 
-  gulp.watch("js/*.js", ["js", server.reload]);
-  gulp.watch("img/svg-sprite/*/*.svg", ["svg"]);
-  gulp.watch("img/*/*.{jpg,png}", ["img"]);
-  gulp.watch("fonts/*/*", ["font"]);
-  gulp.watch("sass/*/*.{scss,sass}", ["style"]);
-  gulp.watch("jade/*/*", ["jade", server.reload]);
+  gulp.watch("js/**/.js", ["js", server.reload]);
+  gulp.watch("img/svg-sprite/**/*.svg", ["svg"]);
+  gulp.watch("img/**/*.{jpg,png}", ["img"]);
+  gulp.watch("fonts/**/*{woff,woff2}", ["font"]);
+  gulp.watch("sass/**/*.{scss,sass}", ["style"]);
+  gulp.watch("jade/**/*", ["jade", server.reload]);
 });
