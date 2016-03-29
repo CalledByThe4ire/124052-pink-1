@@ -16,21 +16,21 @@
       width: 25%;
     }
 
-    th:first-of-type,
-    td:first-of-type {
+    &__row-name,
+    &__option-name {
       display: none;
     }
 
-    td {
+    &__option-value {
       position: relative;
-      text-align: right;
       &::before {
         content: attr(data-option);
-        position: absolute;
-        top: 0;
-        left: 0;
         display: inline-block;
         padding-right: 10px;
+      }
+
+      span {
+        font-size: 0;
       }
     }
   }

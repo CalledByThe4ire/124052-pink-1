@@ -6,7 +6,7 @@ mixin tariffs
       each item, index in site.data.tariffs.tariffsList
         - var isChecked = false
         if index == 0
-          - isChecked = true
+          - isChecked = "checked"
         +e.INPUT.input(
           id="tariff-" + (index + 1),
           type="radio",
@@ -21,7 +21,7 @@ mixin tariffs
         table.tariffs__table
           tr
             //- по сути пустой th на макете
-            th Услуги / Тарифы
+            th.tariffs__row-name Услуги / Тарифы
             //- обращаемся к tariffsList, чтобы вытащить имена тарифов
             each item in site.data.tariffs.tariffsList
               th
@@ -31,10 +31,10 @@ mixin tariffs
           each item in site.data.tariffs.options
             tr
               //- в первую ячейку добавляем название услуги
-              td= item.optionName
+              td.tariffs__option-name= item.optionName
               //- формируем ячейки таблицы с состоянием услуг из options -> optionValues. Из родительского массива options вытягиваем название услуги, и записываем в data-option. data-tariff нужен для удобства и наглядности
               each val in item.optionValues
-                td(data-option=item.optionName, data-tariff=val.tariffName)
+                td.tariffs__option-value(data-option=item.optionName, data-tariff=val.tariffName)
                   //-  делаем проверку состояния услуги для привязки соответствующей иконки
                   if val.isValue
                     span Есть

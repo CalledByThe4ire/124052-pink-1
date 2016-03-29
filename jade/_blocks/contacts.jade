@@ -1,15 +1,16 @@
 mixin contacts
   +b.SECTION.contacts
     +e.H2.header Остались вопросы? Свяжитесь с&nbsp;нами!
-    +e.DL.list
+    +e.UL.list
       each item in site.data.contacts
-        +e.item
-          +e.DT.title= item.title + ":"
-          +e.DD.descr
-            case item.type
-              when "phone"
-                +e.A.link(href="tel:"+item.value)= item.descr
-              when "email"
-                +e.A.link(href="mailto:"+item.value)= item.descr
-              default
-                +e.SPAN.text= item.descr
+        +e.LI.item
+          +e.DL
+            +e.DT.title= item.title + ":"
+            +e.DD.descr
+              case item.type
+                when "phone"
+                  +e.A.link(href="tel:"+item.value)= item.descr
+                when "email"
+                  +e.A.link(href="mailto:"+item.value)= item.descr
+                default
+                  +e.SPAN.text= item.descr

@@ -5,7 +5,7 @@ mixin reviews
       each item, index in site.data.reviews
         - var isChecked = false
         if index == 0
-          - isChecked = true
+          - isChecked = "checked"
         +e.INPUT.input(
           id="review-" + (index + 1),
           type="radio",

@@ -38,9 +38,8 @@ $lh_base: 24 / 14;
 
 // z-index
 $z_base: 1;
-$z_fix: ($z_base + 1);
-$z_hover: ($z_fix + 1);
-$z_modal: ($z_hover + 1);
+$z_header: ($z_base + 1);
+$z_modal: ($z_header + 1);
 
 // @media #{$portable}
 // @media #{$mobile}
