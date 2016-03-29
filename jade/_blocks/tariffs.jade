@@ -38,12 +38,12 @@ mixin tariffs
                   //-  делаем проверку состояния услуги для привязки соответствующей иконки
                   if val.isValue
                     span Есть
-                    svg.icon--true
-                      use
+                    svg.svg-icon-yes
+                      use(xlink:href="img/svg-sprite.svg#icon-yes")
                   else
                     span Нет
-                    svg.icon--false
-                      use
+                    svg.svg-icon-no
+                      use(xlink:href="img/svg-sprite.svg#icon-no")
 
 mixin style-tariffs
   style.
