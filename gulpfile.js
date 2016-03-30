@@ -3,6 +3,7 @@
 var gulp = require("gulp");
 var sass = require("gulp-sass");
 var plumber = require("gulp-plumber");
+var clean = require("gulp-contrib-clean");
 
 var postcss = require("gulp-postcss");
 var autoprefixer = require("autoprefixer");
@@ -19,6 +20,13 @@ var dataPath = "jade/_data/";
 
 var uglify = require("gulp-uglify");
 var svg_sprite = require("gulp-svg-sprite");
+
+
+// clean
+gulp.task("clean", function() {
+	gulp.src("build")
+		.pipe(clean());
+});
 
 
 // jade
@@ -159,13 +167,17 @@ gulp.task("style", ["styletest"], function() {
       })
     ]))
     .pipe(gulp.dest("build/css"))
-    .pipe(server.reload({
-      stream: true
-    }))
+    .pipe(server.stream())
     .pipe(notify({
       message: "Style up!",
       sound: "Pop"
     }));
+});
+
+// build
+gulp.task("build", ["clean", "jade", "js", "img", "svg", "font", "style"], function() {
+  gulp.src("/")
+  .pipe(gulp.dest("build"))
 });
 
 
@@ -180,10 +192,10 @@ gulp.task("serve", ["jade", "js", "img", "svg", "font", "style"], function() {
     ui: false
   });
 
-  gulp.watch("js/**/.js", ["js", server.reload]);
+  gulp.watch("js/**/*.js", ["js", server.reload]);
   gulp.watch("img/svg-sprite/**/*.svg", ["svg"]);
   gulp.watch("img/**/*.{jpg,png}", ["img"]);
   gulp.watch("fonts/**/*{woff,woff2}", ["font"]);
-  gulp.watch("sass/**/*.{scss,sass}", ["style"]);
+  gulp.watch("sass/**/*.{scss,sass}", ["style", server.stream]);
   gulp.watch("jade/**/*", ["jade", server.reload]);
 });

@@ -19,6 +19,7 @@
     "editorconfig-tools": "0.1.1",
     "foldero": "^0.1.1",
     "gulp": "3.9.1",
+    "gulp-contrib-clean": "0.0.2",
     "gulp-jade": "^1.1.0",
     "gulp-notify": "^2.2.0",
     "gulp-plumber": "1.1.0",
@@ -26,6 +27,7 @@
     "gulp-sass": "2.2.0",
     "gulp-svg-sprite": "^1.2.19",
     "gulp-uglify": "^1.5.3",
+    "postcss-assets": "^4.0.1",
     "postcss-reporter": "^1.3.3",
     "postcss-scss": "^0.1.7",
     "stylelint": "^5.2.0",
@@ -33,8 +35,8 @@
   },
   "scripts": {
     "test": "editorconfig-tools check jade/**/*.jade; gulp styletest",
-    "build": "gulp style",
-    "start": "gulp serve"
+    "build": "gulp build",
+    "start": "npm run build && gulp serve"
   },
   "engines": {
     "node": "^5.0.0"
