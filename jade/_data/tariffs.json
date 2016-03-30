@@ -1,15 +1,18 @@
 { "tariffsList": [
     {
       "tariffName": "База",
-      "tariffPrice": "3.00 USD"
+      "tariffPrice": "3.00 USD",
+      "isHit": true
     },
     {
       "tariffName": "Стандарт",
-      "tariffPrice": "3.00 USD"
+      "tariffPrice": "3.00 USD",
+      "isHit": false
     },
     {
       "tariffName": "Анлим",
-      "tariffPrice": "3.00 USD"
+      "tariffPrice": "3.00 USD",
+      "isHit": false
     }
   ],
   "options": [

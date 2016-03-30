@@ -1,6 +1,30 @@
 .tariffs {
+  &__title {
+    position: relative;
+
+    &--hit::before {
+      content: "Хит";
+      position: absolute;
+      top: 0;
+      left: 0;
+      background:
+        transparent
+        inline("./img/bg-hit.svg")
+        left top / auto
+        no-repeat;
+    }
+  }
+
   td {
     outline: 1px solid tomato;
+
+    .svg-icon-yes {
+      fill: #3dc644;
+    }
+
+    .svg-icon-no {
+      fill: #f25b26;
+    }
   }
 }
 

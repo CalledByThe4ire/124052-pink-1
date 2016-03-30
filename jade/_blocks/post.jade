@@ -13,8 +13,8 @@ mixin post(item)
         +e.P.text= item.text
         +e.FOOTER.footer
           +e.BUTTON(type="button").like-btn
-            +e.SVG.icon
-              use
+            +e.SVG.icon.svg-icon-heart
+              use(xlink:href="img/svg-sprite.svg#icon-heart")
           +e.SPAN.likes= "Нравится: " + item.likes
 
   else
@@ -30,6 +30,6 @@ mixin post(item)
       +e.P.text= item.text
       +e.FOOTER.footer
         +e.BUTTON(type="button").like-btn
-          +e.SVG.icon
-            use
+          +e.SVG.icon.svg-icon-heart
+            use(xlink:href="img/svg-sprite.svg#icon-heart")
         +e.SPAN.likes= "Нравится: " + item.likes

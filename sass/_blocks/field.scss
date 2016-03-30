@@ -1,0 +1,28 @@
+.field {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background:
+      transparent
+      right center / auto
+      no-repeat;
+  }
+
+  &--phone {
+    &::after {
+      background-image: inline("./img/icon-mail.svg");
+    }
+  }
+
+  &--email {
+    &::after {
+      background-image: inline("./img/icon-phone.svg");
+    }
+  }
+}

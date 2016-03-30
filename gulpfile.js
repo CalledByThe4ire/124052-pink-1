@@ -6,6 +6,7 @@ var plumber = require("gulp-plumber");
 var clean = require("gulp-contrib-clean");
 
 var postcss = require("gulp-postcss");
+var assets  = require("postcss-assets");
 var autoprefixer = require("autoprefixer");
 var reporter     = require("postcss-reporter");
 var syntax_scss  = require("postcss-scss");
@@ -164,7 +165,10 @@ gulp.task("style", ["styletest"], function() {
           "last 2 Opera versions",
           "last 2 Edge versions"
         ]
-      })
+      }),
+			assets({
+	      loadPaths: ["img"]
+	    })
     ]))
     .pipe(gulp.dest("build/css"))
     .pipe(server.stream())
@@ -193,7 +197,7 @@ gulp.task("serve", ["jade", "js", "img", "svg", "font", "style"], function() {
   });
 
   gulp.watch("js/**/*.js", ["js", server.reload]);
-  gulp.watch("img/svg-sprite/**/*.svg", ["svg"]);
+  gulp.watch(["img/*.svg", "img/**/*.{jpg,png}"], ["svg"]);
   gulp.watch("img/**/*.{jpg,png}", ["img"]);
   gulp.watch("fonts/**/*{woff,woff2}", ["font"]);
   gulp.watch("sass/**/*.{scss,sass}", ["style", server.stream]);

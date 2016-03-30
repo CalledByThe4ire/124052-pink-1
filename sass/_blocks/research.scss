@@ -9,12 +9,16 @@
 @media #{$tab-desk} {
   .research {
     display: block;
+    background:
+      transparent
+      inline("./img/icon-timer.svg")
+      left top / auto
+      no-repeat;
   }
 }
 
 @media #{$tablet} {
   .research {
-    background-color: transparent;
     padding-left: 310px;
   }
 }

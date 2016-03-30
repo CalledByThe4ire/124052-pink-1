@@ -1,5 +1,13 @@
 mixin field(item, index)
-  +b.field
+  case item.inputType
+    when "phone"
+      - var modName = "--phone"
+    when "email"
+      - var modName = "--email"
+    default
+      - var modName = ""
+
+  +b(class="field" + modName)
     +e.LABEL.label(for="form-"+item.name + (index + 1))= item.label
     +e.INPUT.input(
         type=item.inputType,
