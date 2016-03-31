@@ -4,7 +4,10 @@
   background-color: $bg_base;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
+  padding-top: 22px;
+  padding-bottom: 22px;
 
   &__list {
     display: flex;
@@ -114,11 +117,21 @@
 @media #{$desktop} {
   .nav {
     justify-content: space-between;
+    flex-wrap: nowrap;
+    max-height: 200px;
+    overflow: hidden;
     background-color: transparent;
 
     &__list {
       flex-direction: row;
-      width: auto;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      flex-grow: 1;
+      flex-basis: 60%;
+    }
+
+    &__item {
+      padding-left: $gutter;
     }
 
     &__icon-menu {
