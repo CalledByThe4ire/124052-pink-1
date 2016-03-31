@@ -1,16 +1,85 @@
 .logo {
-  width: 75px;
-  height: 22px;
-  color: $c_alt;
+  position: relative;
+  cursor: pointer;
+  font-size: 0;
+
+  &__star {
+    display: none;
+  }
+
+  &__glasses-part {
+    display: none;
+  }
+
+  // common hovers
+  &:hover &__glasses,
+  &:hover &__glasses-part,
+  &:hover &__letters {
+    fill: $c_bright;
+  }
+
+  // header mod
+  &--header:hover &__star {
+    fill: $c_alt;
+  }
+
+  &--header:active &__glasses,
+  &--header:active &__glasses-part,
+  &--header:active &__letters {
+    fill: rgba($c_alt, 0.3);
+  }
+
+  &--header:active &__star {
+    fill: rgba($c_bright, 0.5);
+  }
+
+  // footer mod
+  &--footer:hover &__star {
+    fill: $c_bright;
+  }
+
+  &--footer:active &__glasses,
+  &--footer:active &__glasses-part {
+    fill: rgba($c_bright, 0.3);
+  }
+  &--footer:active &__letters {
+    fill: rgba($c_base, 0.3);
+  }
+  &--footer:active &__star {
+    fill: rgba($c_base, 0.3);
+    &--i {
+      fill: rgba($c_bright, 0.3);
+    }
+  }
+
+  // отменяем активное состояние для логотипов на индексной странице
+  &--inactive {
+    pointer-events: none;
+  }
 }
 
-// @media #{$mobile}
-// @media #{$tablet}
-// @media #{$desktop}
+// @media #{$tab-desk}
 
-@media #{$tab-desk} {
+@media #{$mobile} {
   .logo {
-    width: 150px;
-    height: 40px;
+    &--header &__glasses {
+      display: none;
+    }
+  }
+}
+
+// @media #{$portable}
+
+@media #{$desktop} {
+  .logo {
+    &__star {
+      display: block;
+    }
+    &__glasses {
+      display: none;
+    }
+    &__glasses-part {
+      display: block;
+    }
   }
 }

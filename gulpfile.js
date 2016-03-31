@@ -179,11 +179,7 @@ gulp.task("style", ["styletest"], function() {
 });
 
 // build
-gulp.task("build", ["clean", "jade", "js", "img", "svg", "font", "style"], function() {
-  gulp.src("/")
-  .pipe(gulp.dest("build"))
-});
-
+gulp.task("build", ["clean", "jade", "js", "img", "svg", "font", "style"]);
 
 // serve
 gulp.task("serve", ["jade", "js", "img", "svg", "font", "style"], function() {
@@ -197,9 +193,9 @@ gulp.task("serve", ["jade", "js", "img", "svg", "font", "style"], function() {
   });
 
   gulp.watch("js/**/*.js", ["js", server.reload]);
-  gulp.watch(["img/*.svg", "img/**/*.{jpg,png}"], ["svg"]);
-  gulp.watch("img/**/*.{jpg,png}", ["img"]);
-  gulp.watch("fonts/**/*{woff,woff2}", ["font"]);
+  gulp.watch("img/svg-sprite/*.svg", ["svg", server.reload]);
+  gulp.watch(["img/*.svg", "img/**/*.{jpg,png}"], ["img", server.reload]);
+  gulp.watch("fonts/**/*{woff,woff2}", ["font", server.reload]);
   gulp.watch("sass/**/*.{scss,sass}", ["style", server.stream]);
   gulp.watch("jade/**/*", ["jade", server.reload]);
 });
