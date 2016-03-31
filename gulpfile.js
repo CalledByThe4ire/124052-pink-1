@@ -4,6 +4,8 @@ var gulp = require("gulp");
 var sass = require("gulp-sass");
 var plumber = require("gulp-plumber");
 var clean = require("gulp-contrib-clean");
+var concat = require("gulp-concat");
+var rename = require("gulp-rename");
 
 var postcss = require("gulp-postcss");
 var assets  = require("postcss-assets");
@@ -76,11 +78,14 @@ gulp.task("jade", function() {
 
 // js
 gulp.task("js", function() {
-  gulp.src("js/**/*.js")
+  gulp.src(["js/lib/**", "js/modules/**", "js/app.js"])
   .pipe(plumber({
     errorHandler: notify.onError("Error: <%= error.message %>")
   }))
+	.pipe(concat("script.js"))
+	.pipe(gulp.dest("build/js"))
   .pipe(uglify())
+	.pipe(rename("script.min.js"))
   .pipe(gulp.dest("build/js"))
   .pipe(server.reload({
     stream: true
