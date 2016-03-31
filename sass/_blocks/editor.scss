@@ -12,11 +12,13 @@
   }
 
   &__img-wrap {
-    display: flex;
     width: 100%;
+    height: 375px;
+    overflow: hidden;
   }
 
   &__img {
+    display: block;
     width: $w_block - $gutter;
     margin: 0 auto;
   }
@@ -72,8 +74,7 @@
 
     &__img-wrap {
       width: 50%;
-      display: flex;
-      flex-direction: column;
+      height: 400px;
       padding-left: $gutter / 2;
       padding-right: $gutter / 2;
     }

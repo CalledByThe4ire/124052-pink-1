@@ -4,14 +4,14 @@
   padding-right: $gutter / 2;
 
   &__img-wrap {
-    display: flex;
-    height: 175px;
+    display: block;
+    height: 180px;
+    margin: 0 auto;
     overflow: hidden;
   }
 
   &__img {
     width: $w_block;
-    // margin: 0 auto;
   }
 
   &__content-wrap {
@@ -24,13 +24,16 @@
   }
 
   &--top &__img-wrap {
-    height: 135px;
+    background-color: $bg_grey;
+    height: auto;
   }
 
   &--top &__img {
-    height: 505px;
+    display: block;
     width: 100%;
-    min-width: 320px;
+    min-width: $w_block + $gutter;
+    max-width: 1600px;
+    margin: 0 auto;
   }
 }
 
@@ -45,10 +48,6 @@
     &--top {
       width: 100%;
       padding: 0;
-    }
-
-    &--top &__img-wrap {
-      height: 505px;
     }
   }
 }

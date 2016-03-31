@@ -1,4 +1,10 @@
 .tariffs {
+  &__table {
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 10px;
+  }
+
   &__title {
     position: relative;
 
@@ -16,8 +22,7 @@
   }
 
   td {
-    outline: 1px solid tomato;
-
+    border: 1px solid grey;
     .svg-icon-yes {
       fill: #3dc644;
     }

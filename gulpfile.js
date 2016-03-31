@@ -73,6 +73,7 @@ gulp.task("jade", function() {
     }));
 });
 
+
 // js
 gulp.task("js", function() {
   gulp.src("js/**/*.js")
@@ -179,10 +180,12 @@ gulp.task("style", ["styletest"], function() {
 });
 
 // build
-gulp.task("build", ["clean", "jade", "js", "img", "svg", "font", "style"]);
+gulp.task("all", ["jade", "js", "img", "svg", "font", "style"]);
+
+gulp.task("build", ["clean", "all"]);
 
 // serve
-gulp.task("serve", ["jade", "js", "img", "svg", "font", "style"], function() {
+gulp.task("serve", ["all"], function() {
   server.init({
     server: {
       baseDir: "build/"
