@@ -2,5 +2,5 @@ mixin features
   +b.SECTION.features
     each item in site.data.features
       +e.item
-        +e.H3.title #{item.title}
-        +e.P.text #{item.text}
+        +e.H3.title !{item.title}
+        +e.P.text !{item.text}

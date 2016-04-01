@@ -8,7 +8,7 @@ mixin field(item, index)
       - var modName = ""
 
   +b(class="field" + modName)
-    +e.LABEL.label(for="form-"+item.name + (index + 1))= item.label
+    +e.LABEL.label(for="form-"+item.name + (index + 1)) !{item.label}
     +e.INPUT.input(
         type=item.inputType,
         name="form-"+item.name,

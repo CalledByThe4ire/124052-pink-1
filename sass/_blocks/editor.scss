@@ -47,7 +47,10 @@
 
 @media #{$mobile} {
   .editor {
-    // переключение инструментов
+    /* ============================================>>>>>
+    = logic for tools togglers =
+    ===============================================>>>>> */
+
     &__input[id="tool-crop"]:checked + &__label[for="tool-crop"],
     &__input[id="tool-fill"]:checked + &__label[for="tool-fill"],
     &__input[id="tool-contrast"]:checked + &__label[for="tool-contrast"] {
@@ -63,6 +66,10 @@
     &__input[id="tool-contrast"]:checked ~ &__control--contrast {
       display: block;
     }
+
+    /* --------------------------------------------<<<<<
+    = End of logic for tools togglers =
+    ===============================================<<<<< */
   }
 }
 

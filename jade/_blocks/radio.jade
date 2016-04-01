@@ -6,4 +6,4 @@ mixin radio(item, index)
       checked=item.isChecked
       disabled=item.isDisabled
       )
-  +e.LABEL.label(for="form-"+item.name + (index + 1))= item.label
+  +e.LABEL.label(for="form-"+item.name + (index + 1)) !{item.label}

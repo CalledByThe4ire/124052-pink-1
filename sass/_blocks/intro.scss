@@ -1,8 +1,4 @@
-$bg_intro:
-  $bg_base
-  url(../img/bg-back-mobile.jpg)
-  center / cover
-  no-repeat;
+$bg_intro: $bg_base url("../img/bg-back-mobile.jpg") center / cover no-repeat;
 
 .intro {
   color: $c_alt;
@@ -13,18 +9,23 @@ $bg_intro:
   }
 
   &__title-wrap {
-    @include container;
     padding-top: 100px;
+
+    @include container;
+
     &--index {
       padding-top: 90px;
       padding-bottom: 310px;
+
       background: $bg_intro;
     }
   }
 
   &__title {
     margin: 0;
+
     text-align: center;
+
     outline: 1px solid white;
   }
 
@@ -32,6 +33,10 @@ $bg_intro:
     @include container;
   }
 }
+
+/* ============================================>>>>>
+= MQ TAB-DESK =
+===============================================>>>>> */
 
 @media #{$tab-desk} {
   .intro {
@@ -51,11 +56,15 @@ $bg_intro:
   }
 }
 
+/* --------------------------------------------<<<<<
+= End of MQ TAB-DESK =
+===============================================<<<<< */
+
 @media #{$tablet} {
   .intro {
-
     &__title-wrap {
       padding-top: 185px;
+
       &--index {
         padding-top: 215px;
         padding-bottom: 0;
@@ -66,9 +75,9 @@ $bg_intro:
 
 @media #{$desktop} {
   .intro {
-
     &__title-wrap {
       padding-top: 195px;
+
       &--index {
         padding-top: 230px;
         padding-bottom: 0;
