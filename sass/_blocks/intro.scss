@@ -1,4 +1,9 @@
-$bg_intro: $bg_base url("../img/bg-back-mobile.jpg") center / cover no-repeat;
+$bg_intro:
+  $bg_base
+  url("../img/bg-back-mobile.jpg")
+  center /
+  cover
+  no-repeat;
 
 .intro {
   color: $c_alt;

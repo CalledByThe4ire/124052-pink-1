@@ -1,3 +1,22 @@
 .map {
-  height: 200px;
+  position: relative;
+  min-height: 200px;
+  &__container {
+    @include container;
+    position: relative;
+    min-height: 200px;
+    background:
+      $bg-grey
+      url("../img/bg-map.png")
+      center /
+      cover
+      no-repeat;
+  }
+  &__ya {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 200px;
+    z-index: $z_base;
+  }
 }

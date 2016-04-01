@@ -1,7 +1,8 @@
 .field {
   position: relative;
 
-  &::after {
+  &--phone::after,
+  &--email::after {
     content: "";
     position: absolute;
     top: 0;

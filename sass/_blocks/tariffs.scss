@@ -63,7 +63,7 @@
       }
 
       span {
-        font-size: 0;
+        @include text-hide;
       }
     }
   }
