@@ -2,7 +2,7 @@
 
 var gulp = require("gulp");
 var plumber = require("gulp-plumber");
-var clean = require("gulp-contrib-clean");
+var del = require('del');
 var concat = require("gulp-concat");
 var rename = require("gulp-rename");
 var server = require("browser-sync");
@@ -26,11 +26,10 @@ var uglify = require("gulp-uglify");
 var svg_sprite = require("gulp-svg-sprite");
 
 var argv = require("minimist")(process.argv.slice(2));
-var isOnProduction = !!argv.production
+var isOnProduction = !!argv.production;
 var buildPath = isOnProduction ? "build" : "tmp";
-var srcPath = "src"
+var srcPath = "src";
 var dataPath = path.join(srcPath, "jade/_data/");
-
 
 /*
      ██  █████  ██████  ███████
@@ -135,11 +134,11 @@ gulp.task("svg", function() {
         symbol: {
           dest: ".",
           dimensions: "%s",
-          sprite: buildPath + "/img/svg-sprite.svg",
+          sprite: path.join(buildPath, "img/svg-sprite.svg"),
           example: false,
           render: {
             scss: {
-              dest: "sass/_global/svg-sprite.scss"
+              dest: path.join(srcPath, "sass/_global/svg-sprite.scss"),
             }
           }
         }
@@ -229,18 +228,19 @@ gulp.task("style", ["styletest"], function() {
 
 
 /*
-   ██████ ██      ███████  █████  ███    ██
-  ██      ██      ██      ██   ██ ████   ██
-  ██      ██      █████   ███████ ██ ██  ██
-  ██      ██      ██      ██   ██ ██  ██ ██
-   ██████ ███████ ███████ ██   ██ ██   ████
+██████  ███████ ██
+██   ██ ██      ██
+██   ██ █████   ██
+██   ██ ██      ██
+██████  ███████ ███████
 */
 
-gulp.task("clean", function() {
-  return gulp.src(path.join(buildPath), {read: false})
-    .pipe(clean());
-});
 
+gulp.task("del", function() {
+  return del([path.join(buildPath), path.join(srcPath, "sass/_global/svg-sprite.scss")]).then(paths => {
+    console.log('Deleted files and folders:\n', paths.join('\n'));
+  });
+});
 
 /*
 ███████ ███████ ██████  ██    ██ ███████
@@ -262,6 +262,23 @@ gulp.task("serve", function() {
 });
 
 /*
+██████  ██    ██ ██ ██      ██████
+██   ██ ██    ██ ██ ██      ██   ██
+██████  ██    ██ ██ ██      ██   ██
+██   ██ ██    ██ ██ ██      ██   ██
+██████   ██████  ██ ███████ ██████
+*/
+
+gulp.task("build", ["del"], function (callback) {
+  runSequence(
+    "svg",
+    "img",
+    ["jade", "js", "font"],
+    "style",
+    callback);
+})
+
+/*
 ██████  ███████ ███████  █████  ██    ██ ██   ████████
 ██   ██ ██      ██      ██   ██ ██    ██ ██      ██
 ██   ██ █████   █████   ███████ ██    ██ ██      ██
@@ -269,7 +286,7 @@ gulp.task("serve", function() {
 ██████  ███████ ██      ██   ██  ██████  ███████ ██
 */
 
-var allTasks = ["clean", "jade", "js", "img", "svg", "font", "style"];
+var allTasks = ["build"];
 if (!isOnProduction) {
   allTasks.push("serve");
 }
@@ -278,9 +295,9 @@ gulp.task("default", allTasks, function() {
   if (!isOnProduction) {
     gulp.watch("**/*.js", {cwd: path.join(srcPath, "js")}, ["js", server.reload]);
     gulp.watch("svg-sprite/*.svg", {cwd: path.join(srcPath, "img")}, ["svg", server.reload]);
-    gulp.watch(["!svg-sprite/*.*", "**/*.{jpg,png,svg}"], {cwd: path.join(srcPath, "img")}, ["img", server.reload]);
+    gulp.watch(["!svg-sprite","!svg-sprite/**","!svg-sprite/**.*", "**/*.{jpg,png,svg}"], {cwd: path.join(srcPath, "img")}, ["img", server.reload]);
     gulp.watch("**/*{woff,woff2}", {cwd: path.join(srcPath, "fonts")}, ["font", server.reload]);
-    gulp.watch("**/*.{scss,sass}", {cwd: path.join(srcPath, "sass")}, ["style"]);
+    gulp.watch("**/*.scss", {cwd: path.join(srcPath, "sass")}, ["style"]);
     gulp.watch("**/*.*", {cwd: path.join(srcPath, "jade")}, ["jade", server.reload]);
   }
 });
