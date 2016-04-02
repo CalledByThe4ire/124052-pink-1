@@ -38,8 +38,8 @@
   },
   "scripts": {
     "test": "editorconfig-tools check jade/**/*.jade; gulp styletest",
-    "build": "gulp build",
-    "start": "npm run build && gulp serve"
+    "build": "gulp --production",
+    "start": "gulp"
   },
   "engines": {
     "node": "^5.0.0"

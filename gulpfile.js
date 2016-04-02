@@ -34,19 +34,6 @@ var dataPath = path.join(srcPath, "jade/_data/");
 
 
 /*
-   ██████ ██      ███████  █████  ███    ██
-  ██      ██      ██      ██   ██ ████   ██
-  ██      ██      █████   ███████ ██ ██  ██
-  ██      ██      ██      ██   ██ ██  ██ ██
-   ██████ ███████ ███████ ██   ██ ██   ████
-*/
-
-gulp.task("clean", function() {
-  gulp.src(buildPath + "/")
-    .pipe(clean());
-});
-
-/*
      ██  █████  ██████  ███████
      ██ ██   ██ ██   ██ ██
      ██ ███████ ██   ██ █████
@@ -214,7 +201,6 @@ gulp.task("styletest", function() {
 */
 
 gulp.task("style", ["styletest"], function() {
-  // gulp.src(path.join(srcPath, "sass/style.scss"))
   gulp.src("style.scss", {cwd: path.join(srcPath, "sass")})
     .pipe(plumber({
       errorHandler: notify.onError("Error:  <%= error.message %>")
@@ -235,11 +221,25 @@ gulp.task("style", ["styletest"], function() {
       })
     ]))
     .pipe(gulp.dest(path.join(buildPath, "css")))
-    // .pipe(server.stream())
+    .pipe(server.stream())
     .pipe(notify({
       message: "Style: <%= file.relative %>",
       sound: "Pop"
     }));
+});
+
+
+/*
+   ██████ ██      ███████  █████  ███    ██
+  ██      ██      ██      ██   ██ ████   ██
+  ██      ██      █████   ███████ ██ ██  ██
+  ██      ██      ██      ██   ██ ██  ██ ██
+   ██████ ███████ ███████ ██   ██ ██   ████
+*/
+
+gulp.task("clean", function() {
+  gulp.src(path.join(buildPath))
+    .pipe(clean());
 });
 
 
@@ -279,9 +279,9 @@ gulp.task("default", allTasks, function() {
   if (!isOnProduction) {
     gulp.watch("**/*.js", {cwd: path.join(srcPath, "js")}, ["js", server.reload]);
     gulp.watch("svg-sprite/*.svg", {cwd: path.join(srcPath, "img")}, ["svg", server.reload]);
-    gulp.watch(["!svg-sprite/**", "**/*.{jpg,png,svg}"], {cwd: path.join(srcPath, "img")}, ["img", server.reload]);
+    gulp.watch(["!svg-sprite/*.*", "**/*.{jpg,png,svg}"], {cwd: path.join(srcPath, "img")}, ["img", server.reload]);
     gulp.watch("**/*{woff,woff2}", {cwd: path.join(srcPath, "fonts")}, ["font", server.reload]);
-    gulp.watch("**/*.{scss,sass}", {cwd: path.join(srcPath, "sass")}, ["style", server.stream]);
-    gulp.watch("**/**", {cwd: path.join(srcPath, "jade")}, ["jade", server.reload]);
+    gulp.watch("**/*.{scss,sass}", {cwd: path.join(srcPath, "sass")}, ["style"]);
+    gulp.watch("**/*.*", {cwd: path.join(srcPath, "jade")}, ["jade", server.reload]);
   }
 });
