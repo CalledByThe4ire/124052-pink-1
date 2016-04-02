@@ -17,13 +17,13 @@
 
   &--phone {
     &::after {
-      background-image: inline("./img/icon-mail.svg");
+      background-image: inline("icon-mail.svg");
     }
   }
 
   &--email {
     &::after {
-      background-image: inline("./img/icon-phone.svg");
+      background-image: inline("icon-phone.svg");
     }
   }
 }

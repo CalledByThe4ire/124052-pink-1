@@ -14,9 +14,8 @@ $bg_intro:
   }
 
   &__title-wrap {
-    padding-top: 100px;
-
     @include container;
+    padding-top: 100px;
 
     &--index {
       padding-top: 90px;
@@ -28,10 +27,7 @@ $bg_intro:
 
   &__title {
     margin: 0;
-
     text-align: center;
-
-    outline: 1px solid white;
   }
 
   &__text-wrap {

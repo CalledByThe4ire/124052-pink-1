@@ -5,7 +5,7 @@ mixin field(item, index)
     when "email"
       - var modName = "--email"
     default
-      - var modName = ""
+      - var modName = "piu"
 
   +b(class="field" + modName)
     +e.LABEL.label(for="form-"+item.name + (index + 1)) !{item.label}
