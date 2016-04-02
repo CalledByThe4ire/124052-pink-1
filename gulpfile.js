@@ -7,6 +7,10 @@ var concat = require("gulp-concat");
 var rename = require("gulp-rename");
 var server = require("browser-sync");
 var notify = require("gulp-notify");
+var runSequence = require('run-sequence');
+var fs = require("fs");
+var foldero = require("foldero");
+var path = require("path");
 
 var sass = require("gulp-sass");
 var postcss = require("gulp-postcss");
@@ -17,16 +21,11 @@ var syntax_scss = require("postcss-scss");
 var stylelint = require("stylelint");
 
 var jade = require("gulp-jade");
-var fs = require("fs");
-var foldero = require("foldero");
 
 var uglify = require("gulp-uglify");
 var svg_sprite = require("gulp-svg-sprite");
 
 var argv = require("minimist")(process.argv.slice(2));
-
-var path = require("path");
-
 var isOnProduction = !!argv.production
 var buildPath = isOnProduction ? "build" : "tmp";
 var srcPath = "src"
@@ -238,7 +237,7 @@ gulp.task("style", ["styletest"], function() {
 */
 
 gulp.task("clean", function() {
-  gulp.src(path.join(buildPath))
+  return gulp.src(path.join(buildPath), {read: false})
     .pipe(clean());
 });
 
@@ -257,7 +256,7 @@ gulp.task("serve", function() {
       baseDir: buildPath
     },
     notify: false,
-    open: true,
+    open: false,
     ui: false
   });
 });
