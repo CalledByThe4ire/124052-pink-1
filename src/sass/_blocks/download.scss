@@ -16,6 +16,7 @@
 
 @media #{$tab-desk} {
   .download {
+    padding: 0;
     background-color: transparent;
 
     &__inner {
