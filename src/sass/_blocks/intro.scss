@@ -18,7 +18,8 @@ $bg_hand:
 
   &__title-wrap {
     @include container;
-    padding-top: 185px;
+    padding-top: 100px;
+    padding-bottom: 85px;
   }
 
   &__title {
@@ -76,10 +77,14 @@ $bg_hand:
    ██    ██   ██ ██████  ███████ ███████    ██
 */
 
-
 @media #{$tablet} {
   .intro {
     background-image: url("../img/bg-back-tablet@1x.jpg");
+
+    &__title-wrap {
+      padding-top: 190px;
+      padding-bottom: 145px;
+    }
 
     &__title {
       font-size: $fz_xl;
@@ -92,6 +97,7 @@ $bg_hand:
 
     &--index &__title-wrap {
       padding-top: 210px;
+      padding-bottom: 10px;
       padding-right: 0;
       padding-left: 0;
     }
@@ -144,6 +150,10 @@ $bg_hand:
 @media #{$desktop} {
   .intro {
     background-image: url("../img/bg-back-desktop.jpg");
+    &__title-wrap {
+      padding-top: 185px;
+      padding-bottom: 110px;
+    }
     &__title {
       font-size: $fz_xxl;
     }
@@ -154,6 +164,8 @@ $bg_hand:
     }
 
     &--index &__title-wrap {
+      padding-top: 220px;
+      padding-bottom: 30px;
       padding-right: 0;
       padding-left: 0;
     }

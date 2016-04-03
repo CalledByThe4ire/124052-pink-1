@@ -3,10 +3,33 @@
   background-color: $bg_dark;
   color: $c_alt;
   text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
 
   &__inner {
     max-width: $w_container_min;
     margin: 0 auto;
+  }
+
+  &__btn-wrap {
+    margin-bottom: 10px;
+  }
+
+  &__links {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+
+  &__link {
+    @include text-hide;
+    padding: $gutter;
+  }
+
+  &__text {
+    font-weight: $fw_light;
   }
 }
 
@@ -16,7 +39,8 @@
 
 @media #{$tab-desk} {
   .download {
-    padding: 0;
+    padding-right: 0;
+    padding-left: 0;
     background-color: transparent;
 
     &__inner {
