@@ -113,7 +113,7 @@ gulp.task("js", function() {
 */
 
 gulp.task("img", function() {
-  gulp.src(["!svg-sprite/**", "**/*.{jpg,png,svg}"], {cwd: path.join(srcPath, "img")})
+  gulp.src(["!svg-sprite","!svg-sprite/**","!svg-sprite/**.*", "**/*.{jpg,png,svg}"], {cwd: path.join(srcPath, "img")})
 
     .pipe(gulp.dest(path.join(buildPath, "img")))
 });
@@ -255,7 +255,7 @@ gulp.task("serve", function() {
     server: {
       baseDir: buildPath
     },
-    notify: false,
+    notify: true,
     open: false,
     ui: false
   });
