@@ -4,14 +4,15 @@
   color: $c_alt;
   text-align: center;
   padding-top: 30px;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
 
   &__inner {
     max-width: $w_container_min;
     margin: 0 auto;
   }
 
-  &__btn-wrap {
+  &__btn {
+    width: 100%;
     margin-bottom: 10px;
   }
 
@@ -34,8 +35,11 @@
 }
 
 // @media #{$mobile}
-// @media #{$tablet}
-// @media #{$desktop}
+@media #{$tablet} {
+  .download {
+    padding-bottom: 95px;
+  }
+}
 
 @media #{$tab-desk} {
   .download {
@@ -47,5 +51,11 @@
       width: $w_block;
       margin: 0;
     }
+  }
+}
+
+@media #{$desktop} {
+  .download {
+    padding-bottom: 105px;
   }
 }

@@ -1,12 +1,12 @@
 $bg_intro:
   $bg_base
-  url("../img/bg-back-mobile.jpg")
+  url("../img/intro/bg-back-mobile.jpg")
   center /
   cover
   no-repeat;
 
 $bg_hand:
-  url("../img/iphone-hand-mobile.png")
+  url("../img/intro/iphone-hand-mobile.png")
   center bottom /
   auto 286px
   no-repeat;
@@ -50,8 +50,8 @@ $bg_hand:
     }
 
     &--index &__title-wrap {
-      padding-top: 90px;
-      padding-bottom: 310px;
+      padding-top: 85px;
+      padding-bottom: 315px;
       background:
         $bg_hand,
         $bg_intro;
@@ -62,8 +62,8 @@ $bg_hand:
     .intro {
       &--index &__title-wrap {
         background-image:
-          url("../img/iphone-hand-mobile@2x.png"),
-          url("../img/bg-back-mobile@2x.jpg");
+          url("../img/intro/iphone-hand-mobile@2x.png"),
+          url("../img/intro/bg-back-mobile@2x.jpg");
       }
     }
   }
@@ -79,11 +79,11 @@ $bg_hand:
 
 @media #{$tablet} {
   .intro {
-    background-image: url("../img/bg-back-tablet@1x.jpg");
+    background-image: url("../img/intro/bg-back-tablet@1x.jpg");
 
     &__title-wrap {
-      padding-top: 190px;
-      padding-bottom: 145px;
+      padding-top: 185px;
+      padding-bottom: 130px;
     }
 
     &__title {
@@ -91,7 +91,7 @@ $bg_hand:
     }
 
     &--index &__container {
-      background-image: url("../img/iphone-hand-tablet@1x.png");
+      background-image: url("../img/intro/iphone-hand-tablet@1x.png");
       background-size: auto 545px;
     }
 
@@ -105,11 +105,11 @@ $bg_hand:
 
   @media #{$retina2x} {
     .intro {
-      background-image: url("../img/bg-back-tablet@2x.jpg");
+      background-image: url("../img/intro/bg-back-tablet@2x.jpg");
     }
 
     &--index &__container {
-      background-image: url("../img/iphone-hand-tablet@2x.png");
+      background-image: url("../img/intro/iphone-hand-tablet@2x.png");
     }
   }
 }
@@ -149,17 +149,17 @@ $bg_hand:
 
 @media #{$desktop} {
   .intro {
-    background-image: url("../img/bg-back-desktop.jpg");
+    background-image: url("../img/intro/bg-back-desktop.jpg");
     &__title-wrap {
-      padding-top: 185px;
-      padding-bottom: 110px;
+      padding-top: 175px;
+      padding-bottom: 90px;
     }
     &__title {
       font-size: $fz_xxl;
     }
 
     &--index &__container {
-      background-image: url("../img/iphone-hand-desktop@1x.png");
+      background-image: url("../img/intro/iphone-hand-desktop@1x.png");
       background-size: auto 645px;
     }
 
@@ -174,7 +174,7 @@ $bg_hand:
   @media #{$retina2x} {
     .intro {
       &--index &__container {
-        background-image: url("../img/iphone-hand-desktop@2x.png");
+        background-image: url("../img/intro/iphone-hand-desktop@2x.png");
       }
     }
   }
