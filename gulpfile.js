@@ -113,7 +113,7 @@ gulp.task("js", function() {
 */
 
 gulp.task("img", function() {
-  gulp.src(["!svg-sprite","!svg-sprite/**","!svg-sprite/**.*", "**/*.{jpg,png,svg}"], {cwd: path.join(srcPath, "img")})
+  gulp.src(["!svg-sprite", "!svg-sprite/**", "**/*.{jpg,png,svg}"], {cwd: path.join(srcPath, "img")})
 
     .pipe(gulp.dest(path.join(buildPath, "img")))
 });
@@ -295,7 +295,7 @@ gulp.task("default", allTasks, function() {
   if (!isOnProduction) {
     gulp.watch("**/*.js", {cwd: path.join(srcPath, "js")}, ["js", server.reload]);
     gulp.watch("svg-sprite/*.svg", {cwd: path.join(srcPath, "img")}, ["svg", server.reload]);
-    gulp.watch(["!svg-sprite","!svg-sprite/**","!svg-sprite/**.*", "**/*.{jpg,png,svg}"], {cwd: path.join(srcPath, "img")}, ["img", server.reload]);
+    gulp.watch(["!svg-sprite", "!svg-sprite/**", "**/*.{jpg,png,svg}"], {cwd: path.join(srcPath, "img")}, ["img", server.reload]);
     gulp.watch("**/*{woff,woff2}", {cwd: path.join(srcPath, "fonts")}, ["font", server.reload]);
     gulp.watch("**/*.scss", {cwd: path.join(srcPath, "sass")}, ["style"]);
     gulp.watch("**/*.*", {cwd: path.join(srcPath, "jade")}, ["jade", server.reload]);
