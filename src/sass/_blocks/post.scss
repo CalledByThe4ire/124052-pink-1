@@ -1,0 +1,77 @@
+.post {
+  width: $w_block;
+  padding-right: $gutter / 2;
+  padding-left: $gutter / 2;
+
+  &__img-wrap {
+    display: block;
+    overflow: hidden;
+    height: 180px;
+    margin: 0 auto;
+  }
+
+  &__img {
+    width: $w_block;
+  }
+
+  &__content-wrap {
+    @include container;
+  }
+
+  /* ============================================>>>>>
+    = MOD IMG--TOP =
+    ===============================================>>>>> */
+
+  &--top {
+    width: 100%;
+    padding: 0;
+  }
+
+  &--top &__img-wrap {
+    height: auto;
+    background-color: $bg_grey;
+  }
+
+  &--top &__img {
+    display: block;
+    width: 100%;
+    min-width: $w_block + $gutter;
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+
+  /* --------------------------------------------<<<<<
+    = End of MOD IMG--TOP =
+    ===============================================<<<<< */
+}
+
+@media #{$tab-desk} {
+  .post {
+    width: $w_block + $gutter;
+
+    &__img {
+      width: $w_block + $gutter;
+    }
+
+    &--top {
+      width: 100%;
+      padding: 0;
+    }
+  }
+}
+
+@media #{$tablet} {
+  .post {
+    &__img-wrap {
+      height: 300px;
+    }
+  }
+}
+
+@media #{$desktop} {
+  .post {
+    &__img-wrap {
+      height: 400px;
+    }
+  }
+}

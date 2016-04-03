@@ -1,0 +1,47 @@
+extends ../_layouts/base
+
+block variables
+  - var isIndex = true
+  - var isFooterMobileHidden = true
+  
+append style
+  // выносим логику слайдеров в html для удобного добавления слайдов
+  +style-reviews
+  +style-tariffs
+
+block content
+  +b.intro--index
+    +e.title-wrap--index
+      +e.H1.title--index Взгляните на&nbsp;жизнь иначе!
+    +download
+
+  .box
+    .container
+      h2.title
+        span Устали от&nbsp;серости мегаполиса?
+        span Нам есть, что вам предложить!
+
+  .box.box--dark
+    .container
+      +features
+
+  .box.box--blink
+    .container
+      +research
+
+  .box
+    .container
+      +reviews
+
+  .box.box--dark
+    .container
+      +tariffs
+
+  .box
+    .container
+      +contacts
+
+  +map
+
+prepend script
+  script(src="http://api-maps.yandex.ru/2.1/?lang=ru_RU")

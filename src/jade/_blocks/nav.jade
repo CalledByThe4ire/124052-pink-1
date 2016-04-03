@@ -1,0 +1,28 @@
+-
+  var navItems = [
+    {
+      name: "Главная",
+      link: "index.html"
+    },
+    {
+      name: "Фотографии",
+      link: "photo.html"
+    },
+    {
+      name: "Конкурс",
+      link: "form.html"
+    },
+    {
+      name: "HTML Academy",
+      link: "https://htmlacademy.ru"
+    }
+  ]
+
+mixin nav
+  +b.NAV.nav#nav
+    +logo-header
+    +e.icon-menu.js-toggle
+    +e.UL.list
+      each item in navItems
+        +e.LI.item
+          +e.A.link(href=item.link) #{item.name}

@@ -1,0 +1,22 @@
+@mixin typo-h1 {
+  font-size: 30px;
+  line-height: 1.2;
+  font-weight: 400;
+}
+
+// @mixin typo-base-text
+// @mixin typo-page-heading
+// @mixin typo-promo
+// @mixin typo-label
+
+body {
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: $fz_base;
+  line-height: $lh_base;
+  color: $c_base;
+}
+
+// @media #{$mobile}
+// @media #{$tab-desk}
+// @media #{$tablet}
+// @media #{$desktop}

@@ -1,0 +1,63 @@
+.slider {
+  position: relative;
+  overflow: hidden;
+
+  &__input {
+    display: none;
+  }
+
+  &__controls {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: $z_base;
+  }
+
+  &__control {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    vertical-align: middle;
+    border: 3px solid transparent;
+    background-color: rgba($c_base, 0.3);
+    cursor: pointer;
+    border-radius: 50%;
+  }
+
+  &__arrows {
+    display: none;
+  }
+
+  &__slides {
+    display: flex;
+  }
+}
+
+@media #{$mobile} {
+  .slider {
+
+    &--tariffs {
+      padding-right: $offset_mobile;
+      padding-left: $offset_mobile;
+    }
+  }
+}
+
+@media #{$tab-desk} {
+  .slider {
+
+    &--tariffs &__controls {
+      display: none;
+    }
+  }
+}
+// @media #{$tablet}
+@media #{$desktop} {
+  .slider {
+
+    &__arrows {
+      display: block;
+    }
+  }
+}

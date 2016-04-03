@@ -1,9 +1,0 @@
-mixin checkbox(item, index)
-  +e.INPUT.checkbox(
-      type="checkbox",
-      name="form-"+item.name,
-      id="form-"+item.name + (index + 1),
-      checked=item.isChecked
-      disabled=item.isDisabled
-      )
-  +e.LABEL.label(for="form-"+item.name + (index + 1))= item.label

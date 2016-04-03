@@ -1,0 +1,48 @@
+// media query diapasons
+$mobile: "(max-width: 699px)";
+$tablet: "(min-width: 700px) and (max-width: 1019px)";
+$desktop: "(min-width: 1020px)";
+
+// mobile + tablet
+$portable: "(max-width: 1019px)";
+// tablet + desktop = more than mobile
+$tab-desk: "(min-width: 700px)";
+
+// colors
+$c_base: #283645;
+$c_alt: #fff;
+$c_bright: #d22856;
+
+$bg_base: $c_base;
+$bg_alt: $c_alt;
+$bg_grey: #f2f2f2;
+$bg_dark: #1d2631;
+
+// widths
+$w_container_min: 320px;
+$w_container_mid: 700px;
+$w_container_max: 1020px;
+
+$w_block: 300px;
+
+// paddings and margins
+$offset_mobile: 20px;
+$offset_tablet: 40px;
+$offset_desktop: 40px;
+
+$gutter: 20px;
+
+// fonts
+$fz_base: 14px;
+$lh_base: 24 / 14;
+
+// z-index
+$z_base: 1;
+$z_header: ($z_base + 1);
+$z_modal: ($z_header + 1);
+
+// @media #{$portable}
+// @media #{$mobile}
+// @media #{$tab-desk}
+// @media #{$tablet}
+// @media #{$desktop}

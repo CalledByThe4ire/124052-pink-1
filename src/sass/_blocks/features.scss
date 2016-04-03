@@ -1,0 +1,26 @@
+.features {
+  &__item {
+    text-align: center;
+  }
+}
+
+@media #{$tablet} {
+  .features {
+    &__item {
+      padding-left: 310px;
+      text-align: left;
+    }
+  }
+}
+
+@media #{$desktop} {
+  .features {
+    display: flex;
+    justify-content: space-between;
+    &__item {
+      width: $w_block;
+    }
+  }
+}
+
+// @media #{$tab-desk}

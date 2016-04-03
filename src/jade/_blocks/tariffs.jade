@@ -1,0 +1,73 @@
+mixin tariffs
+  +b.SECTION.tariffs
+    //- slider-block starts
+    +b.slider--tariffs
+      //- создаем нужное количество управляющих элементов слайдера в зависимости от количества тарифов в tariffsList
+      each item, index in site.data.tariffs.tariffsList
+        - var isChecked = false
+        if index == 0
+          - isChecked = "checked"
+        +e.INPUT.input(
+          id="tariff-" + (index + 1),
+          type="radio",
+          name="tariffs",
+          checked=isChecked
+          )
+      +e.controls
+        each item, index in site.data.tariffs.tariffsList
+          +e.LABEL.control(for="tariff-" + (index + 1))
+      +e.slides
+        //- slider-content
+        table.tariffs__table
+          tr
+            //- по сути пустой th на макете
+            th.tariffs__row-name Услуги / Тарифы
+            //- обращаемся к tariffsList, чтобы вытащить имена тарифов
+            each item in site.data.tariffs.tariffsList
+              if item.isHit
+                th.tariffs__title.tariffs__title--hit
+                  span.tariffs__name= item.tariffName
+                  span.tariffs__price= item.tariffPrice
+              else
+                th.tariffs__title
+                  span.tariffs__name= item.tariffName
+                  span.tariffs__price= item.tariffPrice
+          //- формируем остальные ряды таблицы, каждая услуга в массиве options = 1 ряд
+          each item in site.data.tariffs.options
+            tr
+              //- в первую ячейку добавляем название услуги
+              td.tariffs__option-name= item.optionName
+              //- формируем ячейки таблицы с состоянием услуг из options -> optionValues. Из родительского массива options вытягиваем название услуги, и записываем в data-option. data-tariff нужен для удобства и наглядности
+              each val in item.optionValues
+                td.tariffs__option-value(data-option=item.optionName, data-tariff=val.tariffName)
+                  //-  делаем проверку состояния услуги для привязки соответствующей иконки
+                  if val.isValue
+                    span Есть
+                    svg.svg-icon-yes
+                      use(xlink:href="img/svg-sprite.svg#icon-yes")
+                  else
+                    span Нет
+                    svg.svg-icon-no
+                      use(xlink:href="img/svg-sprite.svg#icon-no")
+
+mixin style-tariffs
+  style.
+    @media (max-width: 699px) {
+     .slider--tariffs .slider__slides {
+       width: 300%;
+     }
+     .slider__input[id="tariff-1"]:checked ~ .slider__controls .slider__control[for="tariff-1"],
+     .slider__input[id="tariff-2"]:checked ~ .slider__controls .slider__control[for="tariff-2"],
+     .slider__input[id="tariff-3"]:checked ~ .slider__controls .slider__control[for="tariff-3"] {
+       border-color: #283645;
+     }
+     .slider__input[id="tariff-1"]:checked ~ .slider__slides {
+       transform: translate(0%);
+     }
+     .slider__input[id="tariff-2"]:checked ~ .slider__slides {
+       transform: translate(-33.3333%);
+     }
+     .slider__input[id="tariff-3"]:checked ~ .slider__slides {
+       transform: translate(-66.6666%);
+     }
+    }

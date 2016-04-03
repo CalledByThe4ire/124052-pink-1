@@ -1,0 +1,35 @@
+mixin post(item)
+  if item.top
+    +b.ARTICLE.post--top
+      +e.A.img-wrap(href=item.link)
+        +e.IMG.img(
+          src=item.img,
+          alt=item.imgAlt,
+          title=item.imgAlt)
+      +e.content-wrap
+        +e.HEADER.header
+          +e.CITE.author= item.author
+          +e.TIME.time(datetime=item.dateTime)= "(" + item.time + ")"
+        +e.P.text= item.text
+        +e.FOOTER.footer
+          +e.BUTTON(type="button").like-btn
+            +e.SVG.icon.svg-icon-heart
+              use(xlink:href="img/svg-sprite.svg#icon-heart")
+          +e.SPAN.likes= "Нравится: " + item.likes
+
+  else
+    +b.ARTICLE.post
+      +e.A.img-wrap(href=item.link)
+        +e.IMG.img(
+          src=item.img
+          alt=item.imgAlt,
+          title=item.imgAlt)
+      +e.HEADER.header
+        +e.CITE.author= item.author
+        +e.TIME.time(datetime=item.dateTime)= "(" + item.time + ")"
+      +e.P.text= item.text
+      +e.FOOTER.footer
+        +e.BUTTON(type="button").like-btn
+          +e.SVG.icon.svg-icon-heart
+            use(xlink:href="img/svg-sprite.svg#icon-heart")
+        +e.SPAN.likes= "Нравится: " + item.likes

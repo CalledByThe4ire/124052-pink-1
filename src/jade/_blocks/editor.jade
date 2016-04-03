@@ -1,0 +1,57 @@
+-
+  var toolsItems = [
+    {
+      name: "crop",
+      title: "Кадрировать",
+      isChecked: "checked",
+      svgClass: "svg-icon-editor-crop",
+      svgID: "icon-editor-crop"
+    },
+    {
+      name: "fill",
+      title: "Заполнить",
+      isChecked: false,
+      svgClass: "svg-icon-editor-fill",
+      svgID: "icon-editor-fill"
+    },
+    {
+      name: "contrast",
+      title: "Контраст",
+      isChecked: false,
+      svgClass: "svg-icon-editor-contrast",
+      svgID: "icon-editor-contrast"
+    }
+  ]
+
+mixin editor
+  +b.FORM.editor
+    +e.inner
+      +e.img-wrap
+        +e.IMG.img(
+          src="https://placebear.com/200/300",
+          alt="Ваша фотография",
+          title="Ваша фотография"
+          )
+
+      +e.tools
+        each item in toolsItems
+          +e.tool
+            +e.INPUT.input(
+              type="radio",
+              name="tool"
+              id="tool-" + item.name,
+              checked=item.isChecked
+              )
+            +e.LABEL.label(
+              class="__item--" + item.name,
+              for="tool-" + item.name
+              )= item.title
+              svg.tools__icon(class=item.svgClass)
+                use(xlink:href="img/svg-sprite.svg#" + item.svgID)
+            +e(class="control--" + item.name)
+              +e.scale
+                +e.toggle
+
+        +e.btn-wrap
+          +b.BUTTON.btn--editor(type="submit") Запостить
+          +b.BUTTON.btn--editor(type="reset") Отмена

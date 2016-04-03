@@ -1,0 +1,31 @@
+.research {
+  display: none;
+
+  &__title {
+    margin: 0;
+  }
+}
+
+@media #{$tab-desk} {
+  .research {
+    display: block;
+    background:
+      transparent
+      inline("icon-timer.svg")
+      left top / auto
+      no-repeat;
+  }
+}
+
+@media #{$tablet} {
+  .research {
+    padding-left: 310px;
+  }
+}
+
+@media #{$desktop} {
+  .research {
+    background-color: $bg_grey;
+    padding-left: 370px;
+  }
+}

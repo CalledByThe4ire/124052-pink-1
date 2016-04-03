@@ -1,0 +1,42 @@
+include ../_vendor/bemto/bemto
+include ../_blocks/checkbox
+include ../_blocks/contacts
+include ../_blocks/copyright
+include ../_blocks/download
+include ../_blocks/editor
+include ../_blocks/features
+include ../_blocks/field
+include ../_blocks/logo
+include ../_blocks/map
+include ../_blocks/modal
+include ../_blocks/nav
+include ../_blocks/page-footer
+include ../_blocks/page-header
+include ../_blocks/post
+include ../_blocks/radio
+include ../_blocks/research
+include ../_blocks/reviews
+include ../_blocks/review
+include ../_blocks/socials
+include ../_blocks/tariffs
+
+block variables
+
+doctype html
+
+head
+  meta(charset='utf-8')
+  title Pink
+  meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  link(rel="stylesheet", href="css/style.css")
+  block style
+
+body
+  +page-header
+  main.content
+    block content
+  .container
+    +page-footer  
+
+  block script
+    script(src="js/script.min.js")

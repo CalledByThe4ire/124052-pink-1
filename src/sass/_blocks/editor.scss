@@ -1,0 +1,123 @@
+.editor {
+  @include container;
+  background-color: $bg_grey;
+
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: - $gutter / 2;
+    margin-right: - $gutter / 2;
+    flex-direction: column;
+  }
+
+  &__img-wrap {
+    width: 100%;
+    height: 375px;
+    overflow: hidden;
+  }
+
+  &__img {
+    display: block;
+    width: $w_block - $gutter;
+    margin: 0 auto;
+  }
+
+  &__tools {
+    width: $w_block - $gutter;
+    margin: 0 auto;
+  }
+
+  &__input {
+    display: none;
+  }
+
+  &__control {
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+  }
+
+  &__btn-wrap {
+    display: flex;
+    flex-direction: column;
+    width: $w_block - $gutter;
+  }
+}
+
+@media #{$mobile} {
+  .editor {
+    /* ============================================>>>>>
+    = logic for tools togglers =
+    ===============================================>>>>> */
+
+    &__input[id="tool-crop"]:checked + &__label[for="tool-crop"],
+    &__input[id="tool-fill"]:checked + &__label[for="tool-fill"],
+    &__input[id="tool-contrast"]:checked + &__label[for="tool-contrast"] {
+      outline: 1px solid tomato;
+    }
+
+    &__control {
+      display: none;
+    }
+
+    &__input[id="tool-crop"]:checked ~ &__control--crop,
+    &__input[id="tool-fill"]:checked ~ &__control--fill,
+    &__input[id="tool-contrast"]:checked ~ &__control--contrast {
+      display: block;
+    }
+
+    /* --------------------------------------------<<<<<
+    = End of logic for tools togglers =
+    ===============================================<<<<< */
+  }
+}
+
+@media #{$tab-desk} {
+  .editor {
+    &__inner {
+      flex-direction: row;
+    }
+
+    &__img-wrap {
+      width: 50%;
+      height: 400px;
+      padding-left: $gutter / 2;
+      padding-right: $gutter / 2;
+    }
+
+    &__img {
+      width: $w_block;
+    }
+
+    &__tools {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      padding-left: $gutter / 2;
+      padding-right: $gutter / 2;
+    }
+
+    &__btn-wrap {
+      flex-direction: row;
+    }
+  }
+}
+
+@media #{$tablet} {
+  .editor {
+    &__tools {
+      padding-left: 40px;
+    }
+  }
+}
+
+@media #{$desktop} {
+  .editor {
+    &__tools {
+      margin-left: 0;
+      padding-left: 0;
+      padding-right: 70px;
+    }
+  }
+}

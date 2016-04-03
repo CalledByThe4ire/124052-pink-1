@@ -1,0 +1,90 @@
+.tariffs {
+  &__table {
+    table-layout: fixed;
+    border-collapse: collapse;
+  }
+
+  &__title {
+    position: relative;
+
+    &--hit::before {
+      content: "Хит";
+      position: absolute;
+      top: 0;
+      left: 0;
+      background:
+        transparent
+        inline("bg-hit.svg")
+        left top / auto
+        no-repeat;
+    }
+  }
+
+  th {
+    border: 2px solid #ccc;
+  }
+
+  td {
+    border: 2px solid #ccc;
+    .svg-icon-yes {
+      fill: #3dc644;
+    }
+
+    .svg-icon-no {
+      fill: #f25b26;
+    }
+  }
+}
+
+/* ============================================>>>>>
+= MOBILE =
+===============================================>>>>> */
+
+@media #{$mobile} {
+  .tariffs {
+    margin-right: -($offset_mobile);
+    margin-left: -($offset_mobile);
+    &__table {
+      width: 100%;
+    }
+    th,
+    td {
+      padding: 0;
+    }
+
+    &__row-name,
+    &__option-name {
+      display: none;
+    }
+
+    &__option-value {
+      position: relative;
+      &::before {
+        content: attr(data-option);
+        display: inline-block;
+        padding-right: 10px;
+      }
+
+      span {
+        @include text-hide;
+      }
+    }
+  }
+}
+
+/* --------------------------------------------<<<<<
+= End of MOBILE =
+===============================================<<<<< */
+
+@media #{$tab-desk} {
+  .tariffs {
+    &__table {
+      width: 100%;
+    }
+    td {
+      width: auto;
+    }
+  }
+}
+// @media #{$tablet}
+// @media #{$desktop}

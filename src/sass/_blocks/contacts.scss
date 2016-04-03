@@ -1,0 +1,50 @@
+.contacts {
+  text-align: center;
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__descr {
+    margin: 0;
+  }
+}
+
+@media #{$mobile} {
+  .contacts {
+    &__list {
+      flex-direction: column;
+    }
+  }
+}
+// @media #{$tab-desk}
+
+@media #{$tablet} {
+  .contacts {
+    &__item {
+      @include col-fluid(6);
+      margin: auto;
+    }
+  }
+}
+
+@media #{$desktop} {
+  .contacts {
+
+    &__item {
+      @include col-fluid(4);
+
+      &:nth-of-type(1) {
+        order: 1;
+      }
+      &:nth-of-type(2) {
+        order: 3;
+      }
+      &:nth-of-type(3) {
+        order: 2;
+      }
+    }
+  }
+}

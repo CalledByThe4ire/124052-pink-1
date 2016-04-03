@@ -1,0 +1,16 @@
+mixin download
+  +b.download
+    +e.inner
+      +e.btn-wrap
+        +b.A.btn(href="#") Скачать приложение
+      +e.links
+        +e.A.link--apple(href="#", title="Скачать в Apple iTunes") Apple iTunes
+          +e.SVG.icon--apple.svg-logo-apple
+            use(xlink:href="img/svg-sprite.svg#logo-apple")
+        +e.A.link--google(href="#", title="Скачать на Google Play") Google Play
+          +e.SVG.icon--google.svg-logo-android
+            use(xlink:href="img/svg-sprite.svg#logo-android")
+        +e.A.link--win(href="#", title="Скачать в Windows Center") Windows Center
+          +e.SVG.icon--win.svg-logo-microsoft
+            use(xlink:href="img/svg-sprite.svg#logo-microsoft")
+      +e.P.text Доступно для iPhone, iPad, Android, Windows Phone, OS&nbsp;X, Windows&nbsp;8

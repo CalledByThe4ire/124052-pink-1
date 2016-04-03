@@ -7,3 +7,7 @@ Thumbs.db
 *.psd
 *.ai
 css/*.css
+build/
+tmp/
+svg-sprite.scss
+.jsbeautifyrc

@@ -1,0 +1,7 @@
+mixin page-footer
+  - var modName = isFooterMobileHidden ? "--hidden" : ""
+
+  +b.FOOTER(class="page-footer" + modName)
+    +logo-footer
+    +socials
+    +copyright

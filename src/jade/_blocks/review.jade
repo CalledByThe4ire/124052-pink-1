@@ -1,0 +1,5 @@
+mixin review(item)
+  +b.BLOCKQUOTE.review
+    +e.P.text !{item.text}
+    +e.CITE.author !{item.author}
+    +e.SPAN.info !{item.info}
