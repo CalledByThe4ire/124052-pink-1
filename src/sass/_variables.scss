@@ -36,10 +36,17 @@ $gutter: 20px;
 $fz_base: 14px;
 $lh_base: 24 / 14;
 
+$fz_s: 12px;
+$fz_m: 18px;
+$fz_l: 22px;
+
 // z-index
 $z_base: 1;
 $z_header: ($z_base + 1);
 $z_modal: ($z_header + 1);
+
+// transitions
+$trs_base: all 0.2s ease-in;
 
 // @media #{$portable}
 // @media #{$mobile}
