@@ -1,0 +1,31 @@
+.copyright {
+  display: flex;
+  align-items: center;
+
+  &__text {
+    font-size: $fz_base;
+    margin-right: 15px;
+  }
+
+  &__logo {
+    height: 35px;
+  }
+
+  &__link {
+    @include text-hide;
+  }
+
+  &__icon {
+    fill: $c_bright;
+    transition: $trs_base;
+    width: 26.943px;
+    height: 34.09px;
+
+    &:hover {
+      fill: $c_base;
+    }
+    &:active {
+      fill: rgba($c_base, 0.3);
+    }
+  }
+}

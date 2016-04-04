@@ -2,6 +2,7 @@
   &__grid {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     text-align: center;
   }
 }
@@ -9,10 +10,14 @@
 @media #{$mobile} {
   .page-footer {
     padding-top: 60px;
-    padding-bottom: 40px;
+    padding-bottom: 10px;
 
     &__grid {
       flex-direction: column;
+    }
+
+    &__col {
+      margin-bottom: 30px;
     }
 
     &--hidden {
