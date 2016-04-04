@@ -1,6 +1,5 @@
 .map {
   position: relative;
-  min-height: 200px;
 
   &__container {
     @include container;
@@ -22,8 +21,6 @@
   }
 }
 
-// @media #{$portable}
-// @media #{$mobile}
 @media #{$tab-desk} {
   .map {
     &__container {
@@ -31,11 +28,25 @@
     }
   }
 }
-// @media #{$tablet} {
-//   .map {
 
-// }
-// @media #{$desktop} {
-//   .map {
+@media #{$tablet} {
+  .map {
+    &__container {
+      min-height: 375px;
+    }
+    &__ya {
+      height: 375px;
+    }
+  }
+}
 
-// }
+@media #{$desktop} {
+  .map {
+    &__container {
+      min-height: 505px;
+    }
+    &__ya {
+      height: 505px;
+    }
+  }
+}

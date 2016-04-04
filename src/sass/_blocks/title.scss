@@ -8,3 +8,11 @@
     margin-bottom: 25px;
   }
 }
+
+@media #{$tab-desk} {
+  .title {
+    span {
+      margin-bottom: 0;
+    }
+  }
+}

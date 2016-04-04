@@ -23,3 +23,9 @@
   color: transparent;
   background-color: transparent;
 }
+
+@mixin list-clear {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}

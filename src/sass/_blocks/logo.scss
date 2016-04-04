@@ -51,6 +51,10 @@
   }
 
   // footer mod
+  &--footer {
+    width: 147px;
+  }
+
   &--footer:hover &__star {
     fill: $c_bright;
   }

@@ -29,6 +29,10 @@
   display: flex;
   flex-direction: column;
 
+  @media #{$mobile} {
+    min-width: 100%;
+  }
+
   @media #{$tab-desk} {
     padding-left: $gutter / 2;
     padding-right: $gutter / 2;
