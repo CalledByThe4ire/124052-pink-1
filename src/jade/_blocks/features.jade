@@ -2,5 +2,20 @@ mixin features
   +b.SECTION.features
     each item in site.data.features
       +e.item
-        +e.H3.title !{item.title}
-        +e.P.text !{item.text}
+        picture
+         source(
+           media="(min-width: 1020px)",
+           srcset= item.imgDesktop + " 1x, " + item.imgDesktop2x + " 2x"
+         )
+         source(
+           media="(min-width: 700px)",
+           srcset= item.imgTablet + " 1x, " + item.imgTablet2x + " 2x"
+         )
+         +e.IMG.img(
+           src= item.imgMobile,
+           srcset= item.imgMobile2x + " 2x",
+           alt= item.title,
+         )
+        +e.descr 
+          +e.H3.title !{item.title}
+          +e.P.text !{item.text}

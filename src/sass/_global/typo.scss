@@ -1,12 +1,32 @@
-@mixin typo-h1 {
-  font-size: 30px;
+@mixin typo-title($color: $c_base) {
+  margin: 0;
+  padding: 0;
+  font-size: $fz_l;
   line-height: 1.2;
-  font-weight: 400;
+  font-weight: $fw_light;
+  color: $color;
+
+  @media #{$tablet} {
+    font-size: $fz_xxl;
+  }
+
+  @media #{$desktop} {
+    font-size: $fz_xxxl;
+  }
 }
 
-// @mixin typo-base-text
-// @mixin typo-page-heading
-// @mixin typo-promo
+@mixin typo-link {
+  color: $c_bright;
+
+  &:hover {
+    color: $c_base;
+  }
+
+  &:active {
+    color: rgba($c_base, 0.3);
+  }
+}
+
 // @mixin typo-label
 
 body {

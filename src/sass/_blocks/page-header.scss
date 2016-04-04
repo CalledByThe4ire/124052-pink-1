@@ -9,5 +9,6 @@
   .page-header {
     position: fixed;
     background-color: rgba(0, 0, 0, 0.3);
+    z-index: $z_header;
   }
 }

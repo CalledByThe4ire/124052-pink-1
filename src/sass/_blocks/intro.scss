@@ -23,10 +23,7 @@ $bg_hand:
   }
 
   &__title {
-    margin: 0;
-    color: $c_alt;
-    font-weight: $fw_light;
-    line-height: 1.16;
+    @include typo-title($c_alt);
   }
 }
 
@@ -43,10 +40,6 @@ $bg_hand:
   .intro {
     &__title-wrap {
       background: $bg_intro;
-    }
-
-    &__title {
-      font-size: $fz_l;
     }
 
     &--index &__title-wrap {
@@ -84,10 +77,6 @@ $bg_hand:
     &__title-wrap {
       padding-top: 185px;
       padding-bottom: 130px;
-    }
-
-    &__title {
-      font-size: $fz_xl;
     }
 
     &--index &__container {
@@ -153,9 +142,6 @@ $bg_hand:
     &__title-wrap {
       padding-top: 175px;
       padding-bottom: 90px;
-    }
-    &__title {
-      font-size: $fz_xxl;
     }
 
     &--index &__container {

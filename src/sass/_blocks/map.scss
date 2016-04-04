@@ -1,6 +1,7 @@
 .map {
   position: relative;
   min-height: 200px;
+
   &__container {
     @include container;
     position: relative;
@@ -30,5 +31,11 @@
     }
   }
 }
-// @media #{$tablet}
-// @media #{$desktop}
+// @media #{$tablet} {
+//   .map {
+
+// }
+// @media #{$desktop} {
+//   .map {
+
+// }

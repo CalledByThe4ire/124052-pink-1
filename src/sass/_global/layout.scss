@@ -3,7 +3,6 @@
   margin: 0 auto;
   padding-left: $offset_mobile;
   padding-right: $offset_mobile;
-  outline: 1px solid bisque;
 
   @media #{$tablet} {
     padding-left: $offset_tablet;
