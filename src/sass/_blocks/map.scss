@@ -8,7 +8,7 @@
     min-height: 200px;
     background:
       $bg-grey
-      url("../img/bg-map-mobile.jpg")
+      url("../img/bg/bg-map-mobile.jpg")
       center /
       cover
       no-repeat;
@@ -27,7 +27,7 @@
 @media #{$tab-desk} {
   .map {
     &__container {
-      background-image: url("../img/bg-map.jpg");
+      background-image: url("../img/bg/bg-map.jpg");
     }
   }
 }

@@ -1,40 +1,127 @@
 .tariffs {
+  line-height: 30px;
+
   &__table {
     table-layout: fixed;
     border-collapse: collapse;
   }
 
+  /*
+  ████████ ██ ████████ ██      ███████
+     ██    ██    ██    ██      ██
+     ██    ██    ██    ██      █████
+     ██    ██    ██    ██      ██
+     ██    ██    ██    ███████ ███████
+  */
+
+  &__row-name {
+    visibility: hidden;
+  }
+
   &__title {
     position: relative;
+    padding: 20px;
+    border: 2px solid transparent;
+    border-bottom: none;
+    color: #fff;
+    background-color: $bg_base;
 
-    &--hit::before {
-      content: "Хит";
-      position: absolute;
-      top: 0;
-      left: 0;
-      background:
-        transparent
-        inline("inline/bg-hit.svg")
-        left top / auto
-        no-repeat;
+    // pseudo-borders for table-headings
+
+    &:nth-child(2) {
+      box-shadow: -2px 0 0 -1px $bg_base;
+    }
+    &:last-child {
+      box-shadow: 2px 0 0 -1px $bg_base;
     }
   }
 
-  th {
-    border: 2px solid #ccc;
+
+  &__icon-hit {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 73px;
+    height: 73px;
+    z-index: $z_base;
+    overflow: hidden;
+
+    &::before {
+      content: "Хит";
+      position: absolute;
+      top: 11px;
+      left: -25px;
+      width: 102px;
+      height: 30px;
+      text-transform: uppercase;
+      font-size: $fz_s;
+      background-color: $c_bright;
+      transform: rotate(-45deg);
+    }
   }
+
+  &__name {
+    display: block;
+    font-size: $fz_m;
+    text-transform: uppercase;
+    font-weight: $fw_bold;
+  }
+
+  &__price {
+    display: block;
+    font-size: $fz_l;
+    font-weight: $fw_light;
+  }
+
+  /*
+ ██████ ███████ ██      ██      ███████
+██      ██      ██      ██      ██
+██      █████   ██      ██      ███████
+██      ██      ██      ██           ██
+ ██████ ███████ ███████ ███████ ███████
+*/
+
 
   td {
     border: 2px solid #ccc;
+    border-top: none;
+    background-color: #fff;
+    padding: 15px;
+  }
+
+  &__option-value {
+    position: relative;
+    span {
+      @include text-hide;
+    }
+    svg {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
     .svg-icon-yes {
       fill: #3dc644;
     }
-
     .svg-icon-no {
       fill: #f25b26;
     }
   }
 }
+
+// pseudo-border for table cell
+tr:nth-child(2) .tariffs__option-name {
+  box-shadow: 1px 0 0 2px #ccc;
+}
+
+/*
+███    ███  ██████
+████  ████ ██    ██
+██ ████ ██ ██    ██
+██  ██  ██ ██ ▄▄ ██
+██      ██  ██████
+               ▀▀
+*/
 
 /* ============================================>>>>>
 = MOBILE =
@@ -44,12 +131,10 @@
   .tariffs {
     margin-right: -($offset_mobile);
     margin-left: -($offset_mobile);
+    padding-top: 90px;
+    padding-bottom: 40px;
     &__table {
       width: 100%;
-    }
-    th,
-    td {
-      padding: 0;
     }
 
     &__row-name,
@@ -58,15 +143,14 @@
     }
 
     &__option-value {
-      position: relative;
       &::before {
         content: attr(data-option);
         display: inline-block;
+        width: 80%;
         padding-right: 10px;
       }
-
-      span {
-        @include text-hide;
+      svg {
+        right: 15px;
       }
     }
   }
@@ -76,15 +160,43 @@
 = End of MOBILE =
 ===============================================<<<<< */
 
+@media #{$tablet} {
+  .tariffs {
+    padding-top: 85px;
+    padding-bottom: 70px;
+    &__name {
+      font-size: 16px;
+    }
+
+    &__price {
+      font-size: $fz_m;
+    }
+  }
+}
+
 @media #{$tab-desk} {
   .tariffs {
     &__table {
       width: 100%;
     }
-    td {
-      width: auto;
+
+    &__option-value {
+      svg {
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
     }
   }
 }
-// @media #{$tablet}
+
+@media #{$desktop} {
+  .tariffs {
+    padding-top: 150px;
+    padding-bottom: 70px;
+    &__option-name {
+      font-size: $fz_m;
+    }
+  }
+}
+
 // @media #{$desktop}
