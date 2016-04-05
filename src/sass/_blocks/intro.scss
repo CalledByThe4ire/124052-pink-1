@@ -25,6 +25,11 @@ $bg_hand:
   &__title {
     @include typo-title($c_alt);
   }
+
+  &__text-wrap {
+    @include container;
+    background-color: $bg_alt;
+  }
 }
 
 /*

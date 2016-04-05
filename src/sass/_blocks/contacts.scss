@@ -25,7 +25,7 @@
     margin: 0;
     padding: 0;
     font-size: $fz_m;
-    line-height: 30px;
+    line-height: $lh_m;
     font-weight: $fw_bold;
   }
 
@@ -35,7 +35,7 @@
 
   &__text {
     font-size: $fz_l;
-    line-height: 30px;
+    line-height: $lh_m;
     color: $c_bright;
     font-weight: $fw_light;
   }

@@ -29,3 +29,15 @@
   margin: 0;
   list-style: none;
 }
+
+@mixin btn-clear {
+  padding: 0;
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+
+@mixin text-no-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

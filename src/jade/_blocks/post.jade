@@ -1,11 +1,53 @@
 mixin post(item)
   if item.top
     +b.ARTICLE.post--top
+      +e.tag
       +e.A.img-wrap(href=item.link)
-        +e.IMG.img(
-          src=item.img,
-          alt=item.imgAlt,
-          title=item.imgAlt)
+        picture
+          source(
+            media="(min-width: 1020px)",
+            srcset= item.imgDesktop + " 1x, " + item.imgDesktop2x + " 2x"
+          )
+          source(
+            media="(min-width: 700px)",
+            srcset= item.imgTablet + " 1x, " + item.imgTablet2x + " 2x"
+          )
+          +e.IMG.img(
+            src= item.imgMobile,
+            srcset= item.imgMobile2x + " 2x",
+            alt=item.imgAlt,
+            title=item.imgAlt
+          )
+      .container      
+        +e.content-wrap
+          +e.HEADER.header
+            +e.CITE.author= item.author
+            +e.TIME.time(datetime=item.dateTime)= "(" + item.time + ")"
+          +e.P.text= item.text
+          +e.FOOTER.footer
+            +e.BUTTON(type="button").like-btn
+              +e.SVG.like-icon.svg-icon-heart
+                use(xlink:href="img/svg-sprite.svg#icon-heart")
+            +e.SPAN.like-text= "Нравится: " + item.likes
+
+  else
+    +b.ARTICLE.post
+      +e.A.img-wrap(href=item.link)
+        picture
+          source(
+            media="(min-width: 1020px)",
+            srcset= item.imgDesktop + " 1x, " + item.imgDesktop2x + " 2x"
+          )
+          source(
+            media="(min-width: 700px)",
+            srcset= item.imgTablet + " 1x, " + item.imgTablet2x + " 2x"
+          )
+          +e.IMG.img(
+            src= item.imgMobile,
+            srcset= item.imgMobile2x + " 2x",
+            alt=item.imgAlt,
+            title=item.imgAlt
+          )
       +e.content-wrap
         +e.HEADER.header
           +e.CITE.author= item.author
@@ -13,23 +55,6 @@ mixin post(item)
         +e.P.text= item.text
         +e.FOOTER.footer
           +e.BUTTON(type="button").like-btn
-            +e.SVG.icon.svg-icon-heart
+            +e.SVG.like-icon.svg-icon-heart
               use(xlink:href="img/svg-sprite.svg#icon-heart")
-          +e.SPAN.likes= "Нравится: " + item.likes
-
-  else
-    +b.ARTICLE.post
-      +e.A.img-wrap(href=item.link)
-        +e.IMG.img(
-          src=item.img
-          alt=item.imgAlt,
-          title=item.imgAlt)
-      +e.HEADER.header
-        +e.CITE.author= item.author
-        +e.TIME.time(datetime=item.dateTime)= "(" + item.time + ")"
-      +e.P.text= item.text
-      +e.FOOTER.footer
-        +e.BUTTON(type="button").like-btn
-          +e.SVG.icon.svg-icon-heart
-            use(xlink:href="img/svg-sprite.svg#icon-heart")
-        +e.SPAN.likes= "Нравится: " + item.likes
+          +e.SPAN.like-text= "Нравится: " + item.likes

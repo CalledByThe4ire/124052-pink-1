@@ -18,7 +18,7 @@
 
     &__title {
       width: 200px;
-      line-height: 1.2;
+      line-height: $lh_l;
     }
   }
 }
@@ -28,10 +28,11 @@
     padding-top: 95px;
     padding-bottom: 95px;
     display: block;
-    background-color: transparent;
-    background-image: inline("inline/icon-timer.svg");
-    background-position: left 0 top 50%;
-    background-repeat: no-repeat;
+    background:
+      transparent
+      inline("inline/icon-timer.svg")
+      left 0 top 50%
+      no-repeat;
 
     &__title {
       font-size: $fz_xl;

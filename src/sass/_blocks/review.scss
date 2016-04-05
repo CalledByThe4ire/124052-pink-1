@@ -4,7 +4,7 @@
   margin: 0;
   text-align: center;
   width: (100% / 3);
-  line-height: 30px;
+  line-height: $lh_m;
 
   &__text {
     @include typo-text;
@@ -73,7 +73,8 @@
     background:
       transparent
       inline("inline/icon-quotes.svg")
-      center top / auto
+      center top /
+      auto
       no-repeat;
 
     &__text {

@@ -1,33 +1,94 @@
 .post {
+  display: flex;
+  flex-direction: column;
   width: $w_block;
+  margin-bottom: 20px;
   padding-right: $gutter / 2;
   padding-left: $gutter / 2;
+  // display: flex;
 
   &__img-wrap {
     display: block;
     overflow: hidden;
-    height: 180px;
     margin: 0 auto;
   }
 
   &__img {
+    display: block;
     width: $w_block;
   }
 
   &__content-wrap {
-    @include container;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    padding-top: 18px;
+    padding-bottom: 20px;
+    padding-left: 18px;
+    padding-right: 18px;
+    background-color: $bg_grey;
+    line-height: $lh_s;
+  }
+
+  &__header {
+    @include text-no-overflow;
+  }
+
+  &__author {
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  &__time {
+    font-size: $fz_xs;
+    font-weight: $fw_light;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    margin: 0;
+    margin-bottom: 8px;
+    flex-grow: 1;
+  }
+
+  &__footer {
+    @include text-no-overflow;
+    position: relative;
+    padding-left: 32px;
+  }
+
+  &__like-btn {
+    @include btn-clear;
+    @include text-hide;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &__like-icon {
+    fill: $c_bright;
+  }
+
+  &__like-text {
+    font-size: $fz_xs;
+    color: $c_bright;
+    text-transform: uppercase;
   }
 
   /* ============================================>>>>>
     = MOD IMG--TOP =
     ===============================================>>>>> */
 
+
   &--top {
+    display: block;
     width: 100%;
     padding: 0;
   }
 
   &--top &__img-wrap {
+    width: 100%;
     height: auto;
     background-color: $bg_grey;
   }
@@ -38,6 +99,36 @@
     min-width: $w_block + $gutter;
     max-width: 1600px;
     margin: 0 auto;
+  }
+
+  &--top &__content-wrap {
+    width: $w_block - $gutter;
+    margin: 0 auto;
+
+    // media only for top-post, to look nice when simple images on mobile stand in 2 columns
+    @media (min-width: 620px) {
+      width: $w_block * 2 - $gutter;
+    }
+  }
+
+  &__tag {
+    @include container;
+    position: relative;
+    &::before {
+      content: "Панорама дня";
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin-left: $offset_mobile;
+      margin-right: $offset_mobile;
+      padding: 6px 19px;
+      background-color: $c_bright;
+      color: $c_alt;
+      text-transform: uppercase;
+      font-weight: $fw_bold;
+      font-size: $fz_xs;
+      line-height: $lh_s;
+    }
   }
 
   /* --------------------------------------------<<<<<
@@ -53,9 +144,58 @@
       width: $w_block + $gutter;
     }
 
+    &__content-wrap {
+      min-height: 150px;
+      padding-top: 23px;
+      padding-bottom: 22px;
+      padding-right: 27px;
+      padding-left: 28px;
+    }
+
+    &__text {
+      flex-grow: 1;
+      margin-bottom: 12px;
+    }
+
+    &__footer {
+      padding-left: 0;
+    }
+
+
+    &__like-btn {
+      left: auto;
+      right: 3px;
+    }
+
+    // tab-desk mq for img--top
+
     &--top {
       width: 100%;
-      padding: 0;
+      margin-bottom: 50px;
+    }
+
+    &--top &__content-wrap {
+      flex-direction: row;
+      flex-wrap: wrap;
+      min-height: auto;
+      padding-bottom: 25px;
+    }
+
+    &--top &__header {
+      order: 1;
+      width: 50%;
+    }
+
+    &--top &__text {
+      order: 3;
+      margin-bottom: 0;
+    }
+
+    &--top &__footer {
+      order: 2;
+      width: 50%;
+      text-align: right;
+      padding-right: 30px;
     }
   }
 }
@@ -65,13 +205,38 @@
     &__img-wrap {
       height: 300px;
     }
+
+    &--top &__content-wrap {
+      width: $w_block * 2 + $gutter;
+    }
+
+    &__tag::before {
+      margin-left: $offset_tablet;
+      margin-right: $offset_tablet;
+    }
   }
 }
 
 @media #{$desktop} {
   .post {
+    margin-bottom: 55px;
+
     &__img-wrap {
       height: 400px;
+    }
+
+    // desktop mq for top--img
+    &--top {
+      margin-bottom: 50px;
+    }
+
+    &--top &__content-wrap {
+      width: ($w_block * 3) + ($gutter * 2);
+    }
+
+    &__tag::before {
+      margin-left: $offset_desktop;
+      margin-right: $offset_desktop;
     }
   }
 }
