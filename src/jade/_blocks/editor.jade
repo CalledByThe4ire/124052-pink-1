@@ -45,7 +45,7 @@ mixin editor
 
       +e.tools
         each item in toolsItems
-          +e.tool
+          +e.tool(class="--" + item.name)
             +e.INPUT.input(
               type="radio",
               name="tool"
@@ -53,15 +53,15 @@ mixin editor
               checked=item.isChecked
               )
             +e.LABEL.label(
-              class="__item--" + item.name,
               for="tool-" + item.name
               )= item.title
-              svg.tools__icon(class=item.svgClass)
-                use(xlink:href="img/svg-sprite.svg#" + item.svgID)
-            +e(class="control--" + item.name)
-              +e.scale
-                +e.toggle
+              +e.DIV.tool-icon-wrap
+                +e.SVG.tool-icon(class=item.svgClass)
+                  use(xlink:href="img/svg-sprite.svg#" + item.svgID)
+              +e.DIV(class="scale-wrap--" + item.name)
+                +e.scale
+                  +e.toggle
 
         +e.btn-wrap
-          +b.BUTTON.btn--editor(type="submit") Запостить
-          +b.BUTTON.btn--editor(type="reset") Отмена
+          +e.BUTTON.btn.btn--small.--c-brand(type="submit") Запостить
+          +e.BUTTON.btn.btn--small.--c-mono(type="reset") Отмена

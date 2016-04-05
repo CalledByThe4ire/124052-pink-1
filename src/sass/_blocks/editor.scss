@@ -1,13 +1,13 @@
 .editor {
   @include container;
   background-color: $bg_grey;
+  padding-top: 20px;
+  padding-bottom: 30px;
 
   &__inner {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-left: - $gutter / 2;
-    margin-right: - $gutter / 2;
     flex-direction: column;
   }
 
@@ -19,23 +19,94 @@
 
   &__img {
     display: block;
-    width: $w_block - $gutter;
     margin: 0 auto;
   }
 
   &__tools {
-    width: $w_block - $gutter;
     margin: 0 auto;
   }
+
+  // &__tool {
+  //   outline: 1px solid blue;
+  // }
 
   &__input {
     display: none;
   }
 
-  &__control {
+  &__label {
+    @include text-hide;
+    display: block;
+  }
+
+  &__tool-icon-wrap {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+  }
+
+  &__tool-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    fill: rgba($c_base, 0.3);
+    transition: $trs_base;
+    &:hover {
+      fill: rgba($c_base, 0.5);
+    }
+  }
+
+  &__scale-wrap {
     width: 100%;
+    padding: 34px 20px;
+    position: relative;
+    cursor: pointer;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: $w_container_min;
+      height: 1px;
+      background-color: #ccc;
+      margin-left: - $offset_mobile;
+    }
+  }
+
+  &__scale {
+    position: relative;
     height: 2px;
-    background-color: #000;
+    background-color: $c_base;
+  }
+
+  &__toggle {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 15px;
+    background-color: $c_grey;
+    border: 2px solid $c_bright;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: $trs_short;
+    &:active {
+      background-color: $c_bright;
+    }
+  }
+
+  &__scale-wrap--crop &__toggle {
+    left: 80%;
+  }
+
+  &__scale-wrap--fill &__toggle {
+    left: 40%;
+  }
+
+  &__scale-wrap--contrast &__toggle {
+    left: 60%;
   }
 
   &__btn-wrap {
@@ -45,25 +116,82 @@
   }
 }
 
+/*
+███    ███  ██████  ██████  ██ ██      ███████
+████  ████ ██    ██ ██   ██ ██ ██      ██
+██ ████ ██ ██    ██ ██████  ██ ██      █████
+██  ██  ██ ██    ██ ██   ██ ██ ██      ██
+██      ██  ██████  ██████  ██ ███████ ███████
+*/
+
+
 @media #{$mobile} {
   .editor {
+    &__img-wrap {
+      margin-bottom: 90px;
+    }
+
+    &__tools {
+      position: relative;
+    }
+
+    &__tool-icon-wrap {
+      top: -52px;
+    }
+
+    &__tool-icon {
+      &:active {
+        fill: $c_bright;
+      }
+    }
+
+    &__tool--crop &__tool-icon-wrap {
+      left: 35px;
+    }
+
+    &__tool--fill &__tool-icon-wrap {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &__tool--contrast &__tool-icon-wrap {
+      right: 35px;
+    }
+
+    &__btn-wrap {
+      margin-top: 39px;
+    }
+
+    &__btn {
+      margin-bottom: 12px;
+    }
+
+    // &__scale-wrap {
+    //
+    // }
+
+    /*
+  ██       ██████   ██████  ██  ██████
+  ██      ██    ██ ██       ██ ██
+  ██      ██    ██ ██   ███ ██ ██
+  ██      ██    ██ ██    ██ ██ ██
+  ███████  ██████   ██████  ██  ██████
+  */
+
+
     /* ============================================>>>>>
     = logic for tools togglers =
     ===============================================>>>>> */
 
-    &__input[id="tool-crop"]:checked + &__label[for="tool-crop"],
-    &__input[id="tool-fill"]:checked + &__label[for="tool-fill"],
-    &__input[id="tool-contrast"]:checked + &__label[for="tool-contrast"] {
-      outline: 1px solid tomato;
+    &__input:checked + &__label &__tool-icon {
+      fill: $c_bright;
     }
 
-    &__control {
+    &__scale-wrap {
       display: none;
     }
 
-    &__input[id="tool-crop"]:checked ~ &__control--crop,
-    &__input[id="tool-fill"]:checked ~ &__control--fill,
-    &__input[id="tool-contrast"]:checked ~ &__control--contrast {
+    &__input:checked + &__label &__scale-wrap {
       display: block;
     }
 
@@ -73,17 +201,27 @@
   }
 }
 
+
+/*
+████████ ██████
+   ██    ██   ██
+   ██    ██   ██
+   ██    ██   ██
+   ██    ██████
+*/
+
 @media #{$tab-desk} {
   .editor {
     &__inner {
+      padding-top: 35px;
+      padding-bottom: 25px;
       flex-direction: row;
     }
 
     &__img-wrap {
       width: 50%;
       height: 400px;
-      padding-left: $gutter / 2;
-      padding-right: $gutter / 2;
+      padding-right: 10px;
     }
 
     &__img {
@@ -94,30 +232,110 @@
       width: 50%;
       display: flex;
       flex-direction: column;
-      padding-left: $gutter / 2;
-      padding-right: $gutter / 2;
     }
 
-    &__btn-wrap {
-      flex-direction: row;
+    &__tool {
+      position: relative;
+    }
+
+    &__scale-wrap {
+      padding-left: 60px;
+      &::after {
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        margin: 0;
+      }
+    }
+
+    &__tool-icon-wrap {
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &__tool-icon {
+      fill: $c_bright;
+    }
+
+    &__label:hover &__tool-icon {
+      fill: rgba($c_base, 0.5);
+    }
+
+
+    &__input:checked ~ &__label &__toggle {
+      background-color: $c_bright;
     }
   }
 }
+
+/*
+████████
+   ██
+   ██
+   ██
+   ██
+*/
 
 @media #{$tablet} {
   .editor {
     &__tools {
-      padding-left: 40px;
+      padding-left: 35px;
+    }
+
+    &__tool-icon-wrap {
+      width: 25px;
+      height: 25px;
+    }
+
+    &__tool-icon {
+      width: 25px;
+      height: 25px;
+    }
+
+    &__tool--contrast &__tool-icon {
+      width: 17px;
+      height: 17px;
+    }
+
+    &__scale-wrap {
+      padding-top: 20px;
+      padding-left: 55px;
+      padding-right: 18px;
+    }
+
+    &__btn-wrap {
+      padding-right: 25px;
     }
   }
 }
 
+/*
+██████
+██   ██
+██   ██
+██   ██
+██████
+*/
+
+
 @media #{$desktop} {
   .editor {
+    background-color: transparent;
+    &__inner {
+      background-color: $bg_grey;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
     &__tools {
       margin-left: 0;
       padding-left: 0;
       padding-right: 70px;
+    }
+
+    &__btn-wrap {
+      flex-direction: row;
     }
   }
 }
