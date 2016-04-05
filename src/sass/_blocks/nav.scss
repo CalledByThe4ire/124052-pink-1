@@ -1,13 +1,17 @@
+// vertical gutter
+$gutter_v: 22px;
+
 .nav {
   @include container;
   position: relative;
-  background-color: $bg_base;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  padding-top: 22px;
-  padding-bottom: 22px;
+  padding-top: $gutter_v;
+  padding-bottom: $gutter_v;
+  background-color: $bg_base;
+  font-size: $fz_m;
 
   &__list {
     display: flex;
@@ -25,16 +29,16 @@
   &__link {
     display: block;
     color: $c_alt;
+    text-decoration: none;
+    transition: $trs_short;
   }
 
   /* ============================================>>>>>
-
-   ██████ ██       ██████  ███████ ███████ ██████      ███    ██  █████  ██    ██
-  ██      ██      ██    ██ ██      ██      ██   ██     ████   ██ ██   ██ ██    ██
-  ██      ██      ██    ██ ███████ █████   ██   ██     ██ ██  ██ ███████ ██    ██
-  ██      ██      ██    ██      ██ ██      ██   ██     ██  ██ ██ ██   ██  ██  ██
-   ██████ ███████  ██████  ███████ ███████ ██████      ██   ████ ██   ██   ████
-
+   ██████ ██       ██████  ███████ ███████ ██████
+  ██      ██      ██    ██ ██      ██      ██   ██
+  ██      ██      ██    ██ ███████ █████   ██   ██
+  ██      ██      ██    ██      ██ ██      ██   ██
+   ██████ ███████  ██████  ███████ ███████ ██████
   ===============================================>>>>> */
 
   &--closed {
@@ -46,6 +50,10 @@
     background-color: rgba(0, 0, 0, 0.3);
   }
 
+  /* ============================================>>>>>
+  = Icon 'Hamburger' =
+  ===============================================>>>>> */
+
   &--closed &__icon-menu {
     position: relative;
     width: 50px;
@@ -53,7 +61,8 @@
     font-size: 0;
     cursor: pointer;
 
-    &::before {
+    &::before,
+    &::after {
       content: "";
       position: absolute;
       top: 0;
@@ -61,11 +70,36 @@
       width: 50px;
       height: 4px;
       background-color: $c_alt;
-      box-shadow:
-        0 10px 0 0 $c_alt,
-        0 20px 0 0 $c_alt;
+      transition: $trs_base;
+    }
+
+    &::after {
+      top: 20px;
+      box-shadow: 0 -10px 0 0 $c_alt;
+    }
+
+    &:hover::before,
+    &:hover::after {
+      background-color: $c_bright;
+    }
+
+    &:hover::after {
+      box-shadow: 0 -10px 0 0 $c_bright;
+    }
+
+    &:active::before,
+    &:active::after {
+      background-color: rgba($c_bright, 0.3);
+    }
+
+    &:active::after {
+      box-shadow: 0 -10px 0 0 rgba($c_bright, 0.3);
     }
   }
+
+  /* --------------------------------------------<<<<<
+  = End of Icon 'Hamburger' =
+  ===============================================<<<<< */
 
   &--closed &__list {
     display: none;
@@ -89,7 +123,6 @@
     left: 0;
     z-index: $z_header;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.3);
   }
 
   &--opened &__list {
@@ -107,11 +140,27 @@
     &::after {
       content: "";
       position: absolute;
-      top: 0;
-      right: 0;
+      top: -3px;
+      right: 10px;
       width: 4px;
-      height: 20px;
+      height: 30px;
       background-color: $c_alt;
+      transform: rotate(45deg);
+      transition: $trs_base;
+    }
+
+    &:hover::before,
+    &:hover::after {
+      background-color: $c_bright;
+    }
+
+    &:active::before,
+    &:active::after {
+      background-color: rgba($c_bright, 0.3);
+    }
+
+    &::after {
+      transform: rotate(-45deg);
     }
   }
 
@@ -135,6 +184,48 @@
       margin-left: - $offset_mobile;
       margin-right: - $offset_mobile;
     }
+    &__link {
+      padding-left: $offset_mobile;
+      padding-right: $offset_mobile;
+    }
+  }
+}
+
+@media #{$portable} {
+  .nav {
+    padding-bottom: 0;
+    background-color: $bg_base;
+    &__list {
+      margin-top: $gutter_v;
+    }
+
+    &__item {
+      border-top: 1px solid #485461;
+      border-bottom: 1px solid #000;
+    }
+
+    &__item:first-child {
+      box-shadow: 0 -1px 0 0 #000;
+    }
+
+    &__link {
+      padding-top: $gutter_v;
+      padding-bottom: $gutter_v;
+      line-height: 1;
+      text-transform: uppercase;
+      font-weight: 700;
+      &:hover {
+        color: $c_bright;
+      }
+      &:active {
+        color: rgba($c_bright, 0.3);
+      }
+    }
+
+    &--closed {
+      padding-bottom: $gutter_v;
+      background-color: rgba(0, 0, 0, 0.3);
+    }
   }
 }
 
@@ -143,6 +234,10 @@
     &__item {
       margin-left: - $offset_tablet;
       margin-right: - $offset_tablet;
+    }
+    &__link {
+      padding-left: $offset_tablet;
+      padding-right: $offset_tablet;
     }
   }
 }
@@ -165,6 +260,16 @@
 
     &__item {
       padding-left: $gutter;
+    }
+
+    &__link {
+      &:hover {
+        box-shadow: 0 2px 0 0 $c_alt;
+      }
+      &:active {
+        color: rgba($c_alt, 0.3);
+        box-shadow: none;
+      }
     }
 
     &__icon-menu {

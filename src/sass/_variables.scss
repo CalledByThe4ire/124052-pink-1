@@ -3,10 +3,15 @@ $mobile: "(max-width: 699px)";
 $tablet: "(min-width: 700px) and (max-width: 1019px)";
 $desktop: "(min-width: 1020px)";
 
+$retina2x: "(min-resolution: 1.5dppx)";
+
 // mobile + tablet
 $portable: "(max-width: 1019px)";
 // tablet + desktop = more than mobile
 $tab-desk: "(min-width: 700px)";
+
+
+$desk-xl: "(min-width: 1400px)";
 
 // colors
 $c_base: #283645;
@@ -33,16 +38,45 @@ $offset_desktop: 40px;
 $gutter: 20px;
 
 // fonts
-$fz_base: 14px;
-$lh_base: 24 / 14;
+$fz_xs: 12px;
+$fz_s: 14px;
+$fz_m: 18px;
+$fz_l: 24px;
+$fz_xl: 30px;
+$fz_xxl: 40px;
+$fz_xxxl: 50px;
+
+$fz_base: $fz_s;
+$lh_base: 1.7;
+
+$fw_light: 300;
+$fw_regular: 400;
+$fw_bold: 700;
+
 
 // z-index
 $z_base: 1;
-$z_header: ($z_base + 1);
+$z_decor: ($z_base +1);
+$z_header: ($z_decor + 1);
 $z_modal: ($z_header + 1);
 
-// @media #{$portable}
+// transitions
+$trs_short: all 0.15s ease-in;
+$trs_base: all 0.3s ease-in;
+$trs_long: all 0.5s ease-out;
+
 // @media #{$mobile}
-// @media #{$tab-desk}
+// @media #{$portable}
 // @media #{$tablet}
+// @media #{$tab-desk}
 // @media #{$desktop}
+// @media #{$retina2x}
+
+// @media #{$desk-xl}
+
+// $bg_intro:
+//   $bg_base
+//   url("../img/intro/bg-back-mobile.jpg")
+//   center /
+//   cover
+//   no-repeat;

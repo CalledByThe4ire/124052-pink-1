@@ -3,29 +3,61 @@
 
   &__title {
     margin: 0;
+    color: $c_base;
   }
-}
 
-@media #{$tab-desk} {
-  .research {
-    display: block;
-    background:
-      transparent
-      inline("icon-timer.svg")
-      left top / auto
-      no-repeat;
+  &__link {
+    @include typo-link;
   }
 }
 
 @media #{$tablet} {
   .research {
     padding-left: 310px;
+    background-size: 240px auto;
+
+    &__title {
+      width: 200px;
+      line-height: 1.2;
+    }
+  }
+}
+
+@media #{$tab-desk} {
+  .research {
+    padding-top: 95px;
+    padding-bottom: 95px;
+    display: block;
+    background-color: transparent;
+    background-image: inline("inline/icon-timer.svg");
+    background-position: left 0 top 50%;
+    background-repeat: no-repeat;
+
+    &__title {
+      font-size: $fz_xl;
+    }
   }
 }
 
 @media #{$desktop} {
   .research {
-    background-color: $bg_grey;
+    margin-bottom: 40px;
     padding-left: 370px;
+    background-color: $bg_grey;
+    background-size: 300px auto;
+
+    &__title {
+      line-height: 1;
+      margin-bottom: 25px;
+    }
+
+    &__text {
+      font-size: $fz_m;
+      margin-bottom: 35px;
+    }
+
+    &__link {
+      font-size: $fz_m;
+    }
   }
 }

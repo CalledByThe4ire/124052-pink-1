@@ -1,6 +1,8 @@
 .slider {
   position: relative;
   overflow: hidden;
+  // generl padding with controls
+  padding-bottom: 60px;
 
   &__input {
     display: none;
@@ -8,6 +10,9 @@
 
   &__controls {
     position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    height: 22px;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
@@ -15,24 +20,73 @@
   }
 
   &__control {
-    display: inline-block;
     width: 12px;
     height: 12px;
-    vertical-align: middle;
+    margin: 5px;
     border: 3px solid transparent;
     background-color: rgba($c_base, 0.3);
+    background-clip: content-box;
     cursor: pointer;
     border-radius: 50%;
+    transition: $trs_base;
+
+    &:hover {
+      background-color: rgba($c_base, 0.6);
+    }
+
+    &:active {
+      background-color: rgba($c_base, 0.1);
+    }
   }
 
   &__arrows {
+    position: absolute;
+    width: 100%;
+    top: 50%;
     display: none;
+  }
+
+  &__arrow {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: 2px solid rgba($c_base, 0.3);
+    transform: rotate(45deg);
+    cursor: pointer;
+    z-index: $z_base;
+
+    &--left {
+      left: 15px;
+      border-top-color: transparent;
+      border-right-color: transparent;
+    }
+
+    &--right {
+      right: 15px;
+      border-bottom-color: transparent;
+      border-left-color: transparent;
+    }
   }
 
   &__slides {
     display: flex;
+    transition: $trs_long;
+  }
+
+  &--reviews {
+    // review padding for controls
+    padding-bottom: 40px;
   }
 }
+
+/*
+███    ███  ██████
+████  ████ ██    ██
+██ ████ ██ ██    ██
+██  ██  ██ ██ ▄▄ ██
+██      ██  ██████
+               ▀▀
+*/
 
 @media #{$mobile} {
   .slider {
@@ -47,6 +101,11 @@
 @media #{$tab-desk} {
   .slider {
 
+    &--tariffs {
+      // no controls - no padding
+      padding-bottom: 0;
+    }
+
     &--tariffs &__controls {
       display: none;
     }
@@ -56,8 +115,17 @@
 @media #{$desktop} {
   .slider {
 
-    &__arrows {
+    &--reviews {
+      // no controls - no padding
+      padding: 0;
+    }
+
+    &--reviews &__arrows {
       display: block;
+    }
+
+    &--reviews &__controls {
+      display: none;
     }
   }
 }

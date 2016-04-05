@@ -1,12 +1,24 @@
 .page-footer {
-  display: flex;
-  justify-content: space-between;
-  text-align: center;
+  &__grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+  }
 }
 
 @media #{$mobile} {
   .page-footer {
-    flex-direction: column;
+    padding-top: 60px;
+    padding-bottom: 10px;
+
+    &__grid {
+      flex-direction: column;
+    }
+
+    &__col {
+      margin-bottom: 30px;
+    }
 
     &--hidden {
       display: none;
@@ -14,5 +26,16 @@
   }
 }
 // @media #{$tab-desk}
-// @media #{$tablet}
-// @media #{$desktop}
+@media #{$tablet} {
+  .page-footer {
+    padding-top: 37px;
+    padding-bottom: 37px;
+  }
+}
+
+@media #{$desktop} {
+  .page-footer {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+}

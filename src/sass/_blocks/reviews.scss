@@ -1,0 +1,16 @@
+.reviews {
+  margin-bottom: 40px;
+}
+
+@media #{$tablet} {
+  .reviews {
+    margin-bottom: 20px;
+  }
+}
+
+@media #{$desktop} {
+  .reviews {
+    padding-top: 30px;
+    margin-bottom: 40px;
+  }
+}
