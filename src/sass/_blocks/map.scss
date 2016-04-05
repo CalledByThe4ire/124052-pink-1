@@ -1,13 +1,13 @@
 .map {
   position: relative;
-
+  min-height: 200px;
   &__container {
     @include container;
     position: relative;
     min-height: 200px;
     background:
       $bg-grey
-      url("../img/bg/bg-map-mobile.jpg")
+      url("../img/bg-map-mobile.jpg")
       center /
       cover
       no-repeat;
@@ -21,32 +21,14 @@
   }
 }
 
+// @media #{$portable}
+// @media #{$mobile}
 @media #{$tab-desk} {
   .map {
     &__container {
-      background-image: url("../img/bg/bg-map.jpg");
+      background-image: url("../img/bg-map.jpg");
     }
   }
 }
-
-@media #{$tablet} {
-  .map {
-    &__container {
-      min-height: 375px;
-    }
-    &__ya {
-      height: 375px;
-    }
-  }
-}
-
-@media #{$desktop} {
-  .map {
-    &__container {
-      min-height: 505px;
-    }
-    &__ya {
-      height: 505px;
-    }
-  }
-}
+// @media #{$tablet}
+// @media #{$desktop}

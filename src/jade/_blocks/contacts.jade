@@ -1,11 +1,10 @@
 mixin contacts
   +b.SECTION.contacts
-    +e.header
-     +b.title Остались вопросы?<br>Свяжитесь с&nbsp;нами!
+    +e.H2.header Остались вопросы? Свяжитесь с&nbsp;нами!
     +e.UL.list
       each item in site.data.contacts
         +e.LI.item
-          +e.DL.sub-list
+          +e.DL
             +e.DT.title !{item.title + ":"}
             +e.DD.descr
               case item.type
