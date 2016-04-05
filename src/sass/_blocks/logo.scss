@@ -7,13 +7,6 @@
   margin-right: $gutter;
   cursor: pointer;
 
-  &__star,
-  &__glasses,
-  &__glasses-part,
-  &__letters {
-    transition: $trs_short;
-  }
-
   &__svg {
     position: absolute;
     bottom: 0;
@@ -51,10 +44,6 @@
   }
 
   // footer mod
-  &--footer {
-    width: 147px;
-  }
-
   &--footer:hover &__star {
     fill: $c_bright;
   }

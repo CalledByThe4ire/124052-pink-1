@@ -1,18 +1,7 @@
 .title {
-  @include typo-title;
-  padding-top: 40px;
-  padding-bottom: 20px;
   text-align: center;
   span {
     display: block;
-    margin-bottom: 25px;
-  }
-}
-
-@media #{$tab-desk} {
-  .title {
-    span {
-      margin-bottom: 0;
-    }
+    margin-bottom: 10px;
   }
 }

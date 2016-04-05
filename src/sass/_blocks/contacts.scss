@@ -1,54 +1,16 @@
 .contacts {
   text-align: center;
-  padding-bottom: 30px;
 
   &__list {
-    @include list-clear;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
   }
 
-  &__sub-list {
-    @include list-clear;
-  }
-
-  &__item {
-    padding: 10px 20px;
-  }
-
   &__descr {
     margin: 0;
   }
-
-  &__title {
-    margin: 0;
-    padding: 0;
-    font-size: $fz_m;
-    line-height: 30px;
-    font-weight: $fw_bold;
-  }
-
-  &__link {
-    @include typo-link-special;
-  }
-
-  &__text {
-    font-size: $fz_l;
-    line-height: 30px;
-    color: $c_bright;
-    font-weight: $fw_light;
-  }
 }
-
-/*
-███    ███  ██████
-████  ████ ██    ██
-██ ████ ██ ██    ██
-██  ██  ██ ██ ▄▄ ██
-██      ██  ██████
-               ▀▀
-*/
 
 @media #{$mobile} {
   .contacts {
@@ -61,25 +23,15 @@
 
 @media #{$tablet} {
   .contacts {
-    padding-top: 10px;
-    padding-bottom: 10px;
-
     &__item {
       @include col-fluid(6);
-      margin: 0 auto;
-      padding-top: 25px;
-      padding-bottom: 15px;
+      margin: auto;
     }
   }
 }
 
 @media #{$desktop} {
   .contacts {
-    padding-bottom: 10px;
-
-    &__list {
-      padding-top: 20px;
-    }
 
     &__item {
       @include col-fluid(4);
@@ -93,10 +45,6 @@
       &:nth-of-type(3) {
         order: 2;
       }
-    }
-
-    &__title {
-      margin-bottom: 15px;
     }
   }
 }

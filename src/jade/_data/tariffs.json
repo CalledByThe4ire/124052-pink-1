@@ -1,14 +1,14 @@
 {
   "tariffsList": [{
     "tariffName": "База",
-    "tariffPrice": "1.99 USD"
-  }, {
-    "tariffName": "Стандарт",
-    "tariffPrice": "3.99 USD",
+    "tariffPrice": "3.00 USD",
     "isHit": true
   }, {
+    "tariffName": "Стандарт",
+    "tariffPrice": "3.00 USD"
+  }, {
     "tariffName": "Анлим",
-    "tariffPrice": "9.99 USD"
+    "tariffPrice": "3.00 USD"
   }],
   "options": [{
     "optionName": "Розовый фильтр",

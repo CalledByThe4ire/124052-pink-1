@@ -1,82 +1,13 @@
-@mixin typo-title($color: $c_base) {
-  margin: 0;
-  padding: 0;
-  font-size: $fz_l;
+@mixin typo-h1 {
+  font-size: 30px;
   line-height: 1.2;
-  font-weight: $fw_light;
-  color: $color;
-
-  @media #{$tablet} {
-    font-size: $fz_xxl;
-  }
-
-  @media #{$desktop} {
-    font-size: $fz_xxxl;
-  }
+  font-weight: 400;
 }
 
-@mixin typo-link {
-  color: $c_bright;
-
-  &:hover {
-    color: $c_base;
-  }
-
-  &:active {
-    color: rgba($c_base, 0.3);
-  }
-}
-
-@mixin typo-link-special {
-  font-size: $fz_l;
-  line-height: 30px;
-  color: $c_bright;
-  text-decoration: none;
-  font-weight: $fw_light;
-  &:hover {
-    color: $c_base;
-    text-decoration: underline;
-  }
-
-  &:active {
-    color: rgba($c_base, 0.3);
-    text-decoration: none;
-  }
-}
-
-
-@mixin typo-text {
-  margin: 0;
-  padding: 0;
-  font-size: $fz_base;
-  line-height: 30px;
-
-  @media #{$tab-desk} {
-    font-size: $fz_m;
-  }
-}
-
-@mixin typo-small {
-  margin: 0;
-  padding: 0;
-  font-size: $fz_s;
-
-  @media #{$tablet} {
-    font-size: $fz_s
-  }
-
-  @media #{$desktop} {
-    font-size: $fz_m;
-  }
-}
-
-@mixin typo-label {
-  font-size: $fz_l;
-  line-height: 30px;
-  color: $c_bright;
-  font-weight: $fw_light;
-  text-transform: uppercase;
-}
+// @mixin typo-base-text
+// @mixin typo-page-heading
+// @mixin typo-promo
+// @mixin typo-label
 
 body {
   font-family: "Open Sans", Arial, sans-serif;

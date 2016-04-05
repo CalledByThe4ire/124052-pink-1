@@ -24,11 +24,14 @@ mixin tariffs
             th.tariffs__row-name Услуги / Тарифы
             //- обращаемся к tariffsList, чтобы вытащить имена тарифов
             each item in site.data.tariffs.tariffsList
-              th.tariffs__title
-                span.tariffs__name= item.tariffName
-                span.tariffs__price= item.tariffPrice
-                if item.isHit
-                  span.tariffs__icon-hit
+              if item.isHit
+                th.tariffs__title.tariffs__title--hit
+                  span.tariffs__name= item.tariffName
+                  span.tariffs__price= item.tariffPrice
+              else
+                th.tariffs__title
+                  span.tariffs__name= item.tariffName
+                  span.tariffs__price= item.tariffPrice
           //- формируем остальные ряды таблицы, каждая услуга в массиве options = 1 ряд
           each item in site.data.tariffs.options
             tr
@@ -57,7 +60,6 @@ mixin style-tariffs
      .slider__input[id="tariff-2"]:checked ~ .slider__controls .slider__control[for="tariff-2"],
      .slider__input[id="tariff-3"]:checked ~ .slider__controls .slider__control[for="tariff-3"] {
        border-color: #283645;
-       background-color: transparent;
      }
      .slider__input[id="tariff-1"]:checked ~ .slider__slides {
        transform: translate(0%);
