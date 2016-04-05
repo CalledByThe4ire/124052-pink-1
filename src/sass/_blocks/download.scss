@@ -3,24 +3,59 @@
   background-color: $bg_dark;
   color: $c_alt;
   text-align: center;
+  padding-top: 30px;
+  padding-bottom: 20px;
 
   &__inner {
     max-width: $w_container_min;
     margin: 0 auto;
   }
+
+  &__btn {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  &__links {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+
+  &__link {
+    @include text-hide;
+    padding: $gutter;
+  }
+
+  &__text {
+    font-weight: $fw_light;
+  }
 }
 
 // @media #{$mobile}
-// @media #{$tablet}
-// @media #{$desktop}
+@media #{$tablet} {
+  .download {
+    padding-bottom: 95px;
+  }
+}
 
 @media #{$tab-desk} {
   .download {
+    padding-right: 0;
+    padding-left: 0;
     background-color: transparent;
 
     &__inner {
       width: $w_block;
       margin: 0;
     }
+  }
+}
+
+@media #{$desktop} {
+  .download {
+    padding-bottom: 105px;
   }
 }

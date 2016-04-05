@@ -1,87 +1,166 @@
 $bg_intro:
   $bg_base
-  url("../img/bg-back-mobile.jpg")
+  url("../img/intro/bg-back-mobile.jpg")
   center /
   cover
   no-repeat;
 
+$bg_hand:
+  url("../img/intro/iphone-hand-mobile.png")
+  center bottom /
+  auto 286px
+  no-repeat;
+
 .intro {
-  color: $c_alt;
-  background: $bg_intro;
-  // в индексе-мобайл фон будет на обертке title-wrap, поэтому обнуляем бг
-  &--index {
-    background: none;
-  }
+  margin-left: 0;
+  margin-right: 0;
+  text-align: center;
 
   &__title-wrap {
     @include container;
     padding-top: 100px;
-
-    &--index {
-      padding-top: 90px;
-      padding-bottom: 310px;
-
-      background: $bg_intro;
-    }
+    padding-bottom: 85px;
   }
 
   &__title {
-    margin: 0;
-    text-align: center;
-  }
-
-  &__text-wrap {
-    @include container;
+    @include typo-title($c_alt);
   }
 }
 
-/* ============================================>>>>>
-= MQ TAB-DESK =
-===============================================>>>>> */
+/*
+███    ███  ██████  ██████  ██ ██      ███████
+████  ████ ██    ██ ██   ██ ██ ██      ██
+██ ████ ██ ██    ██ ██████  ██ ██      █████
+██  ██  ██ ██    ██ ██   ██ ██ ██      ██
+██      ██  ██████  ██████  ██ ███████ ███████
+*/
 
-@media #{$tab-desk} {
+
+@media #{$mobile} {
   .intro {
-    &--index {
+    &__title-wrap {
       background: $bg_intro;
     }
 
-    &__title-wrap {
-      background: none;
+    &--index &__title-wrap {
+      padding-top: 85px;
+      padding-bottom: 315px;
+      background:
+        $bg_hand,
+        $bg_intro;
     }
+  }
 
-    &__title {
-      &--index {
-        width: $w_block;
+  @media #{$retina2x} {
+    .intro {
+      &--index &__title-wrap {
+        background-image:
+          url("../img/intro/iphone-hand-mobile@2x.png"),
+          url("../img/intro/bg-back-mobile@2x.jpg");
       }
     }
   }
 }
 
-/* --------------------------------------------<<<<<
-= End of MQ TAB-DESK =
-===============================================<<<<< */
+/*
+████████  █████  ██████  ██      ███████ ████████
+   ██    ██   ██ ██   ██ ██      ██         ██
+   ██    ███████ ██████  ██      █████      ██
+   ██    ██   ██ ██   ██ ██      ██         ██
+   ██    ██   ██ ██████  ███████ ███████    ██
+*/
 
 @media #{$tablet} {
   .intro {
+    background-image: url("../img/intro/bg-back-tablet@1x.jpg");
+
     &__title-wrap {
       padding-top: 185px;
+      padding-bottom: 130px;
+    }
 
-      &--index {
-        padding-top: 215px;
-        padding-bottom: 0;
-      }
+    &--index &__container {
+      background-image: url("../img/intro/iphone-hand-tablet@1x.png");
+      background-size: auto 545px;
+    }
+
+    &--index &__title-wrap {
+      padding-top: 210px;
+      padding-bottom: 10px;
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+
+  @media #{$retina2x} {
+    .intro {
+      background-image: url("../img/intro/bg-back-tablet@2x.jpg");
+    }
+
+    &--index &__container {
+      background-image: url("../img/intro/iphone-hand-tablet@2x.png");
     }
   }
 }
 
+/*
+████████  █████  ██████        ██████  ███████ ███████ ██   ██
+   ██    ██   ██ ██   ██       ██   ██ ██      ██      ██  ██
+   ██    ███████ ██████  █████ ██   ██ █████   ███████ █████
+   ██    ██   ██ ██   ██       ██   ██ ██           ██ ██  ██
+   ██    ██   ██ ██████        ██████  ███████ ███████ ██   ██
+*/
+
+@media #{$tab-desk} {
+  .intro {
+    &__container {
+      @include container;
+    }
+
+    &--index &__title {
+      width: $w_block;
+    }
+
+    &--index &__container {
+      background-position: right bottom;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+/*
+██████  ███████ ███████ ██   ██ ████████  ██████  ██████
+██   ██ ██      ██      ██  ██     ██    ██    ██ ██   ██
+██   ██ █████   ███████ █████      ██    ██    ██ ██████
+██   ██ ██           ██ ██  ██     ██    ██    ██ ██
+██████  ███████ ███████ ██   ██    ██     ██████  ██
+*/
+
 @media #{$desktop} {
   .intro {
+    background-image: url("../img/intro/bg-back-desktop.jpg");
     &__title-wrap {
-      padding-top: 195px;
+      padding-top: 175px;
+      padding-bottom: 90px;
+    }
 
-      &--index {
-        padding-top: 230px;
-        padding-bottom: 0;
+    &--index &__container {
+      background-image: url("../img/intro/iphone-hand-desktop@1x.png");
+      background-size: auto 645px;
+    }
+
+    &--index &__title-wrap {
+      padding-top: 220px;
+      padding-bottom: 30px;
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+
+  @media #{$retina2x} {
+    .intro {
+      &--index &__container {
+        background-image: url("../img/intro/iphone-hand-desktop@2x.png");
       }
     }
   }

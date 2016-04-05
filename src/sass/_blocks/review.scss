@@ -1,27 +1,88 @@
 .review {
+  display: flex;
+  flex-direction: column;
   margin: 0;
   text-align: center;
   width: (100% / 3);
+  line-height: 30px;
+
+  &__text {
+    @include typo-text;
+  }
+
+  &__author {
+    font-style: normal;
+    font-weight: bold;
+    font-size: $fz_m;
+  }
+
+  &__info {
+    @include typo-small;
+    display: none;
+  }
 }
 
 @media #{$mobile} {
   .review {
+    flex-direction: column-reverse;
+    padding-top: 40px;
 
-    &__info {
-      display: none;
+    &__author {
+      margin-bottom: 15px;
+    }
+
+    &__text {
+      margin-bottom: 10px;
     }
   }
 }
-// @media #{$tab-desk}
-// @media #{$tablet}
+
+@media #{$tab-desk} {
+  .review {
+
+    &__info {
+      display: block;
+    }
+  }
+}
+
+@media #{$tablet} {
+  .review {
+    padding-top: 40px;
+
+    &__text {
+      margin-bottom: 35px;
+    }
+
+    &__author {
+      font-size: 20px;
+    }
+
+    &__info {
+      margin-bottom: 15px;
+    }
+  }
+}
+
 @media #{$desktop} {
   .review {
-    padding-left: 60px;
-    padding-right: 60px;
+    padding-top: 110px;
+    padding-bottom: 0;
+    padding-left: 90px;
+    padding-right: 90px;
     background:
       transparent
-      inline("icon-quotes.svg")
+      inline("inline/icon-quotes.svg")
       center top / auto
       no-repeat;
+
+    &__text {
+      margin-bottom: 35px;
+    }
+
+    &__author {
+      font-size: $fz_l;
+      margin-bottom: 10px;
+    }
   }
 }
