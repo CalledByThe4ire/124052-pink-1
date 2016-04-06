@@ -42,25 +42,25 @@ mixin editor
            alt="Ваша фотография",
            title="Ваша фотография"
          )
-
-      +e.tools
-        each item in toolsItems
-          +e.tool(class="--" + item.name)
-            +e.INPUT.input(
-              type="radio",
-              name="tool"
-              id="tool-" + item.name,
-              checked=item.isChecked
-              )
-            +e.LABEL.label(
-              for="tool-" + item.name
-              )= item.title
-              +e.DIV.tool-icon-wrap
-                +e.SVG.tool-icon(class=item.svgClass)
-                  use(xlink:href="img/svg-sprite.svg#" + item.svgID)
-              +e.DIV(class="scale-wrap--" + item.name)
-                +e.scale
-                  +e.toggle
+      +e.col
+        +e.tools
+          each item in toolsItems
+            +e.tool(class="--" + item.name)
+              +e.INPUT.input(
+                type="radio",
+                name="tool"
+                id="tool-" + item.name,
+                checked=item.isChecked
+                )
+              +e.LABEL.label(
+                for="tool-" + item.name
+                )= item.title
+                +e.DIV.tool-icon-wrap
+                  +e.SVG.tool-icon(class=item.svgClass)
+                    use(xlink:href="img/svg-sprite.svg#" + item.svgID)
+                +e.DIV(class="scale-wrap--" + item.name)
+                  +e.scale
+                    +e.toggle
 
         +e.btn-wrap
           +e.BUTTON.btn.btn--small.--c-brand(type="submit") Запостить

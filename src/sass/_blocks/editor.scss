@@ -22,13 +22,9 @@
     margin: 0 auto;
   }
 
-  &__tools {
+  &__col {
     margin: 0 auto;
   }
-
-  // &__tool {
-  //   outline: 1px solid blue;
-  // }
 
   &__input {
     display: none;
@@ -60,19 +56,9 @@
 
   &__scale-wrap {
     width: 100%;
-    padding: 34px 20px;
+    padding: 10px 20px;
     position: relative;
     cursor: pointer;
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: $w_container_min;
-      height: 1px;
-      background-color: #ccc;
-      margin-left: - $offset_mobile;
-    }
   }
 
   &__scale {
@@ -128,15 +114,25 @@
 @media #{$mobile} {
   .editor {
     &__img-wrap {
-      margin-bottom: 90px;
+      margin-bottom: 114px;
     }
 
     &__tools {
       position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -25px;
+        left: 0;
+        width: $w_container_min;
+        height: 1px;
+        background-color: #ccc;
+        margin-left: - $offset_mobile;
+      }
     }
 
     &__tool-icon-wrap {
-      top: -52px;
+      top: -76px;
     }
 
     &__tool-icon {
@@ -159,25 +155,12 @@
     }
 
     &__btn-wrap {
-      margin-top: 39px;
+      margin-top: 63px;
     }
 
     &__btn {
       margin-bottom: 12px;
     }
-
-    // &__scale-wrap {
-    //
-    // }
-
-    /*
-  ██       ██████   ██████  ██  ██████
-  ██      ██    ██ ██       ██ ██
-  ██      ██    ██ ██   ███ ██ ██
-  ██      ██    ██ ██    ██ ██ ██
-  ███████  ██████   ██████  ██  ██████
-  */
-
 
     /* ============================================>>>>>
     = logic for tools togglers =
@@ -214,13 +197,12 @@
   .editor {
     &__inner {
       padding-top: 35px;
-      padding-bottom: 25px;
       flex-direction: row;
     }
 
     &__img-wrap {
       width: 50%;
-      height: 400px;
+      min-height: 400px;
       padding-right: 10px;
     }
 
@@ -228,28 +210,34 @@
       width: $w_block;
     }
 
-    &__tools {
+    &__col {
       width: 50%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__tools {
       display: flex;
       flex-direction: column;
     }
 
     &__tool {
       position: relative;
-    }
-
-    &__scale-wrap {
-      padding-left: 60px;
+      padding-top: 9px;
+      padding-bottom: 9px;
+      margin-bottom: 33px;
       &::after {
-        bottom: 0;
+        content: "";
+        position: absolute;
+        bottom: -17px;
         left: 0;
         width: 100%;
-        margin: 0;
+        height: 1px;
+        background-color: #ccc;
       }
     }
 
     &__tool-icon-wrap {
-      left: 0;
       top: 50%;
       transform: translateY(-50%);
     }
@@ -266,6 +254,10 @@
     &__input:checked ~ &__label &__toggle {
       background-color: $c_bright;
     }
+
+    &__btn-wrap {
+      margin-top: 47px;
+    }
   }
 }
 
@@ -279,11 +271,12 @@
 
 @media #{$tablet} {
   .editor {
-    &__tools {
+    &__col {
       padding-left: 35px;
     }
 
     &__tool-icon-wrap {
+      left: 0;
       width: 25px;
       height: 25px;
     }
@@ -299,13 +292,16 @@
     }
 
     &__scale-wrap {
-      padding-top: 20px;
       padding-left: 55px;
       padding-right: 18px;
     }
 
     &__btn-wrap {
-      padding-right: 25px;
+      padding-right: 20px;
+    }
+
+    &__btn {
+      margin-bottom: 24px;
     }
   }
 }
@@ -321,21 +317,43 @@
 
 @media #{$desktop} {
   .editor {
+    padding-top: 0;
+    padding-bottom: 0;
     background-color: transparent;
     &__inner {
       background-color: $bg_grey;
-      padding-top: 20px;
-      padding-bottom: 20px;
+      padding-top: 57px;
+      padding-bottom: 57px;
+    }
+
+    &__col {
+      margin-left: 0;
+      padding-left: 0;
+      padding-right: 60px;
     }
 
     &__tools {
-      margin-left: 0;
-      padding-left: 0;
-      padding-right: 70px;
+      flex-grow: 1;
     }
+
+    &__tool-icon-wrap {
+      left: -3px;
+    }
+
+    &__scale-wrap {
+      padding-left: 92px;
+      padding-right: 30px;
+    }
+
 
     &__btn-wrap {
       flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    &__btn {
+      width: 45%;
     }
   }
 }
