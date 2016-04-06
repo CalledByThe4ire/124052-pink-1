@@ -12,25 +12,25 @@ block content
 
   .container
     +b.FORM.form
-      +e.FIELDSET.fieldset--name
+      +e.fieldset--name
         each item, index in site.data.form.fieldsName
           +field(item, index)
 
-      +e.FIELDSET.fieldset--os
+      +e.fieldset--os
         +e.P.title С&nbsp;каким приложением путешествовали?
         each item, index in site.data.form.radiosOs
           +radio(item, index)
 
-      +e.FIELDSET.fieldset--contact
+      +e.fieldset--contact
         each item, index in site.data.form.fieldsContact
           +field(item, index)
 
-      +e.FIELDSET.fieldset--achieve
+      +e.fieldset--achieve
         +e.P.title Ваши безбашенные достижения в&nbsp;путешествии
         each item, index in site.data.form.checkboxesAchievement
           +checkbox(item, index)
 
-      +e.FIELDSET.fieldset--text
+      +e.fieldset--text
         +e.LABEL.title(for="fs-text") Опишите свои эмоции
         +e.TEXTAREA.textarea(
           id="fs-text",
@@ -39,11 +39,11 @@ block content
           placeholder="Можно прям в красках, не стесняясь в выражениях"
           )
 
-      +e.btn-wrap
-        +b.BUTTON.btn--form(type="submit") Отправить форму
-      +e.SMALL.disclaimer
-        +e.SPAN.asterisk *
-        | — обязательные поля
+      +e.footer
+        +e.BUTTON.btn.btn--c-green.--small.--square(type="submit") Отправить форму
+        +e.SMALL.disclaimer
+          +e.SPAN.asterisk *
+          |  — обязательные поля
 
   +modal
   +modal-fail

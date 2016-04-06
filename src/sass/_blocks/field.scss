@@ -1,29 +1,108 @@
 .field {
   position: relative;
+  margin-bottom: 6px;
 
-  &--phone::after,
-  &--email::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 30px;
-    height: 30px;
-    background:
-      transparent
-      right center / auto
-      no-repeat;
+  &__label {
+    @include typo-label;
+    @include text-no-overflow;
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    padding-left: 22px;
+    cursor: pointer;
   }
 
-  &--phone {
-    &::after {
-      background-image: inline("inline/icon-mail.svg");
+  &__input-wrap {
+    width: 100%;
+  }
+
+  &__input {
+    @include typo-form-text;
+    display: block;
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 14px;
+    padding-right: 20px;
+    padding-left: 20px;
+    border: 2px solid $bc_grey-dark;
+    border-radius: $br_s;
+  }
+}
+
+@media #{$mobile} {
+  .field {
+    &__label {
+      padding-bottom: 5px;
     }
+    // &__input-wrap {
+    //   margin-bottom: 3px;
+    // }
   }
+}
 
-  &--email {
-    &::after {
-      background-image: inline("inline/icon-phone.svg");
+/*
+████████ ██████
+   ██    ██   ██
+   ██    ██   ██
+   ██    ██   ██
+   ██    ██████
+*/
+
+@media #{$tab-desk} {
+  .field {
+    position: relative;
+    // fluid inputs
+    &--text {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &--text &__label {
+      flex-shrink: 0;
+    }
+
+    &--text &__input-wrap {
+      flex-basis: 100%;
+      flex-shrink: 1;
+    }
+
+    &--text &__input {
+      width: 100%;
+    }
+
+    // input icons
+    &--phone &__input-wrap,
+    &--email &__input-wrap {
+      position: relative;
+    }
+
+    &--phone &__input-wrap,
+    &--email &__input-wrap {
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 30px;
+        height: 30px;
+        background:
+          transparent
+          right center / auto
+          no-repeat;
+      }
+    }
+
+    &--phone &__input-wrap {
+      &::after {
+        background-image: inline("inline/icon-mail.svg");
+      }
+    }
+
+    &--email &__input-wrap {
+      &::after {
+        background-image: inline("inline/icon-phone.svg");
+      }
     }
   }
 }

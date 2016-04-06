@@ -1,0 +1,108 @@
+.checkbox {
+  position: relative;
+  display: block;
+  padding: 22px 0;
+  margin-bottom: 8px;
+  outline: 1px solid grey;
+
+  &__input {
+    display: none;
+  }
+
+
+  &__label {
+    @include typo-form-text;
+    margin-left: 69px;
+    cursor: pointer;
+  }
+
+
+  &__label::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 2px;
+    width: 35px;
+    height: 35px;
+    transform: translateY(-50%);
+    box-shadow: 0 0 0 2px $bc_grey-dark;
+    border-radius: $br_s;
+    background-color: #fff;
+    transition: $trs_short;
+  }
+
+  &__label::after {
+    content: "";
+    position: absolute;
+    opacity: 0;
+    top: 50%;
+    left: 9px;
+    width: 22px;
+    height: 11px;
+    margin-top: -3px;
+    transform: translateY(-50%) rotate(-45deg);
+    background-color: transparent;
+    // border: 3px solid $c_bright;
+    // border-top-color: transparent;
+    // border-right-color: transparent;
+    border-left: 3px solid $c_bright;
+    border-bottom: 3px solid $c_bright;
+    transition: $trs_short;
+  }
+
+  &__label:hover::before {
+    box-shadow: 0 0 0 2px $bg_base;
+  }
+
+  &__label:active::before {
+    box-shadow: 0 0 0 2px $bg_base;
+  }
+
+  &__input:checked + &__label::after {
+    opacity: 1;
+  }
+
+  &__input[disabled] + &__label {
+    text-decoration: line-through;
+    cursor: default;
+  }
+
+  &__input[disabled] + &__label::before,
+  &__input[disabled] + &__label:focus::before,
+  &__input[disabled] + &__label:active::before,
+  &__input[disabled] + &__label:hover::before {
+    box-shadow: 0 0 0 2px $bg_grey;
+    background-color: $bg_grey;
+  }
+
+  &__input:checked:disabled + &__label::after {
+    border-color: $c_bright;
+  }
+}
+
+// @media #{$mobile} {
+//   .checkbox {
+//     &:last-child {
+//       margin-bottom: 0;
+//     }
+//   }
+// }
+
+
+@media #{$tablet} {
+  .checkbox {
+    &__label {
+      margin-left: 59px;
+    }
+  }
+}
+
+
+@media #{$desktop} {
+  .checkbox {
+    width: 33.3%;
+    &__label {
+      margin-left: 59px;
+    }
+  }
+}

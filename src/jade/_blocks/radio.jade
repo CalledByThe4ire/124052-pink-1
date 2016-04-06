@@ -1,9 +1,10 @@
 mixin radio(item, index)
-  +e.INPUT.radio(
-      type="radio",
-      name="form-"+item.name,
-      id="form-"+item.name + (index + 1),
-      checked=item.isChecked
-      disabled=item.isDisabled
-      )
-  +e.LABEL.label(for="form-"+item.name + (index + 1)) !{item.label}
+  +b.radio
+    +e.INPUT.input(
+        type="radio",
+        name="form-"+item.name,
+        id="form-"+item.name + (index + 1),
+        checked=item.isChecked
+        disabled=item.isDisabled
+        )
+    +e.LABEL.label(for="form-"+item.name + (index + 1)) !{item.label}

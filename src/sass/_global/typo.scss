@@ -71,10 +71,16 @@
 }
 
 @mixin typo-label {
-  font-size: $fz_l;
+  margin: 0;
+  font-size: $fz_base;
   line-height: $lh_m;
   color: $c_bright;
   text-transform: uppercase;
+}
+
+@mixin typo-form-text {
+  font-size: $fz_m;
+  line-height: $lh_m;
 }
 
 body {

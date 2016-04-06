@@ -18,11 +18,19 @@ $c_base: #283645;
 $c_alt: #fff;
 $c_bright: #d22856;
 $c_grey: #f2f2f2;
+$c_grey-dark: #e5e5e5;
+
+$bc_grey-dark: $c_grey-dark;
 
 $bg_base: $c_base;
 $bg_alt: $c_alt;
 $bg_grey: $c_grey;
+$bg_grey-dark: $c_grey-dark;
 $bg_dark: #1d2631;
+
+$bg_green: #2aab6d;
+$bg_green-dark: #1c9b5e;
+
 
 // widths
 $w_container_min: 320px;
@@ -50,6 +58,7 @@ $fz_xxxl: 50px;
 $fz_base: $fz_s;
 $lh_base: 1.7;
 
+$lh_xs: 18px;
 $lh_s: 24px;
 $lh_m: 30px;
 $lh_l: 36px;
@@ -58,12 +67,15 @@ $fw_light: 300;
 $fw_regular: 400;
 $fw_bold: 700;
 
+// border radius
+$br_s: 3px;
 
 // z-index
 $z_base: 1;
 $z_decor: ($z_base +1);
 $z_header: ($z_decor + 1);
 $z_modal: ($z_header + 1);
+
 
 // transitions
 $trs_short: all 0.15s ease-in;

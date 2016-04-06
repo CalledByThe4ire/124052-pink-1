@@ -4,6 +4,7 @@
   text-decoration: none;
   font-weight: $fw_bold;
   outline: none;
+  border: 3px solid;
   transition: $trs_base;
 
   /* ============================================>>>>>
@@ -59,15 +60,18 @@
 
   &--c-green {
     color: $c_alt;
-    background-color: #2aab6d;
+    border-color: $bg_green;
+    background-color: $bg_green;
 
     &:hover {
       color: $c_alt;
-      background-color: #1c9b5e;
+      border-color: $bg_green-dark;
+      background-color: $bg_green-dark;
     }
     &:active {
       color: rgba($c_alt, 0.3);
-      background-color: $bg_alt;
+      border-color: $bg_grey-dark;
+      background-color: $bg_grey-dark;
     }
     &[disabled] {
       color: $c_alt;
@@ -90,14 +94,18 @@
     padding-left: 20px;
     font-size: $fz_m;
     line-height: 1;
-    border: 3px solid;
     border-radius: 30px;
   }
 
   &--square {
-    padding: 10px 20px;
+    padding-top: 13px;
+    padding-bottom: 14px;
+    padding-right: 14px;
+    padding-left: 14px;
     font-size: $fz_m;
+    line-height: $lh_m;
     text-transform: uppercase;
+    border-radius: 0;
   }
 
   /* --------------------------------------------<<<<<

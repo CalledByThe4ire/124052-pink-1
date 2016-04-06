@@ -1,0 +1,97 @@
+.radio {
+  position: relative;
+  display: block;
+  padding: 22px 0;
+
+  &__input {
+    display: none;
+  }
+
+
+  &__label {
+    @include typo-form-text;
+    margin-left: 69px;
+    cursor: pointer;
+  }
+
+
+  &__label::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 2px;
+    width: 35px;
+    height: 35px;
+    transform: translateY(-50%);
+    box-shadow: 0 0 0 2px $bc_grey-dark;
+    border: 10px solid #fff;
+    border-radius: 50%;
+    background-color: #fff;
+    transition: $trs_short;
+  }
+
+
+  &__label:hover::before {
+    box-shadow: 0 0 0 2px $bg_base;
+  }
+
+
+  &__label:active::before {
+    box-shadow: 0 0 0 2px $c_bright;
+  }
+
+
+  &__input:checked + &__label::before {
+    background-color: $c_bright;
+  }
+
+  /* ================================
+  =            Disabled            =
+  ================================ */
+
+  &__input[disabled] + &__label {
+    text-decoration: line-through;
+    cursor: default;
+  }
+
+
+  &__input[disabled] + &__label::before,
+  &__input[disabled] + &__label:focus::before,
+  &__input[disabled] + &__label:active::before,
+  &__input[disabled] + &__label:hover::before {
+    box-shadow: 0 0 0 2px $bg_grey;
+    background-color: $bg_grey;
+    border-color: $bc_grey-dark;
+  }
+
+
+  &__input:checked:disabled + &__label::before {
+    background-color: $c_bright;
+  }
+
+  /* =====  End of Disabled  ====== */
+}
+
+// @media #{$mobile} {}
+
+
+@media #{$tablet} {
+  .radio {
+
+
+    &__label {
+      margin-left: 59px;
+    }
+  }
+}
+
+
+@media #{$desktop} {
+  .radio {
+
+
+    &__label {
+      margin-left: 60px;
+    }
+  }
+}

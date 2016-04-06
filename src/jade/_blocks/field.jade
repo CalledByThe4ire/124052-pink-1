@@ -5,13 +5,14 @@ mixin field(item, index)
     when "email"
       - var modName = "--email"
     default
-      - var modName = "piu"
+      - var modName = "--text"
 
   +b(class="field" + modName)
     +e.LABEL.label(for="form-"+item.name + (index + 1)) !{item.label}
-    +e.INPUT.input(
-        type=item.inputType,
-        name="form-"+item.name,
-        id="form-"+item.name + (index + 1),
-        placeholder=item.placeholder
-        )
+    +e.DIV.input-wrap
+      +e.INPUT.input(
+          type=item.inputType,
+          name="form-"+item.name,
+          id="form-"+item.name + (index + 1),
+          placeholder=item.placeholder
+          )
