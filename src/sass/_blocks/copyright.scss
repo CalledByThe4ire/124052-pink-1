@@ -1,6 +1,6 @@
 .copyright {
   display: flex;
-  align-items: center;
+  margin-top: 10px;
 
   &__text {
     font-size: $fz_base;
@@ -26,6 +26,14 @@
     }
     &:active {
       fill: rgba($c_base, 0.3);
+    }
+  }
+}
+
+@media #{$desktop} {
+  .copyright {
+    &__text {
+      font-size: $fz_m;
     }
   }
 }
