@@ -11,6 +11,7 @@
 
   &__label {
     @include typo-form-text;
+    display: block;
     margin-left: 69px;
     cursor: pointer;
   }
@@ -97,9 +98,10 @@
 
 @media #{$desktop} {
   .checkbox {
-    width: 33.3%;
+    @include text-no-overflow;
     &__label {
       margin-left: 59px;
+      width: 200px;
     }
   }
 }

@@ -109,13 +109,18 @@
 
       &--text {
         order: 5;
-        margin-bottom: 22px;
+        margin-bottom: 20px;
+        padding-top: 40px;
       }
     }
 
     &__title {
       line-height: $lh_xs;
       margin-bottom: 22px;
+    }
+
+    &__textarea {
+      min-height: 200px;
     }
 
     &__footer {
@@ -141,6 +146,7 @@
 
 @media #{$tab-desk} {
   .form {
+    width: 100%;
     &__fieldset {
       position: relative;
       padding-top: 45px;
@@ -193,30 +199,65 @@
   }
 }
 
-// @media #{$tablet}
+@media #{$tablet} {
+  .form {
+    &__fieldset {
+      &--text {
+        padding-bottom: 50px;
+        margin-bottom: 68px;
+      }
+    }
+    &__textarea {
+      min-height: 193px;
+    }
+  }
+}
+
 @media #{$desktop} {
   .form {
+    justify-content: space-between;
+    align-items: flex-start;
 
     &__fieldset {
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 65px;
 
       &--name {
+        flex-direction: column;
         width: 50%;
-        padding-right: 0;
+        padding-top: 8px;
+        padding-right: 35px;
       }
 
       &--os {
-        width: 50%;
-        padding-left: 0;
+        width: 433px;
+        padding-left: 73px;
+      }
+
+      &--contact {
+        display: flex;
+        padding-top: 42px;
       }
 
       &--achieve {
         display: flex;
         flex-wrap: wrap;
+        padding-top: 41px;
+        padding-bottom: 25px;
+        padding-right: 0;
+      }
+
+      &--text {
+        margin-bottom: 65px;
+        padding-top: 42px;
+        padding-bottom: 43px;
       }
     }
-    // до позиционирования
-    &__fieldset--achieve &__title {
-      width: 100%;
+
+    &__textarea {
+      min-height: 128px;
+      padding-bottom: 10px;
     }
   }
 }

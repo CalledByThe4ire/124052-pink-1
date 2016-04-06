@@ -7,13 +7,12 @@
     display: none;
   }
 
-
   &__label {
     @include typo-form-text;
+    display: block;
     margin-left: 69px;
     cursor: pointer;
   }
-
 
   &__label::before {
     content: "";
@@ -45,15 +44,10 @@
     background-color: $c_bright;
   }
 
-  /* ================================
-  =            Disabled            =
-  ================================ */
-
   &__input[disabled] + &__label {
     text-decoration: line-through;
     cursor: default;
   }
-
 
   &__input[disabled] + &__label::before,
   &__input[disabled] + &__label:focus::before,
@@ -68,16 +62,10 @@
   &__input:checked:disabled + &__label::before {
     background-color: $c_bright;
   }
-
-  /* =====  End of Disabled  ====== */
 }
-
-// @media #{$mobile} {}
-
 
 @media #{$tablet} {
   .radio {
-
 
     &__label {
       margin-left: 59px;
@@ -85,10 +73,8 @@
   }
 }
 
-
 @media #{$desktop} {
   .radio {
-
 
     &__label {
       margin-left: 60px;

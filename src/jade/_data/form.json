@@ -51,22 +51,22 @@
     "isChecked": "checked",
     "isDisabled": false
   }, {
-    "label": "Обгорел на&nbsp;пляже",
-    "name": "achievement",
-    "isChecked": false,
-    "isDisabled": "disabled"
-  }, {
     "label": "Видел Чака Норриса",
     "name": "achievement",
     "isChecked": false,
     "isDisabled": false
   }, {
-    "label": "Накупил сувениров",
+    "label": "Удержал башню",
     "name": "achievement",
     "isChecked": false,
     "isDisabled": false
   }, {
-    "label": "Удержал башню",
+    "label": "Обгорел на&nbsp;пляже",
+    "name": "achievement",
+    "isChecked": false,
+    "isDisabled": "disabled"
+  }, {
+    "label": "Накупил сувениров",
     "name": "achievement",
     "isChecked": false,
     "isDisabled": false
