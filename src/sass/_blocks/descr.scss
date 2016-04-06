@@ -1,0 +1,42 @@
+.descr {
+  margin: 0;
+  text-align: center;
+  padding-top: 45px;
+  padding-bottom: 49px;
+  &__text {
+    @include typo-text;
+  }
+  &--inner {
+    padding-top: 43px;
+    padding-bottom: 42px;
+  }
+}
+
+
+
+
+@media #{$tablet} {
+  .descr {
+    padding-top: 92px;
+    padding-bottom: 76px;
+    padding-left: 40px;
+    padding-right: 40px;
+    &--inner {
+      padding-top: 65px;
+      padding-bottom: 69px;
+    }
+  }
+}
+
+@media #{$desktop} {
+  .descr {
+    padding-top: 92px;
+    padding-bottom: 88px;
+    padding-left: 80px;
+    padding-right: 80px;
+    &--inner {
+      padding-top: 59px;
+      padding-bottom: 66px;
+    }
+  }
+}

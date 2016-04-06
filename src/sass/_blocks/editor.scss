@@ -36,6 +36,7 @@
   }
 
   &__tool-icon-wrap {
+    display: block;
     position: absolute;
     width: 50px;
     height: 50px;
@@ -55,6 +56,7 @@
   }
 
   &__scale-wrap {
+    display: block;
     width: 100%;
     padding: 10px 20px;
     position: relative;
@@ -63,6 +65,7 @@
 
   &__scale {
     position: relative;
+    display: block;
     height: 2px;
     background-color: $c_base;
   }
@@ -71,6 +74,7 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    display: block;
     width: 15px;
     height: 15px;
     background-color: $c_grey;

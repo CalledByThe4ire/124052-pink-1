@@ -2,12 +2,12 @@
 
 var gulp = require("gulp");
 var plumber = require("gulp-plumber");
-var del = require('del');
+var del = require("del");
 var concat = require("gulp-concat");
 var rename = require("gulp-rename");
 var server = require("browser-sync");
 var notify = require("gulp-notify");
-var runSequence = require('run-sequence');
+var runSequence = require("run-sequence");
 var fs = require("fs");
 var foldero = require("foldero");
 var path = require("path");
@@ -15,7 +15,9 @@ var path = require("path");
 var sass = require("gulp-sass");
 var postcss = require("gulp-postcss");
 var assets = require("postcss-assets");
+var flexboxfixer = require("postcss-flexboxfixer")
 var autoprefixer = require("autoprefixer");
+var cssnano = require("cssnano");
 var reporter = require("postcss-reporter");
 var syntax_scss = require("postcss-scss");
 var stylelint = require("stylelint");
@@ -24,6 +26,7 @@ var jade = require("gulp-jade");
 
 var uglify = require("gulp-uglify");
 var svg_sprite = require("gulp-svg-sprite");
+var imagemin = require("gulp-imagemin")
 
 var argv = require("minimist")(process.argv.slice(2));
 var isOnProduction = !!argv.production;
@@ -114,7 +117,8 @@ gulp.task("js", function() {
 
 gulp.task("img", function() {
   gulp.src(["!svg-sprite", "!svg-sprite/**", "!inline", "!inline/**", "**/*.{jpg,png,svg}"], {cwd: path.join(srcPath, "img")})
-
+    .pipe(imagemin({
+    progressive: true}))
     .pipe(gulp.dest(path.join(buildPath, "img")))
 });
 
@@ -205,6 +209,7 @@ gulp.task("style", ["styletest"], function() {
     }))
     .pipe(sass())
     .pipe(postcss([
+      flexboxfixer,
       autoprefixer({
         browsers: [
           "last 1 version",
@@ -214,11 +219,16 @@ gulp.task("style", ["styletest"], function() {
           "last 2 Edge versions"
         ]
       }),
+      cssnano({
+        safe:true
+      }),
       assets({
         loadPaths: [path.join(srcPath, "img")]
       })
     ]))
+    .pipe(rename("style.min.css"))
     .pipe(gulp.dest(path.join(buildPath, "css")))
+
     .pipe(server.stream())
     .pipe(notify({
       message: "Style: <%= file.relative %>",
@@ -238,7 +248,7 @@ gulp.task("style", ["styletest"], function() {
 
 gulp.task("del", function() {
   return del([path.join(buildPath), path.join(srcPath, "sass/_global/svg-sprite.scss")]).then(paths => {
-    console.log('Deleted files and folders:\n', paths.join('\n'));
+    console.log("Deleted files and folders:\n", paths.join("\n"));
   });
 });
 

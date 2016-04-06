@@ -23,6 +23,16 @@
     padding-left: 20px;
     border: 2px solid $bc_grey-dark;
     border-radius: $br_s;
+    transition: $trs_short;
+
+    &:hover {
+      border-color: $c_base;
+    }
+
+    &:focus {
+      border-color: $c_bright;
+      outline: none;
+    }
   }
 
   &--phone &__input,

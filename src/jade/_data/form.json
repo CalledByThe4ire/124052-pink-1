@@ -64,7 +64,7 @@
     "label": "Обгорел на&nbsp;пляже",
     "name": "achievement",
     "isChecked": false,
-    "isDisabled": "disabled"
+    "isDisabled": false
   }, {
     "label": "Накупил сувениров",
     "name": "achievement",

@@ -8,10 +8,12 @@
 
   @media #{$tablet} {
     font-size: $fz_xxl;
+    line-height: $lh_xxl;
   }
 
   @media #{$desktop} {
     font-size: $fz_xxxl;
+    line-height: $lh_xxl;
   }
 }
 

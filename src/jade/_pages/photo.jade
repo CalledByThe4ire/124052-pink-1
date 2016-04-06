@@ -6,9 +6,10 @@ block content
   +b.intro
     +e.title-wrap
       +e.H1.title Фотографии пользователей
-    .box
-      +e.text-wrap
-        p.text Взгляните на&nbsp;фотографии, которые выкладывают наши пользователи!<br> Видите, как не&nbsp;хватает ваших?
+
+  .container
+    +b.descr
+      +e.P.text Взгляните на&nbsp;фотографии, которые выкладывают наши пользователи!<br> Видите, как не&nbsp;хватает ваших?
 
   +b.SECTION.feed
     each item in site.data.feed
@@ -22,6 +23,7 @@ block content
             +post(item)
 
   .container
-    p.text Затмите их&nbsp;всех!<br>Выкладывайте все, что накопилось в&nbsp;телефоне!
+    +b.descr--inner
+      +e.P.text Затмите их&nbsp;всех!<br>Выкладывайте все, что накопилось в&nbsp;телефоне!
 
   +editor

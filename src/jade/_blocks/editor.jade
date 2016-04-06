@@ -55,10 +55,10 @@ mixin editor
               +e.LABEL.label(
                 for="tool-" + item.name
                 )= item.title
-                +e.DIV.tool-icon-wrap
+                +e.tool-icon-wrap
                   +e.SVG.tool-icon(class=item.svgClass)
                     use(xlink:href="img/svg-sprite.svg#" + item.svgID)
-                +e.DIV(class="scale-wrap--" + item.name)
+                +e.SPAN(class="scale-wrap--" + item.name)
                   +e.scale
                     +e.toggle
 
