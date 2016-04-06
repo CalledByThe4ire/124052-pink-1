@@ -3,7 +3,6 @@
   display: block;
   padding: 22px 0;
   margin-bottom: 8px;
-  outline: 1px solid grey;
 
   &__input {
     display: none;
@@ -80,20 +79,18 @@
   }
 }
 
-// @media #{$mobile} {
-//   .checkbox {
-//     &:last-child {
-//       margin-bottom: 0;
-//     }
-//   }
-// }
-
-
 @media #{$tablet} {
   .checkbox {
     &__label {
       margin-left: 59px;
     }
+  }
+}
+
+@media #{$tab-desk} {
+  .checkbox {
+    padding: 15px 0;
+    margin-bottom: 22px;
   }
 }
 

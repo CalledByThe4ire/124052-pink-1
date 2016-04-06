@@ -6,10 +6,6 @@
     @include typo-label;
     @include text-no-overflow;
     display: block;
-    padding-top: 10px;
-    padding-bottom: 20px;
-    padding-right: 20px;
-    padding-left: 22px;
     cursor: pointer;
   }
 
@@ -33,7 +29,10 @@
 @media #{$mobile} {
   .field {
     &__label {
+      padding-top: 10px;
       padding-bottom: 5px;
+      padding-right: 20px;
+      padding-left: 22px;
     }
     // &__input-wrap {
     //   margin-bottom: 3px;
@@ -52,14 +51,18 @@
 @media #{$tab-desk} {
   .field {
     position: relative;
+    display: flex;
+    justify-content: space-between;
+
     // fluid inputs
     &--text {
-      display: flex;
-      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 52px;
     }
 
     &--text &__label {
       flex-shrink: 0;
+      padding-right: 20px;
     }
 
     &--text &__input-wrap {
@@ -69,6 +72,29 @@
 
     &--text &__input {
       width: 100%;
+    }
+
+    // contact fields
+
+    &--phone,
+    &--email {
+      position: relative;
+      flex-direction: column;
+    }
+
+    &--phone &__label,
+    &--email &__label {
+      order: 2;
+      margin-top: 14px;
+      margin-bottom: 20px;
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+
+
+    &--phone &__input,
+    &--email &__input {
+      order: 1;
     }
 
     // input icons
@@ -82,8 +108,9 @@
       &::after {
         content: "";
         position: absolute;
-        top: 0;
-        right: 0;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
         width: 30px;
         height: 30px;
         background:
@@ -95,13 +122,13 @@
 
     &--phone &__input-wrap {
       &::after {
-        background-image: inline("inline/icon-mail.svg");
+        background-image: inline("inline/icon-phone.svg");
       }
     }
 
     &--email &__input-wrap {
       &::after {
-        background-image: inline("inline/icon-phone.svg");
+        background-image: inline("inline/icon-mail.svg");
       }
     }
   }
