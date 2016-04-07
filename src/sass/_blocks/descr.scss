@@ -7,7 +7,7 @@
     @include typo-text;
   }
   &--inner {
-    padding-top: 43px;
+    padding-top: 23px;
     padding-bottom: 42px;
   }
 }
@@ -17,6 +17,9 @@
     &__hidden {
       @include text-hide;
     }
+    &__new-line {
+      display: block;
+    }
   }
 }
 
@@ -25,10 +28,10 @@
   .descr {
     padding-top: 92px;
     padding-bottom: 70px;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 60px;
+    padding-right: 60px;
     &--inner {
-      padding-top: 65px;
+      padding-top: 50px;
       padding-bottom: 69px;
     }
   }
@@ -41,8 +44,11 @@
     padding-left: 80px;
     padding-right: 80px;
     &--inner {
-      padding-top: 59px;
-      padding-bottom: 66px;
+      padding-top: 10px;
+      padding-bottom: 64px;
+    }
+    &__new-line {
+      display: block;
     }
   }
 }

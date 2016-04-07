@@ -1,14 +1,14 @@
 // media query diapasons
-$mobile: "(max-width: 699px)";
-$tablet: "(min-width: 700px) and (max-width: 1019px)";
-$desktop: "(min-width: 1020px)";
+$mobile: "only screen and (max-width: 699px)";
+$tablet: "only screen and (min-width: 700px) and (max-width: 1019px)";
+$desktop: "only screen and (min-width: 1020px)";
 
 $retina2x: "(min-resolution: 1.5dppx)";
 
 // mobile + tablet
-$portable: "(max-width: 1019px)";
+$portable: "only screen and (max-width: 1019px)";
 // tablet + desktop = more than mobile
-$tab-desk: "(min-width: 700px)";
+$tab-desk: "only screen and (min-width: 700px)";
 
 
 $desk-xl: "(min-width: 1400px)";

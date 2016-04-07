@@ -4,18 +4,19 @@ block variables
 
 block content
   +b.intro
-    +e.title-wrap
-      +e.H1.title Фотографии пользователей
+    +e.title-wrap--photo
+      +e.H1.title Фотографии<br>пользователей
 
   .container
     +b.descr
-      +e.P.text Взгляните на&nbsp;фотографии, которые выкладывают наши пользователи!<br> Видите, как не&nbsp;хватает ваших?
+      +e.P.text Взгляните на&nbsp;фотографии, которые выкладывают пользователи!
+        +e.SPAN.new-line  Видите, как не&nbsp;хватает ваших?
 
   +b.SECTION.feed
     each item in site.data.feed
       if item.top
         +post(item)
-    
+
     .container
       +e.grid
         each item in site.data.feed

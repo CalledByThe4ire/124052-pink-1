@@ -1,6 +1,7 @@
 .post {
   display: flex;
   flex-direction: column;
+  min-height: 280px;
   width: $w_block;
   margin-bottom: 20px;
   padding-right: $gutter / 2;
@@ -104,11 +105,6 @@
   &--top &__content-wrap {
     width: $w_block - $gutter;
     margin: 0 auto;
-
-    // media only for top-post, to look nice when simple images on mobile stand in 2 columns
-    @media (min-width: 620px) {
-      width: $w_block * 2 - $gutter;
-    }
   }
 
   &__tag {
@@ -135,6 +131,30 @@
     = End of MOD IMG--TOP =
     ===============================================<<<<< */
 }
+
+/*
+███    ███
+████  ████
+██ ████ ██
+██  ██  ██
+██      ██
+*/
+
+@media #{$mobile} {
+  .post--top {
+    margin-top: 15px;
+  }
+}
+
+
+/*
+████████ ██████
+   ██    ██   ██
+   ██    ██   ██
+   ██    ██   ██
+   ██    ██████
+*/
+
 
 @media #{$tab-desk} {
   .post {
@@ -200,10 +220,23 @@
   }
 }
 
+/*
+████████
+   ██
+   ██
+   ██
+   ██
+*/
+
+
 @media #{$tablet} {
   .post {
     &__img-wrap {
       height: 300px;
+    }
+
+    &--top {
+      margin-top: 5px;
     }
 
     &--top &__content-wrap {
@@ -211,11 +244,21 @@
     }
 
     &__tag::before {
+      top: 58px;
       margin-left: $offset_tablet;
       margin-right: $offset_tablet;
     }
   }
 }
+
+/*
+██████
+██   ██
+██   ██
+██   ██
+██████
+*/
+
 
 @media #{$desktop} {
   .post {
@@ -227,6 +270,7 @@
 
     // desktop mq for top--img
     &--top {
+      margin-top: 10px;
       margin-bottom: 50px;
     }
 
@@ -235,6 +279,7 @@
     }
 
     &__tag::before {
+      top: 55px;
       margin-left: $offset_desktop;
       margin-right: $offset_desktop;
     }
