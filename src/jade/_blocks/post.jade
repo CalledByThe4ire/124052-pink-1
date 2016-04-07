@@ -18,7 +18,7 @@ mixin post(item)
             alt=item.imgAlt,
             title=item.imgAlt
           )
-      .container      
+      .container
         +e.content-wrap
           +e.HEADER.header
             +e.CITE.author= item.author
@@ -26,6 +26,10 @@ mixin post(item)
           +e.P.text= item.text
           +e.FOOTER.footer
             +e.BUTTON(type="button").like-btn
+              //- +e.SVG.like-icon--inner.svg-icon-heart-inner
+              //-   use(xlink:href="img/svg-sprite.svg#icon-heart-inner")
+              //- +e.SVG.like-icon--outer.svg-icon-heart-outer
+              //-   use(xlink:href="img/svg-sprite.svg#icon-heart-outer")
               +e.SVG.like-icon.svg-icon-heart
                 use(xlink:href="img/svg-sprite.svg#icon-heart")
             +e.SPAN.like-text= "Нравится: " + item.likes

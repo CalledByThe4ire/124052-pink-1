@@ -62,25 +62,38 @@
     @include btn-clear;
     @include text-hide;
     position: absolute;
-    left: 0;
+    left: 1px;
     top: 50%;
+    width: 17px;
+    height: 17px;
     transform: translateY(-50%);
+    &:hover {
+      color: rgba($c_bright, 0.1);
+    }
+    &:active {
+      color: $c_bright;
+    }
   }
 
   &__like-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     fill: $c_bright;
     width: 12.545px;
     height: 11.99px;
     transition: $trs_short;
-    &:hover {
-      fill: rgba($c_bright, 0.5);
-    }
-    &:active {
-      fill: $c_bright;
-      width: 14px;
-      height: 14px;
-    }
+  }
 
+  &__like-btn:hover &__like-icon {
+    width: 15px;
+    height: 15px;
+  }
+
+  &__like-btn:active &__like-icon {
+    width: 17px;
+    height: 17px;
   }
 
   &__like-text {
