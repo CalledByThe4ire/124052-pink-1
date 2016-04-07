@@ -1,8 +1,8 @@
 .checkbox {
   position: relative;
-  display: block;
-  padding: 22px 0;
-  margin-bottom: 8px;
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
 
   &__input {
     display: none;
@@ -11,7 +11,7 @@
   &__label {
     @include typo-form-text;
     display: block;
-    margin-left: 69px;
+    padding-left: 69px;
     cursor: pointer;
   }
 
@@ -75,28 +75,11 @@
   }
 }
 
-
-@media #{$tablet} {
-  .checkbox {
-    &__label {
-      margin-left: 59px;
-    }
-  }
-}
-
 @media #{$tab-desk} {
   .checkbox {
-    padding: 15px 0;
-    margin-bottom: 22px;
-  }
-}
 
-@media #{$desktop} {
-  .checkbox {
-    @include text-no-overflow;
     &__label {
-      margin-left: 59px;
-      width: 200px;
+      padding-left: 59px;
     }
   }
 }

@@ -23,8 +23,9 @@
   &__textarea {
     display: block;
     width: 100%;
+    min-height: 200px;
     padding-top: 15px;
-    padding-bottom: 32px;
+    padding-bottom: 15px;
     padding-left: 18px;
     padding-right: 18px;
     font-size: $fz_m;
@@ -52,10 +53,6 @@
     width: 100%;
   }
 
-  // &__btn {
-  //   flex-grow: 0;
-  // }
-
   &__disclaimer {
     font-size: $fz_base;
     line-height: $lh_m;
@@ -72,6 +69,15 @@
 = MQ Mobile =
 ===============================================>>>>> */
 
+/*
+███    ███  ██████  ██████  ██ ██      ███████
+████  ████ ██    ██ ██   ██ ██ ██      ██
+██ ████ ██ ██    ██ ██████  ██ ██      █████
+██  ██  ██ ██    ██ ██   ██ ██ ██      ██
+██      ██  ██████  ██████  ██ ███████ ███████
+*/
+
+
 @media #{$mobile} {
   .form {
     flex-direction: column;
@@ -79,48 +85,53 @@
     margin-right: - $offset_mobile;
 
     &__fieldset {
-      padding-top: 35px;
-      padding-bottom: 25px;
-      margin-bottom: 15px;
       padding-left: $offset_mobile;
       padding-right: $offset_mobile;
       border: none;
 
       &--name {
-        order: 1;
+        padding-top: 0;
+        padding-bottom: 42px;
       }
 
       &--os {
         order: 4;
+        padding-top: 35px;
+        padding-bottom: 45px;
         background-color: $bg_grey;
-        // padding-bottom: 24px;
       }
 
       &--contact {
         order: 3;
-        padding-top: 0;
-        margin-bottom: 25px;
+        padding-top: 32px;
+        padding-bottom: 54px;
       }
 
       &--achieve {
         order: 2;
+        padding-top: 38px;
+        padding-bottom: 47px;
         background-color: $bg_grey;
       }
 
       &--text {
         order: 5;
-        margin-bottom: 20px;
-        padding-top: 40px;
+        margin-bottom: 50px;
+        padding-top: 60px;
       }
     }
 
     &__title {
       line-height: $lh_xs;
-      margin-bottom: 22px;
+      margin-bottom: 40px;
     }
 
-    &__textarea {
-      min-height: 200px;
+    &__fieldset--contact &__title {
+      display: none;
+    }
+
+    &__fieldset--text &__title {
+      margin-bottom: 15px;
     }
 
     &__footer {
@@ -128,6 +139,7 @@
       flex-direction: column;
       padding-left: $offset_mobile;
       padding-right: $offset_mobile;
+      margin-bottom: 15px;
     }
 
     &__btn {
@@ -136,6 +148,33 @@
 
     &__disclaimer {
       text-align: center;
+    }
+
+
+    &__item {
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &--name {
+        margin-bottom: 15px;
+        &:last-child {
+          padding-top: 5px;
+        }
+      }
+
+      &--os {
+        margin-bottom: 45px;
+      }
+
+      &--contact {
+        margin-bottom: 15px;
+      }
+
+      &--achieve {
+        margin-bottom: 42px;
+      }
     }
   }
 }
@@ -149,37 +188,7 @@
     width: 100%;
     &__fieldset {
       position: relative;
-      padding-top: 45px;
-      padding-left: 60px;
-      padding-right: 60px;
-
-      &--name {
-        padding: 0;
-        margin-bottom: 15px;
-      }
-
-      &--os {
-        padding-top: 35px;
-        padding-bottom: 40px;
-        margin-bottom: 60px;
-      }
-
-      &--contact {
-        padding-bottom: 0;
-        margin-bottom: 60px;
-      }
-
-      &--achieve {
-        padding-bottom: 15px;
-        margin-bottom: 65px;
-      }
-
-      &--text {
-        padding-bottom: 45px;
-        margin-bottom: 65px;
-      }
     }
-
     &__title {
       position: absolute;
       top: 0;
@@ -189,7 +198,6 @@
       padding: 0 25px;
       white-space: nowrap;
     }
-
     &__footer {
       align-items: center;
     }
@@ -199,19 +207,86 @@
   }
 }
 
+/*
+████████
+   ██
+   ██
+   ██
+   ██
+*/
+
+
 @media #{$tablet} {
   .form {
     &__fieldset {
+      padding-top: 45px;
+      padding-left: 58px;
+      padding-right: 58px;
+
+      &--name {
+        padding: 0;
+        padding-bottom: 66px;
+      }
+
+      &--os {
+        padding-top: 50px;
+        padding-bottom: 55px;
+        margin-bottom: 65px;
+      }
+
+      &--contact {
+        padding-bottom: 15px;
+        margin-bottom: 65px;
+      }
+
+      &--achieve {
+        padding-top: 50px;
+        padding-bottom: 49px;
+        margin-bottom: 65px;
+      }
+
       &--text {
         padding-bottom: 50px;
         margin-bottom: 68px;
       }
     }
+
     &__textarea {
       min-height: 193px;
     }
+
+
+    &__item {
+      &:last-child {
+        margin-bottom: 0;
+      }
+      &--name {
+        margin-bottom: 52px;
+      }
+
+      &--os {
+        margin-bottom: 35px;
+      }
+
+      &--contact {
+        margin-bottom: 20px;
+      }
+
+      &--achieve {
+        margin-bottom: 42px;
+      }
+    }
   }
 }
+
+/*
+██████
+██   ██
+██   ██
+██   ██
+██████
+*/
+
 
 @media #{$desktop} {
   .form {
@@ -219,32 +294,44 @@
     align-items: flex-start;
 
     &__fieldset {
-      justify-content: space-between;
       flex-wrap: wrap;
-      margin-bottom: 65px;
+      // margin-bottom: 65px;
+      // padding-top: 45px;
+      // padding-left: 60px;
+      // padding-right: 60px;
+      padding-top: 45px;
+      padding-left: 58px;
+      padding-right: 58px;
 
       &--name {
         flex-direction: column;
         width: 50%;
+        margin-bottom: 15px;
+        padding-left: 0;
         padding-top: 8px;
         padding-right: 35px;
       }
 
       &--os {
         width: 433px;
+        padding-top: 55px;
+        padding-bottom: 52px;
+        margin-bottom: 65px;
         padding-left: 73px;
       }
 
       &--contact {
         display: flex;
+        margin-bottom: 65px;
+        padding-bottom: 3px;
         padding-top: 42px;
       }
 
       &--achieve {
         display: flex;
-        flex-wrap: wrap;
-        padding-top: 41px;
-        padding-bottom: 25px;
+        margin-bottom: 65px;
+        padding-top: 52px;
+        padding-bottom: 12px;
         padding-right: 0;
       }
 
@@ -258,6 +345,34 @@
     &__textarea {
       min-height: 128px;
       padding-bottom: 10px;
+    }
+
+    &__item {
+      &:last-child {
+        margin-bottom: 0;
+        margin-right: 0;
+      }
+      &--name {
+        margin-bottom: 52px;
+      }
+
+      &--os {
+        margin-bottom: 35px;
+      }
+
+      &--contact {
+        margin-right: 70px;
+        width: 375px;
+      }
+
+      &--achieve {
+        width: 260px;
+        margin-bottom: 42px;
+        margin-right: 49px;
+        &:nth-of-type(3n) {
+          margin-right: 0;
+        }
+      }
     }
   }
 }

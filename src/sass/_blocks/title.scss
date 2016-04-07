@@ -9,6 +9,13 @@
   }
 }
 
+@media #{$tablet} {
+  .title {
+    font-size: $fz_xxl;
+    line-height: $lh_xxl;
+  }
+}
+
 @media #{$tab-desk} {
   .title {
     span {

@@ -11,10 +11,13 @@ var runSequence = require("run-sequence");
 var fs = require("fs");
 var foldero = require("foldero");
 var path = require("path");
+var gulpIf = require("gulp-if");
+var sourcemaps = require("gulp-sourcemaps");
 
 var sass = require("gulp-sass");
 var postcss = require("gulp-postcss");
 var assets = require("postcss-assets");
+var mqpacker = require('css-mqpacker');
 var flexboxfixer = require("postcss-flexboxfixer")
 var autoprefixer = require("autoprefixer");
 var cssnano = require("cssnano");
@@ -118,7 +121,7 @@ gulp.task("js", function() {
 gulp.task("img", function() {
   gulp.src(["!svg-sprite", "!svg-sprite/**", "!inline", "!inline/**", "**/*.{jpg,png,svg}"], {cwd: path.join(srcPath, "img")})
     .pipe(imagemin({
-    progressive: true}))
+      progressive: true}))
     .pipe(gulp.dest(path.join(buildPath, "img")))
 });
 
@@ -207,26 +210,29 @@ gulp.task("style", ["styletest"], function() {
     .pipe(plumber({
       errorHandler: notify.onError("Error:  <%= error.message %>")
     }))
+    // .pipe(gulpIf(!isOnProduction, sourcemaps.init()))
     .pipe(sass())
     .pipe(postcss([
+      mqpacker,
       flexboxfixer,
       autoprefixer({
         browsers: [
-          "last 1 version",
+          "last 2 version",
           "last 2 Chrome versions",
           "last 2 Firefox versions",
           "last 2 Opera versions",
           "last 2 Edge versions"
         ]
       }),
-      cssnano({
-        safe:true
-      }),
       assets({
         loadPaths: [path.join(srcPath, "img")]
+      }),
+      cssnano({
+        safe:true
       })
     ]))
     .pipe(rename("style.min.css"))
+    // .pipe(gulpIf(!isOnProduction, sourcemaps.write()))
     .pipe(gulp.dest(path.join(buildPath, "css")))
 
     .pipe(server.stream())

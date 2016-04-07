@@ -2,7 +2,7 @@
   margin: 0;
   text-align: center;
   padding-top: 45px;
-  padding-bottom: 49px;
+  padding-bottom: 34px;
   &__text {
     @include typo-text;
   }
@@ -12,15 +12,21 @@
   }
 }
 
-
+@media #{$mobile} {
+  .descr {
+    &__hidden {
+      @include text-hide;
+    }
+  }
+}
 
 
 @media #{$tablet} {
   .descr {
     padding-top: 92px;
-    padding-bottom: 76px;
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-bottom: 70px;
+    padding-left: 50px;
+    padding-right: 50px;
     &--inner {
       padding-top: 65px;
       padding-bottom: 69px;
@@ -31,7 +37,7 @@
 @media #{$desktop} {
   .descr {
     padding-top: 92px;
-    padding-bottom: 88px;
+    padding-bottom: 78px;
     padding-left: 80px;
     padding-right: 80px;
     &--inner {

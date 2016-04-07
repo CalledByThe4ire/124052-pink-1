@@ -10,25 +10,30 @@ block content
   .container
     +b.descr
       +e.P.text Поделитесь своей историей и&nbsp;получите шанс выиграть ценный приз&nbsp;&mdash; 1000 миль на&nbsp;вашу бонусную карту!
+        +e.SPAN.hidden  Пожалуйста, заполните форму ниже:
     +b.FORM.form
       +e.fieldset--name
         each item, index in site.data.form.fieldsName
-          +field(item, index)
+          +e.item--name
+            +field(item, index)
 
       +e.fieldset--os
         +e.P.title С&nbsp;каким приложением путешествовали?
         each item, index in site.data.form.radiosOs
-          +radio(item, index)
+          +e.item--os
+            +radio(item, index)
 
       +e.fieldset--contact
         +e.P.title Контактная информация
         each item, index in site.data.form.fieldsContact
-          +field(item, index)
+          +e.item--contact
+            +field(item, index)
 
       +e.fieldset--achieve
         +e.P.title Ваши безбашенные достижения в&nbsp;путешествии
         each item, index in site.data.form.checkboxesAchievement
-          +checkbox(item, index)
+          +e.item--achieve
+            +checkbox(item, index)
 
       +e.fieldset--text
         +e.LABEL.title(for="fs-text") Опишите свои эмоции

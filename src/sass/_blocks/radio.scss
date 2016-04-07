@@ -1,7 +1,8 @@
 .radio {
   position: relative;
   display: block;
-  padding: 22px 0;
+  padding-top: 5px;
+  padding-bottom: 5px;
 
   &__input {
     display: none;
@@ -10,7 +11,7 @@
   &__label {
     @include typo-form-text;
     display: block;
-    margin-left: 69px;
+    padding-left: 69px;
     cursor: pointer;
   }
 
@@ -64,20 +65,11 @@
   }
 }
 
-@media #{$tablet} {
+@media #{$tab-desk} {
   .radio {
 
     &__label {
-      margin-left: 59px;
-    }
-  }
-}
-
-@media #{$desktop} {
-  .radio {
-
-    &__label {
-      margin-left: 60px;
+      padding-left: 59px;
     }
   }
 }
