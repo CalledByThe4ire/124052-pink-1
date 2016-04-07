@@ -69,6 +69,18 @@
 
   &__like-icon {
     fill: $c_bright;
+    width: 12.545px;
+    height: 11.99px;
+    transition: $trs_short;
+    &:hover {
+      fill: rgba($c_bright, 0.5);
+    }
+    &:active {
+      fill: $c_bright;
+      width: 14px;
+      height: 14px;
+    }
+
   }
 
   &__like-text {
