@@ -25,15 +25,17 @@ block content
 
       +e.fieldset--contact
         +e.P.title Контактная информация
-        each item, index in site.data.form.fieldsContact
-          +e.item--contact
-            +field(item, index)
+        +e.items
+          each item, index in site.data.form.fieldsContact
+            +e.item--contact
+              +field(item, index)
 
       +e.fieldset--achieve
         +e.P.title Ваши безбашенные достижения в&nbsp;путешествии
-        each item, index in site.data.form.checkboxesAchievement
-          +e.item--achieve
-            +checkbox(item, index)
+        +e.items
+          each item, index in site.data.form.checkboxesAchievement
+            +e.item--achieve
+              +checkbox(item, index)
 
       +e.fieldset--text
         +e.LABEL.title(for="fs-text") Опишите свои эмоции
