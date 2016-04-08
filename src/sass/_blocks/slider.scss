@@ -2,7 +2,7 @@
   position: relative;
   overflow: hidden;
   // generl padding with controls
-  padding-bottom: 56px;
+  padding-bottom: 55px;
 
   &__input {
     display: none;
@@ -42,7 +42,7 @@
   &__arrows {
     position: absolute;
     width: 100%;
-    top: 50%;
+    top: 48%;
     display: none;
   }
 
@@ -54,17 +54,40 @@
     transform: rotate(45deg);
     cursor: pointer;
     z-index: $z_base;
+    transition: $trs_base;
+    &:hover {
+      border-color: rgba($c_base, 0.6);
+    }
+    &:active {
+      border-color: rgba($c_base, 0.1);
+    }
 
     &--left {
-      left: 15px;
+      left: 5px;
       border-top-color: transparent;
       border-right-color: transparent;
+      &:hover {
+        border-top-color: transparent;
+        border-right-color: transparent;
+      }
+      &:active {
+        border-top-color: transparent;
+        border-right-color: transparent;
+      }
     }
 
     &--right {
-      right: 15px;
+      right: 5px;
       border-bottom-color: transparent;
       border-left-color: transparent;
+      &:hover {
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+      }
+      &:active {
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+      }
     }
   }
 
@@ -115,7 +138,7 @@
 @media #{$tablet} {
   .slider {
     &--reviews {
-      padding-bottom: 20px;
+      padding-bottom: 51px;
     }
   }
 }

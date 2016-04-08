@@ -1,10 +1,15 @@
 .tariffs {
-  line-height: $lh_m;
+  line-height: 30px;
 
   &__table {
     table-layout: fixed;
     border-collapse: collapse;
+    border-bottom: 2px solid #ccc;
   }
+
+  // td {
+  //   background-color: #fff;
+  // }
 
   /*
   ████████ ██ ████████ ██      ███████
@@ -15,49 +20,23 @@
   */
 
   &__row-name {
-    visibility: hidden;
+    @include text-hide;
+    background-color: $bg_grey;
+    border-top: 2px solid transparent;
+    border-left: 2px solid transparent;
+    background-color: transparent;
   }
 
   &__title {
-    position: relative;
     padding-top: 16px;
     padding-bottom: 21px;
-    border: 2px solid transparent;
-    border-bottom: none;
+    border: 2px solid #f2f2f2;
     color: #fff;
     background-color: $bg_base;
 
-    // pseudo-borders for table-headings
-
-    &:nth-child(2) {
-      box-shadow: -2px 0 0 -1px $bg_base;
-    }
-    &:last-child {
-      box-shadow: 2px 0 0 -1px $bg_base;
-    }
-  }
-
-
-  &__icon-hit {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 73px;
-    height: 73px;
-    z-index: $z_base;
-    overflow: hidden;
-
-    &::before {
-      content: "Хит";
-      position: absolute;
-      top: 11px;
-      left: -25px;
-      width: 102px;
-      height: 30px;
-      text-transform: uppercase;
-      font-size: $fz_s;
-      background-color: $c_bright;
-      transform: rotate(-45deg);
+    &--hit {
+      background-image: inline("inline/icon-hit.png");
+      background-repeat: no-repeat;
     }
   }
 
@@ -83,40 +62,38 @@
 */
 
 
-  td {
-    border: 2px solid #ccc;
-    border-top: none;
-    background-color: #fff;
-    padding: 15px;
-    padding-top: 15px;
+  &__option-value,
+  &__option-name {
+    padding-top: 14px;
     padding-bottom: 15px;
     padding-left: 20px;
-    padding-right: 10px;
+    padding-right: 15px;
+    vertical-align: middle;
+    border: 2px solid #ccc;
+    background-color: #fff;
   }
 
   &__option-value {
-    position: relative;
     span {
       @include text-hide;
     }
+
     svg {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
+      vertical-align: middle;
     }
+
 
     .svg-icon-yes {
       fill: #3dc644;
+      width: 33px;
+      height: 23px;
     }
     .svg-icon-no {
       fill: #f25b26;
+      width: 27px;
+      height: 27px;
     }
   }
-}
-
-// pseudo-border for table cell
-tr:nth-child(2) .tariffs__option-name {
-  box-shadow: 1px 0 0 2px #ccc;
 }
 
 /*
@@ -151,12 +128,12 @@ tr:nth-child(2) .tariffs__option-name {
       &::before {
         content: attr(data-option);
         display: inline-block;
-        width: 80%;
-        padding-right: 10px;
+        width: calc(100% - 50px);
         text-transform: uppercase;
       }
       svg {
-        right: 15px;
+        float: right;
+        width: 32px;
       }
     }
   }
@@ -168,11 +145,12 @@ tr:nth-child(2) .tariffs__option-name {
 
 @media #{$tablet} {
   .tariffs {
-    padding-top: 85px;
-    padding-bottom: 70px;
+    padding-top: 83px;
+    padding-bottom: 68px;
 
     &__title {
-      padding-bottom: 0;
+      padding-top: 12px;
+      padding-bottom: 5px;
     }
 
     &__name {
@@ -181,6 +159,15 @@ tr:nth-child(2) .tariffs__option-name {
 
     &__price {
       font-size: $fz_m;
+    }
+
+    &__option-value,
+    &__option-name {
+      padding-top: 7px;
+      padding-bottom: 8px;
+      padding-left: 15px;
+      padding-right: 15px;
+
     }
   }
 }
@@ -192,22 +179,18 @@ tr:nth-child(2) .tariffs__option-name {
     }
 
     &__option-value {
-      svg {
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
+      text-align: center;
+      vertical-align: middle;
     }
   }
 }
 
 @media #{$desktop} {
   .tariffs {
-    padding-top: 150px;
-    padding-bottom: 70px;
+    padding-top: 148px;
+    padding-bottom: 92px;
     &__option-name {
       font-size: $fz_m;
     }
   }
 }
-
-// @media #{$desktop}

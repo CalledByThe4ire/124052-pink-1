@@ -48,10 +48,6 @@
     &__links {
       margin-bottom: 18px;
     }
-
-    &__text {
-      font-size: $fz_m;
-    }
   }
 }
 
@@ -65,11 +61,27 @@
       width: $w_block;
       margin: 0;
     }
+
+    &__text {
+      font-size: $fz_m;
+    }
   }
 }
 
 @media #{$desktop} {
   .download {
-    padding-bottom: 105px;
+    padding-top: 20px;
+    padding-bottom: 120px;
+
+    &__btn {
+      margin-bottom: 45px;
+      padding-bottom: 15px;
+      font-size: $fz_btn;
+      line-height: 1;
+    }
+
+    &__links {
+      margin-bottom: 40px;
+    }
   }
 }

@@ -17,8 +17,6 @@
 
 @media #{$tab-desk} {
   .research {
-    padding-top: 98px;
-    padding-bottom: 95px;
     display: block;
 
     &__title {
@@ -29,18 +27,20 @@
 
 @media #{$tablet} {
   .research {
-    padding-left: 310px;
+    padding-top: 98px;
+    padding-bottom: 95px;
+    padding-left: 309px;
     background:
       transparent
       inline("inline/icon-timer.svg")
-      left 0 top 47% /
+      left 0 top 45.5% /
       240px auto
       no-repeat;
 
     &__title {
       width: 200px;
       margin-bottom: 10px;
-      line-height: $lh_l;
+      line-height: (36 / 30);
     }
 
     &__text {
@@ -51,22 +51,25 @@
 
 @media #{$desktop} {
   .research {
-    margin-bottom: 40px;
-    padding-left: 370px;
+    margin-bottom: 45px;
+    padding-top: 111px;
+    padding-bottom: 112px;
+    padding-left: 365px;
     background:
       $bg_grey
       inline("inline/icon-timer.svg")
-      left 0 top 50% /
+      left 0 top 18% /
       300px auto
       no-repeat;
 
     &__title {
       line-height: 1;
-      margin-bottom: 25px;
+      margin-bottom: 24px;
     }
 
     &__text {
       font-size: $fz_m;
+      line-height: (30 / 18);
       margin-bottom: 35px;
     }
 

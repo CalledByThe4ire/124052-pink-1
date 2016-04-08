@@ -12,6 +12,7 @@
     display: block;
     overflow: hidden;
     margin: 0 auto;
+    overflow: hidden;
   }
 
   &__img {
@@ -185,10 +186,6 @@
 @media #{$tab-desk} {
   .post {
     width: $w_block + $gutter;
-
-    &__img {
-      width: $w_block + $gutter;
-    }
 
     &__content-wrap {
       min-height: 150px;

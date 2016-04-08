@@ -1,6 +1,7 @@
 .features {
   position: relative;
-  padding-top: 86px;
+  margin-top: 22px;
+  padding-top: 84px;
   overflow: hidden;
 
   &__item {
@@ -53,30 +54,35 @@
 
 @media #{$tablet} {
   .features {
-    padding-top: 72px;
+    margin-top: 35px;
+    padding-top: 78px;
+    padding-bottom: 42px;
     &__item {
       margin-bottom: 38px;
       padding-left: 310px;
       text-align: left;
       &:last-child {
-        margin-bottom: 42px;
+        margin-bottom: 0;
       }
     }
 
     &__img {
       position: absolute;
       left: 0;
-      top: 0;
+      top: 5px;
     }
   }
 }
 
 @media #{$desktop} {
   .features {
+    margin-top: 70px;
+    padding-top: 0;
+    padding-bottom: 15px;
     display: flex;
     justify-content: space-between;
     &__item {
-      width: 240px;
+      width: $w_block;
       flex-direction: column;
     }
 
@@ -86,11 +92,12 @@
 
     &__title {
       font-size: $fz_xl;
-      margin-bottom: 25px;
+      margin-bottom: 24px;
     }
 
     &__text {
       font-size: $fz_m;
+      line-height: (30 / 18);
     }
   }
 }

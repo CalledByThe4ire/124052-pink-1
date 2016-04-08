@@ -30,7 +30,7 @@
 
 @mixin typo-link-special {
   font-size: $fz_l;
-  line-height: $lh_m;
+  line-height: (30 / 24);
   color: $c_bright;
   text-decoration: none;
   font-weight: $fw_light;
