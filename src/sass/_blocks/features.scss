@@ -1,15 +1,12 @@
 .features {
   position: relative;
-  padding-top: 70px;
+  padding-top: 86px;
   overflow: hidden;
 
   &__item {
     display: flex;
     text-align: center;
-  }
-
-  &__descr {
-    margin-bottom: 35px;
+    margin-bottom: 34px;
   }
 
   &__title {
@@ -40,13 +37,13 @@
       margin: 0 auto;
     }
 
-    &__item:last-child &__descr {
+    &__item:last-child {
       margin-bottom: 0;
     }
 
     &__item:last-child &__img {
       position: relative;
-      bottom: -40px;
+      bottom: -41px;
       display: block;
       z-index: 1;
     }
@@ -56,10 +53,16 @@
 
 @media #{$tablet} {
   .features {
+    padding-top: 72px;
     &__item {
+      margin-bottom: 38px;
       padding-left: 310px;
       text-align: left;
+      &:last-child {
+        margin-bottom: 42px;
+      }
     }
+
     &__img {
       position: absolute;
       left: 0;

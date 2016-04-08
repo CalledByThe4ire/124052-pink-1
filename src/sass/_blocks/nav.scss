@@ -188,6 +188,10 @@ $gutter_v: 22px;
       padding-left: $offset_mobile;
       padding-right: $offset_mobile;
     }
+
+    &__list {
+      margin-top: 26px;
+    }
   }
 }
 
@@ -195,9 +199,6 @@ $gutter_v: 22px;
   .nav {
     padding-bottom: 0;
     background-color: $bg_base;
-    &__list {
-      margin-top: $gutter_v;
-    }
 
     &__item {
       border-top: 1px solid #485461;
@@ -238,6 +239,9 @@ $gutter_v: 22px;
     &__link {
       padding-left: $offset_tablet;
       padding-right: $offset_tablet;
+    }
+    &__list {
+      margin-top: $gutter_v;
     }
   }
 }

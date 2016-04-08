@@ -3,7 +3,11 @@
 
   &__title {
     margin: 0;
-    color: $c_base;
+    color: #000;
+  }
+
+  &__text {
+    margin: 0;
   }
 
   &__link {
@@ -11,31 +15,36 @@
   }
 }
 
-@media #{$tablet} {
+@media #{$tab-desk} {
   .research {
-    padding-left: 310px;
-    background-size: 240px auto;
+    padding-top: 98px;
+    padding-bottom: 95px;
+    display: block;
 
     &__title {
-      width: 200px;
-      line-height: $lh_l;
+      font-size: $fz_xl;
     }
   }
 }
 
-@media #{$tab-desk} {
+@media #{$tablet} {
   .research {
-    padding-top: 95px;
-    padding-bottom: 95px;
-    display: block;
+    padding-left: 310px;
     background:
       transparent
       inline("inline/icon-timer.svg")
-      left 0 top 50%
+      left 0 top 47% /
+      240px auto
       no-repeat;
 
     &__title {
-      font-size: $fz_xl;
+      width: 200px;
+      margin-bottom: 10px;
+      line-height: $lh_l;
+    }
+
+    &__text {
+      margin-bottom: 10px;
     }
   }
 }
@@ -44,8 +53,12 @@
   .research {
     margin-bottom: 40px;
     padding-left: 370px;
-    background-color: $bg_grey;
-    background-size: 300px auto;
+    background:
+      $bg_grey
+      inline("inline/icon-timer.svg")
+      left 0 top 50% /
+      300px auto
+      no-repeat;
 
     &__title {
       line-height: 1;

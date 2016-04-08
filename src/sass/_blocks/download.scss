@@ -3,8 +3,8 @@
   background-color: $bg_dark;
   color: $c_alt;
   text-align: center;
-  padding-top: 30px;
-  padding-bottom: 20px;
+  padding-top: 28px;
+  padding-bottom: 30px;
 
   &__inner {
     max-width: $w_container_min;
@@ -13,7 +13,7 @@
 
   &__btn {
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
   }
 
   &__links {
@@ -21,23 +21,37 @@
     justify-content: center;
     align-items: baseline;
     flex-wrap: wrap;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
   }
 
   &__link {
     @include text-hide;
-    padding: $gutter;
+    padding: 18px;
   }
 
   &__text {
     font-weight: $fw_light;
+    margin: 0;
   }
 }
 
 // @media #{$mobile}
 @media #{$tablet} {
   .download {
-    padding-bottom: 95px;
+    padding-top: 20px;
+    padding-bottom: 110px;
+
+    &__btn {
+      margin-bottom: 27px;
+    }
+
+    &__links {
+      margin-bottom: 18px;
+    }
+
+    &__text {
+      font-size: $fz_m;
+    }
   }
 }
 

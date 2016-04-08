@@ -25,7 +25,7 @@ function mapHandler() {
       iconLayout: "default#image",
       iconImageHref: "./img/icon-map-marker.svg",
       iconImageSize: [36, 36],
-      iconImageOffset: [-16, 0]
+      iconImageOffset: [-20, -5]
     });
 
     myMap.geoObjects.add(myPlacemark);

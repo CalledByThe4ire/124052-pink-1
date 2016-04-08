@@ -20,7 +20,8 @@
 
   &__title {
     position: relative;
-    padding: 20px;
+    padding-top: 16px;
+    padding-bottom: 21px;
     border: 2px solid transparent;
     border-bottom: none;
     color: #fff;
@@ -87,6 +88,10 @@
     border-top: none;
     background-color: #fff;
     padding: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    padding-right: 10px;
   }
 
   &__option-value {
@@ -131,8 +136,8 @@ tr:nth-child(2) .tariffs__option-name {
   .tariffs {
     margin-right: -($offset_mobile);
     margin-left: -($offset_mobile);
-    padding-top: 90px;
-    padding-bottom: 40px;
+    padding-top: 89px;
+    padding-bottom: 43px;
     &__table {
       width: 100%;
     }
@@ -148,6 +153,7 @@ tr:nth-child(2) .tariffs__option-name {
         display: inline-block;
         width: 80%;
         padding-right: 10px;
+        text-transform: uppercase;
       }
       svg {
         right: 15px;
@@ -164,6 +170,11 @@ tr:nth-child(2) .tariffs__option-name {
   .tariffs {
     padding-top: 85px;
     padding-bottom: 70px;
+
+    &__title {
+      padding-bottom: 0;
+    }
+
     &__name {
       font-size: 16px;
     }
