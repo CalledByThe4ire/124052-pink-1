@@ -3,9 +3,10 @@
   flex-direction: column;
   min-height: 300px;
   width: $w_block;
-  margin-bottom: 21px;
+  margin-bottom: 20px;
   padding-right: $gutter / 2;
   padding-left: $gutter / 2;
+  flex-shrink: 1;
 
   &__img-wrap {
     display: block;
@@ -189,7 +190,7 @@
 
     &__content-wrap {
       min-height: 150px;
-      padding-top: 23px;
+      padding-top: 24px;
       padding-bottom: 22px;
       padding-right: 27px;
       padding-left: 28px;
@@ -197,13 +198,13 @@
 
     &__text {
       flex-grow: 1;
+      margin-top: -1px;
       margin-bottom: 12px;
     }
 
     &__footer {
       padding-left: 0;
     }
-
 
     &__like-btn {
       left: auto;
@@ -253,7 +254,7 @@
 
 @media #{$tablet} {
   .post {
-    margin-bottom: 22px;
+    margin-bottom: 20px;
     &__img-wrap {
       height: 300px;
     }
