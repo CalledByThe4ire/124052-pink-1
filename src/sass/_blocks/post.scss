@@ -41,6 +41,7 @@
 
   &__time {
     font-size: $fz_xs;
+    line-height: (24 / 12);
     font-weight: $fw_light;
     text-transform: uppercase;
   }
@@ -98,6 +99,7 @@
 
   &__like-text {
     font-size: $fz_xs;
+    line-height: (24 / 12);
     color: $c_bright;
     text-transform: uppercase;
   }
