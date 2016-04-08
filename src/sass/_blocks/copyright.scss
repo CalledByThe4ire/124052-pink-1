@@ -1,9 +1,10 @@
 .copyright {
   display: flex;
-  margin-top: 10px;
+  align-items: center;
 
   &__text {
     font-size: $fz_base;
+    line-height: (18 / 14);
     margin-right: 15px;
   }
 
@@ -34,6 +35,7 @@
   .copyright {
     &__text {
       font-size: $fz_m;
+      line-height: (18 / 18);
     }
   }
 }
