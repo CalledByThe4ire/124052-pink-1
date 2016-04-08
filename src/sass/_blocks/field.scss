@@ -17,7 +17,7 @@
   &__input {
     @include typo-form-text;
     margin: 0;
-    line-height: 1;
+    padding: 0;
     display: block;
     width: 100%;
     height: 63px;

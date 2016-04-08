@@ -212,7 +212,6 @@
 
     &--top {
       width: 100%;
-      margin-bottom: 50px;
     }
 
     &--top &__content-wrap {
@@ -252,14 +251,14 @@
 
 @media #{$tablet} {
   .post {
-    margin-bottom: 20px;
+    margin-bottom: 22px;
     &__img-wrap {
       height: 300px;
     }
 
     &--top {
       margin-top: 5px;
-      margin-bottom: 50px;
+      margin-bottom: 52px;
     }
 
     &--top &__content-wrap {
