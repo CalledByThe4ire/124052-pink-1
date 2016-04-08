@@ -10,6 +10,7 @@
 
   &__label {
     @include typo-form-text;
+    margin: 0;
     display: block;
     padding-left: 69px;
     cursor: pointer;

@@ -10,6 +10,7 @@
 
   &__label {
     @include typo-form-text;
+    margin: 0;
     display: block;
     padding-left: 69px;
     cursor: pointer;
@@ -30,16 +31,13 @@
     transition: $trs_short;
   }
 
-
   &__label:hover::before {
     box-shadow: 0 0 0 2px $bg_base;
   }
 
-
   &__label:active::before {
     box-shadow: 0 0 0 2px $c_bright;
   }
-
 
   &__input:checked + &__label::before {
     background-color: $c_bright;
@@ -59,11 +57,11 @@
     border-color: $bc_grey-dark;
   }
 
-
   &__input:checked:disabled + &__label::before {
     background-color: $c_bright;
   }
 }
+
 
 @media #{$tab-desk} {
   .radio {

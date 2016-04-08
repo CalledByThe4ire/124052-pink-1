@@ -7,6 +7,7 @@
   }
 }
 
+
 @media #{$mobile} {
   .page-footer {
     padding-top: 58px;
@@ -25,13 +26,15 @@
     }
   }
 }
-// @media #{$tab-desk}
+
+
 @media #{$tablet} {
   .page-footer {
     padding-top: 38px;
     padding-bottom: 38px;
   }
 }
+
 
 @media #{$desktop} {
   .page-footer {

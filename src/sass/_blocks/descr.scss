@@ -5,6 +5,7 @@
   padding-bottom: 34px;
   &__text {
     @include typo-text;
+    margin: 0;
   }
   &--inner {
     padding-top: 23px;

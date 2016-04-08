@@ -26,7 +26,7 @@ $bg_hand:
   }
 
   &__title {
-    @include typo-title($c_alt);
+    @include typo-title-inner($c_alt);
     margin: 0;
     padding: 0;
   }
@@ -34,6 +34,11 @@ $bg_hand:
   &__text-wrap {
     @include container;
     background-color: $bg_alt;
+  }
+
+  &--index &__title {
+    @include typo-title($c_alt);
+    margin: 0;
   }
 }
 

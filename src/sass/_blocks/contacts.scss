@@ -46,7 +46,7 @@
 
   &__text {
     font-size: $fz_l;
-    line-height: $lh_m;
+    line-height: (30 / 24);
     color: $c_bright;
     font-weight: $fw_light;
   }

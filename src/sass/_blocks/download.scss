@@ -57,6 +57,10 @@
     padding-left: 0;
     background-color: transparent;
 
+    &__text {
+      line-height: (24 / 18);
+    }
+
     &__inner {
       width: $w_block;
       margin: 0;
@@ -72,6 +76,7 @@
   .download {
     padding-top: 20px;
     padding-bottom: 120px;
+
 
     &__btn {
       margin-bottom: 45px;

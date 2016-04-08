@@ -1,12 +1,11 @@
 .post {
   display: flex;
   flex-direction: column;
-  min-height: 280px;
+  min-height: 300px;
   width: $w_block;
-  margin-bottom: 20px;
+  margin-bottom: 21px;
   padding-right: $gutter / 2;
   padding-left: $gutter / 2;
-  // display: flex;
 
   &__img-wrap {
     display: block;
@@ -17,7 +16,6 @@
 
   &__img {
     display: block;
-    width: $w_block;
   }
 
   &__content-wrap {
@@ -29,7 +27,7 @@
     padding-left: 18px;
     padding-right: 18px;
     background-color: $bg_grey;
-    line-height: $lh_s;
+    line-height: (24 / 14);
   }
 
   &__header {
@@ -150,7 +148,7 @@
       text-transform: uppercase;
       font-weight: $fw_bold;
       font-size: $fz_xs;
-      line-height: $lh_s;
+      line-height: (24 / 12);
     }
   }
 
@@ -254,12 +252,14 @@
 
 @media #{$tablet} {
   .post {
+    margin-bottom: 20px;
     &__img-wrap {
       height: 300px;
     }
 
     &--top {
       margin-top: 5px;
+      margin-bottom: 50px;
     }
 
     &--top &__content-wrap {

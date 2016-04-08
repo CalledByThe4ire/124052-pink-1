@@ -21,6 +21,7 @@
   &__title {
     @include typo-label;
     @include text-no-overflow;
+    margin: 0;
     display: block;
     padding: 0 20px;
     text-align: center;
@@ -35,7 +36,7 @@
     padding-left: 18px;
     padding-right: 18px;
     font-size: $fz_m;
-    line-height: $lh_m;
+    line-height: (30 / 18);
     color: $c_base;
     border: 2px solid $bc_grey-dark;
     border-radius: $br_s;
@@ -61,13 +62,13 @@
 
   &__disclaimer {
     font-size: $fz_base;
-    line-height: $lh_m;
+    line-height: (30 / 14);
     text-transform: uppercase;
   }
 
   &__asterisk {
     color: $c_bright;
-    line-height: $lh_m;
+    line-height: (30 / 14);
   }
 }
 
@@ -128,7 +129,7 @@
     }
 
     &__title {
-      line-height: $lh_xs;
+      line-height: (18 / 14);
       margin-bottom: 40px;
     }
 

@@ -15,6 +15,23 @@
   }
 }
 
+@mixin typo-title-inner($color: $c_base) {
+  font-size: $fz_l;
+  line-height: (30 / 24);
+  font-weight: $fw_light;
+  color: $color;
+
+  @media #{$tablet} {
+    font-size: $fz_xxxl;
+    line-height: (60 / 50);
+  }
+
+  @media #{$desktop} {
+    font-size: $fz_xxxl;
+    line-height: (60 / 50);
+  }
+}
+
 
 @mixin typo-link {
   color: $c_bright;
@@ -47,19 +64,16 @@
 
 
 @mixin typo-text {
-  margin: 0;
-  padding: 0;
   font-size: $fz_base;
-  line-height: $lh_m;
+  line-height: (30 / 14);
 
   @media #{$tab-desk} {
     font-size: $fz_m;
+    line-height: (30 / 18);
   }
 }
 
 @mixin typo-small {
-  margin: 0;
-  padding: 0;
   font-size: $fz_s;
 
   @media #{$tablet} {
@@ -72,22 +86,21 @@
 }
 
 @mixin typo-label {
-  margin: 0;
   font-size: $fz_base;
-  line-height: $lh_m;
+  line-height: (30 / 14);
   color: $c_bright;
   text-transform: uppercase;
 }
 
 @mixin typo-form-text {
   font-size: $fz_m;
-  line-height: $lh_m;
+  line-height: (30 / 18);
 }
 
 body {
   font-family: "Open Sans", Arial, sans-serif;
   font-size: $fz_base;
-  line-height: $lh_s;
+  line-height: (24 / 14);
   color: $c_base;
 }
 

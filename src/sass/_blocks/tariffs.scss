@@ -1,15 +1,10 @@
 .tariffs {
-  line-height: 30px;
 
   &__table {
     table-layout: fixed;
     border-collapse: collapse;
     border-bottom: 2px solid #ccc;
   }
-
-  // td {
-  //   background-color: #fff;
-  // }
 
   /*
   ████████ ██ ████████ ██      ███████
@@ -33,6 +28,7 @@
     border: 2px solid #f2f2f2;
     color: #fff;
     background-color: $bg_base;
+    line-height: (30 / 14);
 
     &--hit {
       background-image: inline("inline/icon-hit.png");
@@ -43,6 +39,7 @@
   &__name {
     display: block;
     font-size: $fz_m;
+    line-height: (30 / 18);
     text-transform: uppercase;
     font-weight: $fw_bold;
   }
@@ -50,6 +47,7 @@
   &__price {
     display: block;
     font-size: $fz_l;
+    line-height: (30 / 24);
     font-weight: $fw_light;
   }
 
@@ -61,7 +59,6 @@
  ██████ ███████ ███████ ███████ ███████
 */
 
-
   &__option-value,
   &__option-name {
     padding-top: 14px;
@@ -71,6 +68,7 @@
     vertical-align: middle;
     border: 2px solid #ccc;
     background-color: #fff;
+    line-height: (30 / 14);
   }
 
   &__option-value {
@@ -128,6 +126,7 @@
       &::before {
         content: attr(data-option);
         display: inline-block;
+        vertical-align: middle;
         width: calc(100% - 50px);
         text-transform: uppercase;
       }
@@ -155,10 +154,12 @@
 
     &__name {
       font-size: 16px;
+      line-height: (30 / 16);
     }
 
     &__price {
       font-size: $fz_m;
+      line-height: (30 / 18);
     }
 
     &__option-value,
@@ -167,7 +168,6 @@
       padding-bottom: 8px;
       padding-left: 15px;
       padding-right: 15px;
-
     }
   }
 }
@@ -191,6 +191,7 @@
     padding-bottom: 92px;
     &__option-name {
       font-size: $fz_m;
+      line-height: (30 / 18);
     }
   }
 }

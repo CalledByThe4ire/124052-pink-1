@@ -4,22 +4,25 @@
   margin: 0;
   text-align: center;
   width: (100% / 3);
-  // lh for all elements
-  line-height: 30px;
 
   &__text {
     @include typo-text;
+    margin: 0;
   }
 
   &__author {
+    margin: 0;
     font-style: normal;
     font-weight: bold;
     font-size: $fz_m;
+    line-height: (30 / 18);
   }
 
   &__info {
     @include typo-small;
+    margin: 0;
     display: none;
+    line-height: (30 / 14);
   }
 }
 

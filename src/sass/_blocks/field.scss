@@ -5,6 +5,7 @@
   &__label {
     @include typo-label;
     @include text-no-overflow;
+    margin: 0;
     display: block;
     cursor: pointer;
   }
@@ -15,11 +16,11 @@
 
   &__input {
     @include typo-form-text;
-    line-height: 1.2;
+    margin: 0;
+    line-height: 1;
     display: block;
     width: 100%;
-    padding-top: 19px;
-    padding-bottom: 19px;
+    height: 63px;
     padding-right: 20px;
     padding-left: 20px;
     border: 2px solid $bc_grey-dark;
