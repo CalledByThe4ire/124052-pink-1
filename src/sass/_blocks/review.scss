@@ -90,5 +90,10 @@
       font-size: $fz_l;
       line-height: (42 / 30);
     }
+
+    &__info {
+      font-size: $fz_m;
+      line-height: (30 / 18);
+    }
   }
 }

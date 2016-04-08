@@ -12,6 +12,7 @@
 
   &__link {
     @include typo-link;
+    line-height: (24 / 14);
   }
 }
 
@@ -27,7 +28,7 @@
 
 @media #{$tablet} {
   .research {
-    padding-top: 98px;
+    padding-top: 96px;
     padding-bottom: 95px;
     padding-left: 309px;
     background:
@@ -70,11 +71,12 @@
     &__text {
       font-size: $fz_m;
       line-height: (30 / 18);
-      margin-bottom: 35px;
+      margin-bottom: 32px;
     }
 
     &__link {
       font-size: $fz_m;
+      line-height: (30 / 18);
     }
   }
 }

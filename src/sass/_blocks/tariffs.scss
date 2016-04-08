@@ -61,8 +61,8 @@
 
   &__option-value,
   &__option-name {
-    padding-top: 14px;
-    padding-bottom: 15px;
+    padding-top: 13px;
+    padding-bottom: 14px;
     padding-left: 20px;
     padding-right: 15px;
     vertical-align: middle;
@@ -192,6 +192,13 @@
     &__option-name {
       font-size: $fz_m;
       line-height: (30 / 18);
+      padding-top: 14px;
+      padding-bottom: 15px;
     }
+    &__option-value {
+      padding-top: 14px;
+      padding-bottom: 15px;
+    }
+
   }
 }
