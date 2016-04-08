@@ -114,6 +114,7 @@ $bg_hand:
     &--index &__container {
       background-image: url("../img/intro/iphone-hand-tablet@1x.png");
       background-size: auto 545px;
+      background-position: right bottom;
     }
 
     &--index &__title-wrap {
@@ -161,7 +162,6 @@ $bg_hand:
     }
 
     &--index &__container {
-      background-position: right bottom;
       background-repeat: no-repeat;
     }
   }
@@ -190,6 +190,7 @@ $bg_hand:
 
     &--index &__container {
       background-image: url("../img/intro/iphone-hand-desktop@1x.png");
+      background-position: -200% 100%;
       background-size: auto 645px;
     }
 
