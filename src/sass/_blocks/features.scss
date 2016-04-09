@@ -76,7 +76,8 @@
 
 @media #{$desktop} {
   .features {
-    margin-top: 70px;
+    outline: 1px solid red;
+    margin-top: 68px;
     padding-top: 0;
     padding-bottom: 15px;
     display: flex;
