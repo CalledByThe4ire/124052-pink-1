@@ -72,16 +72,16 @@
 
 @media #{$tablet} {
   .contacts {
-    padding-top: 35px;
-    padding-bottom: 20px;
+    padding-top: 37px;
+    padding-bottom: 24px;
 
     &__header {
-      margin-bottom: 34px;
+      margin-bottom: 33px;
     }
 
     &__item {
       @include col-fluid(6);
-      margin-bottom: 45px;
+      margin-bottom: 44px;
       margin-left: auto;
       margin-right: auto;
       padding: 0;
@@ -92,7 +92,11 @@
     }
 
     &__title {
-      margin-bottom: 5px;
+      margin-bottom: 6px;
+    }
+
+    &__text {
+      line-height: 1.1;
     }
   }
 }
