@@ -8,6 +8,5 @@ Thumbs.db
 *.ai
 css/*.css
 build/
-tmp/
 svg-sprite.scss
 .jsbeautifyrc
