@@ -71,7 +71,7 @@
 
 @media #{$desktop} {
   .review {
-    padding-top: 110px;
+    padding-top: 112px;
     padding-bottom: 0;
     padding-left: 90px;
     padding-right: 90px;
@@ -83,12 +83,13 @@
       no-repeat;
 
     &__text {
-      margin-bottom: 35px;
+      margin-bottom: 34px;
     }
 
     &__author {
       font-size: $fz_l;
       line-height: (42 / 30);
+      margin-bottom: 3px;
     }
 
     // &__info {
