@@ -54,12 +54,12 @@
   .research {
     margin-bottom: 45px;
     padding-top: 111px;
-    padding-bottom: 112px;
+    padding-bottom: 114px;
     padding-left: 365px;
     background:
       $bg_grey
       inline("inline/icon-timer.svg")
-      left 0 top 18% /
+      left 0 top 21% /
       300px auto
       no-repeat;
 
@@ -71,7 +71,7 @@
     &__text {
       font-size: $fz_m;
       line-height: (30 / 18);
-      margin-bottom: 32px;
+      margin-bottom: 30px;
     }
 
     &__link {
