@@ -251,6 +251,10 @@
       text-align: right;
       padding-right: 30px;
     }
+
+    &--top &__like-btn {
+      right: -2px;
+    }
   }
 }
 

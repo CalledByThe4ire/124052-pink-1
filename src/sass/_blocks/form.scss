@@ -231,7 +231,8 @@
 
       &--name {
         padding: 0;
-        padding-bottom: 66px;
+        padding-top: 1px;
+        padding-bottom: 65px;
       }
 
       &--os {
@@ -265,6 +266,9 @@
     &__item {
       &--name {
         margin-bottom: 52px;
+        &:last-child {
+          padding-top: 1px;
+        }
       }
 
       &--os {
@@ -317,8 +321,8 @@
 
       &--os {
         width: 433px;
-        padding-top: 55px;
-        padding-bottom: 52px;
+        padding-top: 54px;
+        padding-bottom: 55px;
         margin-bottom: 65px;
         padding-left: 73px;
       }
@@ -364,10 +368,13 @@
     &__item {
       &--name {
         margin-bottom: 52px;
+        &:last-child {
+          padding-top: 1px;
+        }
       }
 
       &--os {
-        margin-bottom: 35px;
+        margin-bottom: 34px;
       }
 
       &--contact {

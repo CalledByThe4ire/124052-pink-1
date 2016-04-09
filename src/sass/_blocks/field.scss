@@ -17,12 +17,13 @@
   &__input {
     @include typo-form-text;
     margin: 0;
-    padding: 0;
+    padding-top: 0;
+    padding-bottom: 1px;
+    padding-right: 20px;
+    padding-left: 20px;
     display: block;
     width: 100%;
     height: 63px;
-    padding-right: 20px;
-    padding-left: 20px;
     border: 2px solid $bc_grey-dark;
     border-radius: $br_s;
     transition: $trs_short;
@@ -51,8 +52,31 @@
       padding-right: 20px;
       padding-left: 22px;
     }
+  }
+}
+
+@media #{$tablet} {
+  .field {
     &--text &__input {
-      padding-bottom: 1px;
+      padding-bottom: 2px;
+    }
+
+    &--phone &__input,
+    &--email &__input {
+      padding-bottom: 3px;
+    }
+  }
+}
+
+@media #{$desktop} {
+  .field {
+    &--text &__input {
+      padding-bottom: 3px;
+    }
+
+    &--phone &__input,
+    &--email &__input {
+      padding-bottom: 2px;
     }
   }
 }
@@ -146,23 +170,6 @@
       &::after {
         background-image: inline("inline/icon-mail.svg");
       }
-    }
-  }
-}
-
-
-@media #{$tablet} {
-  .field {
-    &--text &__input {
-      padding-bottom: 2px;
-    }
-  }
-}
-
-@media #{$desktop} {
-  .field {
-    &--text &__input {
-      padding-bottom: 3px;
     }
   }
 }
