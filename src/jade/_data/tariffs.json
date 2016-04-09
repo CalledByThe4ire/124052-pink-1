@@ -17,16 +17,16 @@
       "isValue": true
     }, {
       "tariffName": "Стандарт",
-      "isValue": false
+      "isValue": true
     }, {
       "tariffName": "Анлим",
-      "isValue": false
+      "isValue": true
     }]
   }, {
     "optionName": "Смайлики",
     "optionValues": [{
       "tariffName": "База",
-      "isValue": true
+      "isValue": false
     }, {
       "tariffName": "Стандарт",
       "isValue": true
@@ -38,10 +38,10 @@
     "optionName": "Комментарии",
     "optionValues": [{
       "tariffName": "База",
-      "isValue": true
+      "isValue": false
     }, {
       "tariffName": "Стандарт",
-      "isValue": true
+      "isValue": false
     }, {
       "tariffName": "Анлим",
       "isValue": true

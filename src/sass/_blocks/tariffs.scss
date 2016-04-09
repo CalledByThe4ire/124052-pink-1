@@ -33,6 +33,7 @@
     &--hit {
       background-image: inline("inline/icon-hit.png");
       background-repeat: no-repeat;
+      background-position: left -3px top -8px;
     }
   }
 
@@ -189,7 +190,21 @@
 @media #{$desktop} {
   .tariffs {
     padding-top: 148px;
-    padding-bottom: 92px;
+    padding-bottom: 95px;
+
+    &__title {
+      padding-top: 16px;
+      padding-bottom: 18px;
+
+      &--hit {
+        background-position: left 0 top 0;
+      }
+    }
+
+    &__name {
+      margin-bottom: 2px;
+    }
+
     &__option-name {
       font-size: $fz_m;
       line-height: (30 / 18);
