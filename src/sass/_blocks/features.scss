@@ -1,7 +1,7 @@
 .features {
   position: relative;
-  margin-top: 22px;
-  padding-top: 84px;
+  margin-top: 20px;
+  padding-top: 85px;
   overflow: hidden;
 
   &__item {
@@ -44,7 +44,7 @@
 
     &__item:last-child &__img {
       position: relative;
-      bottom: -41px;
+      bottom: -40px;
       display: block;
       z-index: 1;
     }
