@@ -75,6 +75,7 @@
 
 @mixin typo-small {
   font-size: $fz_s;
+  line-height: 1.5;
 
   @media #{$tablet} {
     font-size: $fz_s

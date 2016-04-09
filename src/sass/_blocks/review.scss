@@ -22,7 +22,6 @@
     @include typo-small;
     margin: 0;
     display: none;
-    line-height: (30 / 14);
   }
 }
 
@@ -55,12 +54,13 @@
     padding-top: 30px;
 
     &__text {
-      margin-bottom: 34px;
+      margin-bottom: 35px;
     }
 
     &__author {
       font-size: 20px;
       line-height: (30 / 20);
+      margin-bottom: 6px;
     }
 
     &__info {
@@ -91,9 +91,9 @@
       line-height: (42 / 30);
     }
 
-    &__info {
-      font-size: $fz_m;
-      line-height: (30 / 18);
-    }
+    // &__info {
+    //   font-size: $fz_m;
+    //   line-height: (30 / 18);
+    // }
   }
 }
