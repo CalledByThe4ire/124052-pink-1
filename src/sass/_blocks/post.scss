@@ -208,7 +208,7 @@
 
     &__like-btn {
       left: auto;
-      right: 3px;
+      right: 1px;
     }
 
     // tab-desk mq for img--top
@@ -221,7 +221,7 @@
       flex-direction: row;
       flex-wrap: wrap;
       min-height: auto;
-      padding-bottom: 25px;
+      padding-bottom: 24px;
     }
 
     &--top &__header {
@@ -261,7 +261,7 @@
 
     &--top {
       margin-top: 5px;
-      margin-bottom: 52px;
+      margin-bottom: 50px;
     }
 
     &--top &__content-wrap {
@@ -287,7 +287,7 @@
 
 @media #{$desktop} {
   .post {
-    margin-bottom: 55px;
+    margin-bottom: 54px;
 
     &__img-wrap {
       height: 400px;
