@@ -47,6 +47,10 @@
 
 @media #{$mobile} {
   .field {
+    &__input {
+      padding-bottom: 1px;
+    }
+
     &__label {
       padding-bottom: 5px;
       padding-right: 20px;
