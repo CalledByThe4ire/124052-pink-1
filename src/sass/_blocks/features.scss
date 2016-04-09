@@ -76,8 +76,7 @@
 
 @media #{$desktop} {
   .features {
-    outline: 1px solid red;
-    margin-top: 68px;
+    margin-top: 65px;
     padding-top: 0;
     padding-bottom: 15px;
     display: flex;
@@ -88,17 +87,19 @@
     }
 
     &__img {
-      margin-bottom: 45px;
+      margin-bottom: 49px;
     }
 
     &__title {
       font-size: $fz_xl;
       margin-bottom: 24px;
+      padding: 0 30px;
     }
 
     &__text {
       font-size: $fz_m;
       line-height: (30 / 18);
+      padding: 0 30px;
     }
   }
 }
