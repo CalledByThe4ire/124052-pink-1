@@ -161,6 +161,10 @@
       right: 35px;
     }
 
+    &__tool--fill &__tool-icon {
+      margin-top: 2px;
+    }
+
     &__btn-wrap {
       margin-top: 63px;
     }
@@ -300,6 +304,10 @@
       height: 17px;
     }
 
+    &__tool--fill &__tool-icon {
+      top: 14px;
+    }
+
     &__scale-wrap {
       padding-left: 55px;
       padding-right: 18px;
@@ -345,6 +353,10 @@
 
     &__tool-icon-wrap {
       left: -3px;
+    }
+
+    &__tool--fill &__tool-icon {
+      top: 27px;
     }
 
     &__scale-wrap {

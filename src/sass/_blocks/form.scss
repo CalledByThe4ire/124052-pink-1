@@ -41,7 +41,7 @@
     border: 2px solid $bc_grey-dark;
     border-radius: $br_s;
     outline: none;
-    resize: none;
+    resize: vertical;
   }
 
   &__textarea::placeholder {
@@ -182,6 +182,10 @@
         margin-bottom: 42px;
       }
     }
+
+    &__hidden {
+      @include text-hide;
+    }
   }
 }
 
@@ -286,6 +290,10 @@
 
     &__footer {
       margin-bottom: 52px;
+    }
+
+    &__hidden {
+      @include text-hide;
     }
   }
 }
