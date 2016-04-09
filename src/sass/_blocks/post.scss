@@ -24,7 +24,7 @@
     flex-grow: 1;
     flex-direction: column;
     padding-top: 18px;
-    padding-bottom: 20px;
+    padding-bottom: 21px;
     padding-left: 18px;
     padding-right: 18px;
     background-color: $bg_grey;
@@ -63,7 +63,7 @@
     @include btn-clear;
     @include text-hide;
     position: absolute;
-    left: 1px;
+    left: -3px;
     top: 50%;
     width: 20px;
     height: 20px;
@@ -169,8 +169,19 @@
 */
 
 @media #{$mobile} {
-  .post--top {
-    margin-top: 15px;
+  .post {
+    &--top {
+      margin-top: 15px;
+    }
+
+    &__author,
+    &__time {
+      line-height: 1.5;
+    }
+    //
+    // &__content-wrap {
+    //
+    // }
   }
 }
 
