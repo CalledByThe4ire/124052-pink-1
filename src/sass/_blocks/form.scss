@@ -311,7 +311,7 @@
         width: 50%;
         margin-bottom: 15px;
         padding-left: 0;
-        padding-top: 8px;
+        padding-top: 7px;
         padding-right: 35px;
       }
 
@@ -333,8 +333,8 @@
       &--achieve {
         display: flex;
         margin-bottom: 65px;
-        padding-top: 52px;
-        padding-bottom: 12px;
+        padding-top: 51px;
+        padding-bottom: 13px;
         padding-right: 0;
       }
 
@@ -348,6 +348,10 @@
     &__textarea {
       min-height: 128px;
       padding-bottom: 10px;
+    }
+
+    &__footer {
+      margin-bottom: 3px;
     }
 
     &__items {

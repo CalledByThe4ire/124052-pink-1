@@ -23,7 +23,6 @@
     height: 63px;
     padding-right: 20px;
     padding-left: 20px;
-    padding-bottom: 2px;
     border: 2px solid $bc_grey-dark;
     border-radius: $br_s;
     transition: $trs_short;
@@ -47,14 +46,13 @@
 
 @media #{$mobile} {
   .field {
-    &__input {
-      padding-bottom: 1px;
-    }
-
     &__label {
       padding-bottom: 5px;
       padding-right: 20px;
       padding-left: 22px;
+    }
+    &--text &__input {
+      padding-bottom: 1px;
     }
   }
 }
@@ -148,6 +146,23 @@
       &::after {
         background-image: inline("inline/icon-mail.svg");
       }
+    }
+  }
+}
+
+
+@media #{$tablet} {
+  .field {
+    &--text &__input {
+      padding-bottom: 2px;
+    }
+  }
+}
+
+@media #{$desktop} {
+  .field {
+    &--text &__input {
+      padding-bottom: 3px;
     }
   }
 }
