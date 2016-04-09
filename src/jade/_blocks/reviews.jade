@@ -42,3 +42,23 @@ mixin style-reviews
     .slider__input[id="review-3"]:checked ~ .slider__slides {
      transform: translate(-66.6666%);
     }
+
+    @media only screen and (min-width:1020px) {
+      .slider__input[id=review-1]:checked~.slider__controls .slider__control[for=review-2]:before,
+      .slider__input[id=review-2]:checked~.slider__controls .slider__control[for=review-3]:before,
+      .slider__input[id=review-3]:checked~.slider__controls .slider__control[for=review-1]:before {
+        right: 5px;
+        border-bottom: none;
+        border-left: none;
+        display: block
+      }
+
+      .slider__input[id=review-1]:checked~.slider__controls .slider__control[for=review-3]:before,
+      .slider__input[id=review-2]:checked~.slider__controls .slider__control[for=review-1]:before,
+      .slider__input[id=review-3]:checked~.slider__controls .slider__control[for=review-2]:before {
+        left: 5px;
+        border-top: none;
+        border-right: none;
+        display: block
+      }
+    }

@@ -28,7 +28,7 @@
     background-clip: content-box;
     cursor: pointer;
     border-radius: 50%;
-    transition: $trs_base;
+    // transition: $trs_base;
 
     &:hover {
       background-color: rgba($c_base, 0.6);
@@ -39,57 +39,49 @@
     }
   }
 
-  &__arrows {
-    position: absolute;
-    width: 100%;
-    top: 48%;
-    display: none;
-  }
-
-  &__arrow {
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    border: 2px solid rgba($c_base, 0.3);
-    transform: rotate(45deg);
-    cursor: pointer;
-    z-index: $z_base;
-    transition: $trs_base;
-    &:hover {
-      border-color: rgba($c_base, 0.6);
-    }
-    &:active {
-      border-color: rgba($c_base, 0.1);
-    }
-
-    &--left {
-      left: 5px;
-      border-top-color: transparent;
-      border-right-color: transparent;
-      &:hover {
-        border-top-color: transparent;
-        border-right-color: transparent;
-      }
-      &:active {
-        border-top-color: transparent;
-        border-right-color: transparent;
-      }
-    }
-
-    &--right {
-      right: 5px;
-      border-bottom-color: transparent;
-      border-left-color: transparent;
-      &:hover {
-        border-bottom-color: transparent;
-        border-left-color: transparent;
-      }
-      &:active {
-        border-bottom-color: transparent;
-        border-left-color: transparent;
-      }
-    }
-  }
+  // /* ============================================>>>>>
+  // = Styles for js-arrows =
+  // ===============================================>>>>> */
+  //
+  // &__arrows {
+  //   position: absolute;
+  //   width: 100%;
+  //   top: 48%;
+  //   display: none;
+  // }
+  //
+  // &__arrow {
+  //   position: absolute;
+  //   width: 30px;
+  //   height: 30px;
+  //   border: 2px solid rgba($c_base, 0.3);
+  //   transform: rotate(45deg);
+  //   cursor: pointer;
+  //   z-index: $z_base;
+  //   transition: $trs_base;
+  //   &:hover {
+  //     border-color: rgba($c_base, 0.6);
+  //   }
+  //   &:active {
+  //     border-color: rgba($c_base, 0.1);
+  //   }
+  //
+  //   &--left {
+  //     left: 5px;
+  //     border-top-color: transparent;
+  //     border-right-color: transparent;
+  //   }
+  //
+  //   &--right {
+  //     right: 5px;
+  //     border-bottom-color: transparent;
+  //     border-left-color: transparent;
+  //   }
+  // }
+  //
+  // /* --------------------------------------------<<<<<
+  // = End of Styles for js-arrows =
+  // ===============================================<<<<< */
 
   &__slides {
     display: flex;
@@ -145,18 +137,82 @@
 
 @media #{$desktop} {
   .slider {
+    position: relative;
 
     &--reviews {
       // no controls - no padding
       padding: 0;
     }
 
-    &--reviews &__arrows {
-      display: block;
+    // &--reviews &__arrows {
+    //   display: none;
+    // }
+
+    // turning off contols and on css-arrows
+
+    &--reviews &__controls,
+    &--reviews &__control {
+      position: static;
+      visibility: hidden;
+      width: 0;
+      height: 0;
+      border: none;
+      transform: none;
+      pointer-events: none;
+      background-color: transparent;
     }
 
-    &--reviews &__controls {
+    &__control::before {
+      visibility: visible;
+      pointer-events: all;
+    }
+
+    /* ============================================>>>>>
+    = CSS Arrows =
+    ===============================================>>>>> */
+
+    &__control::before {
+      content: "";
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      transform: rotate(45deg);
+      top: 48%;
+      border: 2px solid rgba($c_base, 0.3);
+      cursor: pointer;
+      z-index: $z_base;
       display: none;
     }
+
+    &__control:hover::before {
+      border-color: rgba($c_base, 0.6);
+    }
+    &__control:active::before {
+      border-color: rgba($c_base, 0.1);
+    }
+
+    // is removed to reviews.jade
+
+    // &__input[id="review-1"]:checked ~ &__controls &__control[for="review-2"]::before,
+    // &__input[id="review-2"]:checked ~ &__controls &__control[for="review-3"]::before,
+    // &__input[id="review-3"]:checked ~ &__controls &__control[for="review-1"]::before {
+    //   right: 5px;
+    //   border-bottom: none;
+    //   border-left: none;
+    //   display: block;
+    // }
+    //
+    // &__input[id="review-1"]:checked ~ &__controls &__control[for="review-3"]::before,
+    // &__input[id="review-2"]:checked ~ &__controls &__control[for="review-1"]::before,
+    // &__input[id="review-3"]:checked ~ &__controls &__control[for="review-2"]::before {
+    //   left: 5px;
+    //   border-top: none;
+    //   border-right: none;
+    //   display: block;
+    // }
+
+    /* --------------------------------------------<<<<<
+    = End of CSS Arrows =
+    ===============================================<<<<< */
   }
 }
