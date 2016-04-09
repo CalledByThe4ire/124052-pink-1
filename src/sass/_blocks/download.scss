@@ -75,18 +75,17 @@
 @media #{$desktop} {
   .download {
     padding-top: 20px;
-    padding-bottom: 120px;
+    padding-bottom: 122px;
 
 
     &__btn {
-      margin-bottom: 45px;
-      padding-bottom: 15px;
+      margin-bottom: 48px;
       font-size: $fz_btn;
       line-height: 1;
     }
 
     &__links {
-      margin-bottom: 40px;
+      margin-bottom: 39px;
     }
   }
 }
