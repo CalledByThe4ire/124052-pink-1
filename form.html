@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   <title>Pink</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
   <header class="page-header">
@@ -18,7 +18,7 @@
   y="0px"
   width="146.3px"
   height="40.375px"
-  preserveAspectRatio=""
+  preserveAspectRatio="none"
   viewBox="0 0 146.3 40.375"
   enable-background="new 0 0 146.3 40.375"
   xml:space="preserve">
@@ -120,38 +120,50 @@
       <form class="form">
         <div class="form__fieldset form__fieldset--name">
           <div class="form__item form__item--name">
-            <div class="fieldpiu">
-              <label for="form-user-name1" class="fieldpiu__label">Имя:
-              </label><input type="text" name="form-user-name" id="form-user-name1" placeholder="Введите ваше имя" class="fieldpiu__input"/>
+            <div class="field field--text">
+              <label for="form-user-name1" class="field__label">Имя:
+              </label>
+              <div class="field__input-wrap"><input type="text" name="form-user-name" id="form-user-name1" placeholder="Введите ваше имя" class="field__input"/>
+              </div>
             </div>
           </div>
           <div class="form__item form__item--name">
-            <div class="fieldpiu">
-              <label for="form-user-name2" class="fieldpiu__label">Фамилия:
-              </label><input type="text" name="form-user-name" id="form-user-name2" placeholder="Укажите фамилию" class="fieldpiu__input"/>
+            <div class="field field--text">
+              <label for="form-user-name2" class="field__label">Фамилия:
+              </label>
+              <div class="field__input-wrap"><input type="text" name="form-user-name" id="form-user-name2" placeholder="Укажите фамилию" class="field__input"/>
+              </div>
             </div>
           </div>
           <div class="form__item form__item--name">
-            <div class="fieldpiu">
-              <label for="form-user-name3" class="fieldpiu__label">Отчество:
-              </label><input type="text" name="form-user-name" id="form-user-name3" placeholder="Ну и отчество тоже" class="fieldpiu__input"/>
+            <div class="field field--text">
+              <label for="form-user-name3" class="field__label">Отчество:
+              </label>
+              <div class="field__input-wrap"><input type="text" name="form-user-name" id="form-user-name3" placeholder="Ну и отчество тоже" class="field__input"/>
+              </div>
             </div>
           </div>
         </div>
         <div class="form__fieldset form__fieldset--os">
           <p class="form__title">С&nbsp;каким приложением путешествовали?
           </p>
-          <div class="form__item form__item--os"><input type="radio" name="form-os" id="form-os1" checked="checked" class="form__radio"/>
-            <label for="form-os1" class="form__label">Pink для iOS
-            </label>
+          <div class="form__item form__item--os">
+            <div class="radio"><input type="radio" name="form-os" id="form-os1" checked="checked" class="radio__input"/>
+              <label for="form-os1" class="radio__label">Pink для iOS
+              </label>
+            </div>
           </div>
-          <div class="form__item form__item--os"><input type="radio" name="form-os" id="form-os2" class="form__radio"/>
-            <label for="form-os2" class="form__label">Pink на Android
-            </label>
+          <div class="form__item form__item--os">
+            <div class="radio"><input type="radio" name="form-os" id="form-os2" class="radio__input"/>
+              <label for="form-os2" class="radio__label">Pink на Android
+              </label>
+            </div>
           </div>
-          <div class="form__item form__item--os"><input type="radio" name="form-os" id="form-os3" class="form__radio"/>
-            <label for="form-os3" class="form__label">Windows Phone
-            </label>
+          <div class="form__item form__item--os">
+            <div class="radio"><input type="radio" name="form-os" id="form-os3" class="radio__input"/>
+              <label for="form-os3" class="radio__label">Windows Phone
+              </label>
+            </div>
           </div>
         </div>
         <div class="form__fieldset form__fieldset--contact">
@@ -161,13 +173,17 @@
             <div class="form__item form__item--contact">
               <div class="field field--phone">
                 <label for="form-user-contact1" class="field__label">Номерок телефончика:
-                </label><input type="phone" name="form-user-contact" id="form-user-contact1" placeholder="Номер, пожалуйста" class="field__input"/>
+                </label>
+                <div class="field__input-wrap"><input type="phone" name="form-user-contact" id="form-user-contact1" placeholder="Номер, пожалуйста" class="field__input"/>
+                </div>
               </div>
             </div>
             <div class="form__item form__item--contact">
               <div class="field field--email">
                 <label for="form-user-contact2" class="field__label">Адресок почты:
-                </label><input type="email" name="form-user-contact" id="form-user-contact2" placeholder="E-mail, пожалуйста" class="field__input"/>
+                </label>
+                <div class="field__input-wrap"><input type="email" name="form-user-contact" id="form-user-contact2" placeholder="E-mail, пожалуйста" class="field__input"/>
+                </div>
               </div>
             </div>
           </div>
@@ -176,29 +192,41 @@
           <p class="form__title">Ваши безбашенные достижения в&nbsp;путешествии
           </p>
           <div class="form__items">
-            <div class="form__item form__item--achieve"><input type="checkbox" name="form-achievement" id="form-achievement1" checked="checked" class="form__checkbox"/>
-              <label for="form-achievement1" class="form__label">Сделал селфи с&nbsp;акулой
-              </label>
+            <div class="form__item form__item--achieve">
+              <div class="checkbox"><input type="checkbox" name="form-achievement" id="form-achievement1" checked="checked" class="checkbox__input"/>
+                <label for="form-achievement1" class="checkbox__label">Сделал селфи с&nbsp;акулой
+                </label>
+              </div>
             </div>
-            <div class="form__item form__item--achieve"><input type="checkbox" name="form-achievement" id="form-achievement2" class="form__checkbox"/>
-              <label for="form-achievement2" class="form__label">Видел Чака Норриса
-              </label>
+            <div class="form__item form__item--achieve">
+              <div class="checkbox"><input type="checkbox" name="form-achievement" id="form-achievement2" class="checkbox__input"/>
+                <label for="form-achievement2" class="checkbox__label">Видел Чака Норриса
+                </label>
+              </div>
             </div>
-            <div class="form__item form__item--achieve"><input type="checkbox" name="form-achievement" id="form-achievement3" class="form__checkbox"/>
-              <label for="form-achievement3" class="form__label">Удержал башню
-              </label>
+            <div class="form__item form__item--achieve">
+              <div class="checkbox"><input type="checkbox" name="form-achievement" id="form-achievement3" class="checkbox__input"/>
+                <label for="form-achievement3" class="checkbox__label">Удержал башню
+                </label>
+              </div>
             </div>
-            <div class="form__item form__item--achieve"><input type="checkbox" name="form-achievement" id="form-achievement4" class="form__checkbox"/>
-              <label for="form-achievement4" class="form__label">Обгорел на&nbsp;пляже
-              </label>
+            <div class="form__item form__item--achieve">
+              <div class="checkbox"><input type="checkbox" name="form-achievement" id="form-achievement4" class="checkbox__input"/>
+                <label for="form-achievement4" class="checkbox__label">Обгорел на&nbsp;пляже
+                </label>
+              </div>
             </div>
-            <div class="form__item form__item--achieve"><input type="checkbox" name="form-achievement" id="form-achievement5" class="form__checkbox"/>
-              <label for="form-achievement5" class="form__label">Накупил сувениров
-              </label>
+            <div class="form__item form__item--achieve">
+              <div class="checkbox"><input type="checkbox" name="form-achievement" id="form-achievement5" class="checkbox__input"/>
+                <label for="form-achievement5" class="checkbox__label">Накупил сувениров
+                </label>
+              </div>
             </div>
-            <div class="form__item form__item--achieve"><input type="checkbox" name="form-achievement" id="form-achievement6" class="form__checkbox"/>
-              <label for="form-achievement6" class="form__label">Разгромил отель
-              </label>
+            <div class="form__item form__item--achieve">
+              <div class="checkbox"><input type="checkbox" name="form-achievement" id="form-achievement6" class="checkbox__input"/>
+                <label for="form-achievement6" class="checkbox__label">Разгромил отель
+                </label>
+              </div>
             </div>
           </div>
         </div>
@@ -212,20 +240,20 @@
         </div>
       </form>
     </div>
-    <div class="modal">
+    <div class="modal modal--success">
       <div class="modal__title">Ваша заявка отправлена
       </div>
       <div class="modal__text">Спасибо за&nbsp;ваше участие, ваша заявка уже поступила к&nbsp;нам. В&nbsp;ближайшее время мы&nbsp;рассмотрим ее&nbsp;и&nbsp;оповестим вас.
       </div>
-      <div class="modal__inner modal__inner--bg"><a href="#" class="btn btn--modal">Закрыть окно</a>
+      <div class="modal__inner"><a href="#" class="modal__btn btn btn--square btn--c-green">Закрыть окно</a>
       </div>
     </div>
-    <div class="modal modal--fail">
+    <div class="modal">
       <div class="modal__title">Что-то пошло не&nbsp;так!
       </div>
       <div class="modal__text">Проверьте поля, выделенные красным, скорее всего вы&nbsp;забыли их&nbsp;заполнить
       </div>
-      <div class="modal__inner"><a href="#" class="btn btn--modal">Ok</a>
+      <div class="modal__inner"><a href="#" class="modal__btn btn btn--square btn--c-green">Ok</a>
       </div>
     </div>
   </main>
@@ -317,12 +345,12 @@
           </div>
         </div>
         <div class="page-footer__col"> 
-          <div class="socials"><a href="#" title="Pink на Facebook" class="socials__item socials__item--fb">Facebook
-            <svg class="socials__icon socials__icon--fb svg-icon-facebook">
-              <use xlink:href="img/svg-sprite.svg#icon-facebook"></use>
-            </svg></a><a href="#" title="Pink в Twitter" class="socials__item socials__item--tw">Twitter
+          <div class="socials"><a href="#" title="Pink в Twitter" class="socials__item socials__item--tw">Twitter
             <svg class="socials__icon socials__icon--tw svg-icon-twitter">
               <use xlink:href="img/svg-sprite.svg#icon-twitter"></use>
+            </svg></a><a href="#" title="Pink на Facebook" class="socials__item socials__item--fb">Facebook
+            <svg class="socials__icon socials__icon--fb svg-icon-facebook">
+              <use xlink:href="img/svg-sprite.svg#icon-facebook"></use>
             </svg></a><a href="#" title="Pink на Youtube" class="socials__item socials__item--yt">Youtube
             <svg class="socials__icon socials__icon--yt svg-icon-youtube">
               <use xlink:href="img/svg-sprite.svg#icon-youtube"></use>

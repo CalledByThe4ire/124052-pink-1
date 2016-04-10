@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   <title>Pink</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.min.css">
   <!-- выносим логику слайдеров в html для удобного добавления слайдов-->
   <style>
     .slider--reviews .slider__slides {
@@ -23,6 +23,26 @@
     }
     .slider__input[id="review-3"]:checked ~ .slider__slides {
      transform: translate(-66.6666%);
+    }
+    
+    @media only screen and (min-width:1020px) {
+      .slider__input[id=review-1]:checked~.slider__controls .slider__control[for=review-2]:before,
+      .slider__input[id=review-2]:checked~.slider__controls .slider__control[for=review-3]:before,
+      .slider__input[id=review-3]:checked~.slider__controls .slider__control[for=review-1]:before {
+        right: 5px;
+        border-bottom: none;
+        border-left: none;
+        display: block
+      }
+    
+      .slider__input[id=review-1]:checked~.slider__controls .slider__control[for=review-3]:before,
+      .slider__input[id=review-2]:checked~.slider__controls .slider__control[for=review-1]:before,
+      .slider__input[id=review-3]:checked~.slider__controls .slider__control[for=review-2]:before {
+        left: 5px;
+        border-top: none;
+        border-right: none;
+        display: block
+      }
     }
   </style>
   <style>
@@ -61,7 +81,7 @@
   y="0px"
   width="146.3px"
   height="40.375px"
-  preserveAspectRatio=""
+  preserveAspectRatio="none"
   viewBox="0 0 146.3 40.375"
   enable-background="new 0 0 146.3 40.375"
   xml:space="preserve">
@@ -187,7 +207,7 @@
               <source media="(min-width: 1020px)" srcset="img/features/iphone-screen-desktop-1@1x.png 1x, img/features/iphone-screen-desktop-1@2x.png 2x"/>
               <source media="(min-width: 700px)" srcset="img/features/iphone-screen-tablet-1@1x.png 1x, img/features/iphone-screen-tablet-1@2x.png 2x"/><img src="img/features/iphone-screen-mobile.png" srcset="img/features/iphone-screen-mobile@2x.png 2x" alt="Поднимает настроение" class="features__img" title=""/>
             </picture>
-            <div class="features__descr"> 
+            <div class="features__descr">
               <h3 class="features__title">Поднимает настроение
               </h3>
               <p class="features__text">Приложение позволит вам победить осеннюю хандру и&nbsp;депрессию буквально в&nbsp;несколько кликов!
@@ -199,7 +219,7 @@
               <source media="(min-width: 1020px)" srcset="img/features/iphone-screen-desktop-2@1x.png 1x, img/features/iphone-screen-desktop-2@2x.png 2x"/>
               <source media="(min-width: 700px)" srcset="img/features/iphone-screen-tablet-2@1x.png 1x, img/features/iphone-screen-tablet-2@2x.png 2x"/><img src="img/features/iphone-screen-mobile.png" srcset="img/features/iphone-screen-mobile@2x.png 2x" alt="Меняет мир вокруг" class="features__img" title=""/>
             </picture>
-            <div class="features__descr"> 
+            <div class="features__descr">
               <h3 class="features__title">Меняет мир вокруг
               </h3>
               <p class="features__text">Сделайте снимок и&nbsp;украсьте его смайликом или текстовой подписью, чтобы усилить эффект
@@ -211,7 +231,7 @@
               <source media="(min-width: 1020px)" srcset="img/features/iphone-screen-desktop-3@1x.png 1x, img/features/iphone-screen-desktop-3@2x.png 2x"/>
               <source media="(min-width: 700px)" srcset="img/features/iphone-screen-tablet-3@1x.png 1x, img/features/iphone-screen-tablet-3@2x.png 2x"/><img src="img/features/iphone-screen-mobile.png" srcset="img/features/iphone-screen-mobile@2x.png 2x" alt="Заводит новых друзей" class="features__img" title=""/>
             </picture>
-            <div class="features__descr"> 
+            <div class="features__descr">
               <h3 class="features__title">Заводит новых друзей
               </h3>
               <p class="features__text">Ставьте лайки, комментируете, делитесь фотографиями с&nbsp;друзьями и&nbsp;заводите новых
@@ -285,12 +305,9 @@
               <table class="tariffs__table">
                 <tr>
                   <th class="tariffs__row-name">Услуги / Тарифы</th>
-                  <th class="tariffs__title"><span class="tariffs__name">База</span><span class="tariffs__price">1.99 USD</span>
-                  </th>
-                  <th class="tariffs__title"><span class="tariffs__name">Стандарт</span><span class="tariffs__price">3.99 USD</span><span class="tariffs__icon-hit"></span>
-                  </th>
-                  <th class="tariffs__title"><span class="tariffs__name">Анлим</span><span class="tariffs__price">9.99 USD</span>
-                  </th>
+                  <th class="tariffs__title"><span class="tariffs__name">База</span><span class="tariffs__price">1.99 USD</span></th>
+                  <th class="tariffs__title tariffs__title--hit"><span class="tariffs__name">Стандарт</span><span class="tariffs__price">3.99 USD</span></th>
+                  <th class="tariffs__title"><span class="tariffs__name">Анлим</span><span class="tariffs__price">9.99 USD</span></th>
                 </tr>
                 <tr>
                   <td class="tariffs__option-name">Розовый фильтр</td>
@@ -485,12 +502,12 @@
           </div>
         </div>
         <div class="page-footer__col"> 
-          <div class="socials"><a href="#" title="Pink на Facebook" class="socials__item socials__item--fb">Facebook
-            <svg class="socials__icon socials__icon--fb svg-icon-facebook">
-              <use xlink:href="img/svg-sprite.svg#icon-facebook"></use>
-            </svg></a><a href="#" title="Pink в Twitter" class="socials__item socials__item--tw">Twitter
+          <div class="socials"><a href="#" title="Pink в Twitter" class="socials__item socials__item--tw">Twitter
             <svg class="socials__icon socials__icon--tw svg-icon-twitter">
               <use xlink:href="img/svg-sprite.svg#icon-twitter"></use>
+            </svg></a><a href="#" title="Pink на Facebook" class="socials__item socials__item--fb">Facebook
+            <svg class="socials__icon socials__icon--fb svg-icon-facebook">
+              <use xlink:href="img/svg-sprite.svg#icon-facebook"></use>
             </svg></a><a href="#" title="Pink на Youtube" class="socials__item socials__item--yt">Youtube
             <svg class="socials__icon socials__icon--yt svg-icon-youtube">
               <use xlink:href="img/svg-sprite.svg#icon-youtube"></use>

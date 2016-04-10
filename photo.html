@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   <title>Pink</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
   <header class="page-header">
@@ -18,7 +18,7 @@
   y="0px"
   width="146.3px"
   height="40.375px"
-  preserveAspectRatio=""
+  preserveAspectRatio="none"
   viewBox="0 0 146.3 40.375"
   enable-background="new 0 0 146.3 40.375"
   xml:space="preserve">
@@ -107,180 +107,216 @@
   </header>
   <main class="content">
     <div class="intro">
-      <div class="intro__title-wrap">
-        <h1 class="intro__title">Фотографии пользователей
+      <div class="intro__title-wrap intro__title-wrap--photo">
+        <h1 class="intro__title">Фотографии<br>пользователей
         </h1>
       </div>
-      <div class="box">
-        <div class="intro__text-wrap">
-          <p class="text">Взгляните на&nbsp;фотографии, которые выкладывают наши пользователи! Видите, как не&nbsp;хватает ваших?</p>
-        </div>
+    </div>
+    <div class="container">
+      <div class="descr">
+        <p class="descr__text">Взгляните на&nbsp;фотографии, которые выкладывают пользователи!<span class="descr__new-line"> Видите, как не&nbsp;хватает ваших?</span>
+        </p>
       </div>
     </div>
     <section class="feed">
-      <article class="post post--top"><a href="#" class="post__img-wrap"><img src="https://placebear.com/300/180" alt="Панорама дня" title="Панорама дня" class="post__img"/></a>
-        <div class="post__content-wrap">
-          <header class="post__header">
-            <cite class="post__author">Анна
-            </cite><time datetime="2016-12-20 08:00" class="post__time">(5 минут назад)</time>
-          </header>
-          <p class="post__text">Прыгать или нет? Напишите в коментарии свой совет и смотрите прямую транслацию в перископе, задавайте свои вопросы!
-          </p>
-          <footer class="post__footer">
-            <button type="button" class="post__like-btn">
-              <svg class="post__icon svg-icon-heart">
-                <use xlink:href="img/svg-sprite.svg#icon-heart"></use>
-              </svg>
-            </button><span class="post__likes">Нравится: 215</span>
-          </footer>
+      <article class="post post--top">
+        <div class="post__tag">
+        </div><a href="#" class="post__img-wrap">
+        <picture>
+          <source media="(min-width: 1020px)" srcset="img/content/panorama-desktop.jpg 1x, img/content/panorama-desktop@2x.jpg 2x"/>
+          <source media="(min-width: 700px)" srcset="img/content/panorama-tablet.jpg 1x, img/content/panorama-tablet@2x.jpg 2x"/><img src="img/content/panorama-mobile.jpg" srcset="img/content/panorama-mobile@2x.jpg 2x" alt="Панорама дня" title="Панорама дня" class="post__img"/>
+        </picture></a>
+        <div class="container">
+          <div class="post__content-wrap">
+            <header class="post__header">
+              <cite class="post__author">Анна
+              </cite><time datetime="2016-12-20 08:00" class="post__time">(5 минут назад)</time>
+            </header>
+            <p class="post__text">Прыгать или нет? Напишите в коментарии свой совет и смотрите прямую транслацию в перископе, задавайте свои вопросы!
+            </p>
+            <footer class="post__footer">
+              <button type="button" class="post__like-btn">
+                <svg class="post__like-icon svg-icon-heart">
+                  <use xlink:href="img/svg-sprite.svg#icon-heart"></use>
+                </svg>
+              </button><span class="post__like-text">Нравится: 215</span>
+            </footer>
+          </div>
         </div>
       </article>
       <div class="container">
         <div class="feed__grid">
-          <article class="post"><a href="#" class="post__img-wrap"><img src="https://placebear.com/280/180" alt="" title="" class="post__img" role="presentation"/></a>
-            <header class="post__header">
-              <cite class="post__author">Левон
-              </cite><time datetime="2016-12-20 08:00" class="post__time">(5 часов назад)</time>
-            </header>
-            <p class="post__text">Вчера он на луну летал, сегодня в руки к нам попал.
-            </p>
-            <footer class="post__footer">
-              <button type="button" class="post__like-btn">
-                <svg class="post__icon svg-icon-heart">
-                  <use xlink:href="img/svg-sprite.svg#icon-heart"></use>
-                </svg>
-              </button><span class="post__likes">Нравится: 356</span>
-            </footer>
+          <article class="post"><a href="#" class="post__img-wrap">
+            <picture>
+              <source media="(min-width: 1020px)" srcset="img/content/photo-1-desktop.jpg 1x, img/content/photo-1-desktop@2x.jpg 2x"/>
+              <source media="(min-width: 700px)" srcset="img/content/photo-1-tablet.jpg 1x, img/content/photo-1-tablet@2x.jpg 2x"/><img src="img/content/photo-1-mobile.jpg" srcset="img/content/photo-1-mobile@2x.jpg 2x" alt="" title="" class="post__img" role="presentation"/>
+            </picture></a>
+            <div class="post__content-wrap">
+              <header class="post__header">
+                <cite class="post__author">Левон
+                </cite><time datetime="2016-12-20 08:00" class="post__time">(5 часов назад)</time>
+              </header>
+              <p class="post__text">Вчера он на луну летал, сегодня в руки к нам попал.
+              </p>
+              <footer class="post__footer">
+                <button type="button" class="post__like-btn">
+                  <svg class="post__like-icon svg-icon-heart">
+                    <use xlink:href="img/svg-sprite.svg#icon-heart"></use>
+                  </svg>
+                </button><span class="post__like-text">Нравится: 356</span>
+              </footer>
+            </div>
           </article>
-          <article class="post"><a href="#" class="post__img-wrap"><img src="https://placebear.com/280/180" alt="Фотография пользователя" title="Фотография пользователя" class="post__img"/></a>
-            <header class="post__header">
-              <cite class="post__author">Антон
-              </cite><time datetime="2016-12-20 08:00" class="post__time">(12 часов назад)</time>
-            </header>
-            <p class="post__text">Соседи будут рады!
-            </p>
-            <footer class="post__footer">
-              <button type="button" class="post__like-btn">
-                <svg class="post__icon svg-icon-heart">
-                  <use xlink:href="img/svg-sprite.svg#icon-heart"></use>
-                </svg>
-              </button><span class="post__likes">Нравится: 666</span>
-            </footer>
+          <article class="post"><a href="#" class="post__img-wrap">
+            <picture>
+              <source media="(min-width: 1020px)" srcset="img/content/photo-2-desktop.jpg 1x, img/content/photo-2-desktop@2x.jpg 2x"/>
+              <source media="(min-width: 700px)" srcset="img/content/photo-2-tablet.jpg 1x, img/content/photo-2-tablet@2x.jpg 2x"/><img src="img/content/photo-2-mobile.jpg" srcset="img/content/photo-2-mobile@2x.jpg 2x" alt="Фотография пользователя" title="Фотография пользователя" class="post__img"/>
+            </picture></a>
+            <div class="post__content-wrap">
+              <header class="post__header">
+                <cite class="post__author">Антон
+                </cite><time datetime="2016-12-20 08:00" class="post__time">(12 часов назад)</time>
+              </header>
+              <p class="post__text">Соседи будут рады!
+              </p>
+              <footer class="post__footer">
+                <button type="button" class="post__like-btn">
+                  <svg class="post__like-icon svg-icon-heart">
+                    <use xlink:href="img/svg-sprite.svg#icon-heart"></use>
+                  </svg>
+                </button><span class="post__like-text">Нравится: 666</span>
+              </footer>
+            </div>
           </article>
-          <article class="post"><a href="#" class="post__img-wrap"><img src="https://placebear.com/280/180" alt="Фотография пользователя" title="Фотография пользователя" class="post__img"/></a>
-            <header class="post__header">
-              <cite class="post__author">Борис
-              </cite><time datetime="2016-12-20 08:00" class="post__time">(20 часов назад)</time>
-            </header>
-            <p class="post__text">Здесь могла быть ваша цитата о высоком и вечном.
-            </p>
-            <footer class="post__footer">
-              <button type="button" class="post__like-btn">
-                <svg class="post__icon svg-icon-heart">
-                  <use xlink:href="img/svg-sprite.svg#icon-heart"></use>
-                </svg>
-              </button><span class="post__likes">Нравится: 215</span>
-            </footer>
+          <article class="post"><a href="#" class="post__img-wrap">
+            <picture>
+              <source media="(min-width: 1020px)" srcset="img/content/photo-3-desktop.jpg 1x, img/content/photo-3-desktop@2x.jpg 2x"/>
+              <source media="(min-width: 700px)" srcset="img/content/photo-3-tablet.jpg 1x, img/content/photo-3-tablet@2x.jpg 2x"/><img src="img/content/photo-3-mobile.jpg" srcset="img/content/photo-3-mobile@2x.jpg 2x" alt="Фотография пользователя" title="Фотография пользователя" class="post__img"/>
+            </picture></a>
+            <div class="post__content-wrap">
+              <header class="post__header">
+                <cite class="post__author">Борис
+                </cite><time datetime="2016-12-20 08:00" class="post__time">(20 часов назад)</time>
+              </header>
+              <p class="post__text">Здесь могла быть ваша цитата о высоком и вечном.
+              </p>
+              <footer class="post__footer">
+                <button type="button" class="post__like-btn">
+                  <svg class="post__like-icon svg-icon-heart">
+                    <use xlink:href="img/svg-sprite.svg#icon-heart"></use>
+                  </svg>
+                </button><span class="post__like-text">Нравится: 215</span>
+              </footer>
+            </div>
           </article>
-          <article class="post"><a href="#" class="post__img-wrap"><img src="https://placebear.com/280/180" alt="Фотография пользователя" title="Фотография пользователя" class="post__img"/></a>
-            <header class="post__header">
-              <cite class="post__author">Сергей
-              </cite><time datetime="2016-12-20 08:00" class="post__time">(25 часов назад)</time>
-            </header>
-            <p class="post__text">Самая кубанская в мире!
-            </p>
-            <footer class="post__footer">
-              <button type="button" class="post__like-btn">
-                <svg class="post__icon svg-icon-heart">
-                  <use xlink:href="img/svg-sprite.svg#icon-heart"></use>
-                </svg>
-              </button><span class="post__likes">Нравится: 4</span>
-            </footer>
+          <article class="post"><a href="#" class="post__img-wrap">
+            <picture>
+              <source media="(min-width: 1020px)" srcset="img/content/photo-4-desktop.jpg 1x, img/content/photo-4-desktop@2x.jpg 2x"/>
+              <source media="(min-width: 700px)" srcset="img/content/photo-4-tablet.jpg 1x, img/content/photo-4-tablet@2x.jpg 2x"/><img src="img/content/photo-4-mobile.jpg" srcset="img/content/photo-4-mobile@2x.jpg 2x" alt="Фотография пользователя" title="Фотография пользователя" class="post__img"/>
+            </picture></a>
+            <div class="post__content-wrap">
+              <header class="post__header">
+                <cite class="post__author">Сергей
+                </cite><time datetime="2016-12-20 08:00" class="post__time">(25 часов назад)</time>
+              </header>
+              <p class="post__text">Самая кубанская в мире!
+              </p>
+              <footer class="post__footer">
+                <button type="button" class="post__like-btn">
+                  <svg class="post__like-icon svg-icon-heart">
+                    <use xlink:href="img/svg-sprite.svg#icon-heart"></use>
+                  </svg>
+                </button><span class="post__like-text">Нравится: 4</span>
+              </footer>
+            </div>
           </article>
-          <article class="post"><a href="#" class="post__img-wrap"><img src="https://placebear.com/280/180" alt="Фотография пользователя" title="Фотография пользователя" class="post__img"/></a>
-            <header class="post__header">
-              <cite class="post__author">Максим
-              </cite><time datetime="2016-12-20 08:00" class="post__time">(40 часов назад)</time>
-            </header>
-            <p class="post__text">Где снег-то?
-            </p>
-            <footer class="post__footer">
-              <button type="button" class="post__like-btn">
-                <svg class="post__icon svg-icon-heart">
-                  <use xlink:href="img/svg-sprite.svg#icon-heart"></use>
-                </svg>
-              </button><span class="post__likes">Нравится: 150</span>
-            </footer>
+          <article class="post"><a href="#" class="post__img-wrap">
+            <picture>
+              <source media="(min-width: 1020px)" srcset="img/content/photo-5-desktop.jpg 1x, img/content/photo-5-desktop@2x.jpg 2x"/>
+              <source media="(min-width: 700px)" srcset="img/content/photo-5-tablet.jpg 1x, img/content/photo-5-tablet@2x.jpg 2x"/><img src="img/content/photo-5-mobile.jpg" srcset="img/content/photo-5-mobile@2x.jpg 2x" alt="Фотография пользователя" title="Фотография пользователя" class="post__img"/>
+            </picture></a>
+            <div class="post__content-wrap">
+              <header class="post__header">
+                <cite class="post__author">Максим
+                </cite><time datetime="2016-12-20 08:00" class="post__time">(40 часов назад)</time>
+              </header>
+              <p class="post__text">Где снег-то?
+              </p>
+              <footer class="post__footer">
+                <button type="button" class="post__like-btn">
+                  <svg class="post__like-icon svg-icon-heart">
+                    <use xlink:href="img/svg-sprite.svg#icon-heart"></use>
+                  </svg>
+                </button><span class="post__like-text">Нравится: 150</span>
+              </footer>
+            </div>
           </article>
-          <article class="post"><a href="#" class="post__img-wrap"><img src="https://placebear.com/280/180" alt="Фотография пользователя" title="Фотография пользователя" class="post__img"/></a>
-            <header class="post__header">
-              <cite class="post__author">Надежда
-              </cite><time datetime="2016-12-20 08:00" class="post__time">(45 часов назад)</time>
-            </header>
-            <p class="post__text">Всем GM и взаимные лайки!
-            </p>
-            <footer class="post__footer">
-              <button type="button" class="post__like-btn">
-                <svg class="post__icon svg-icon-heart">
-                  <use xlink:href="img/svg-sprite.svg#icon-heart"></use>
-                </svg>
-              </button><span class="post__likes">Нравится: 2560</span>
-            </footer>
+          <article class="post"><a href="#" class="post__img-wrap">
+            <picture>
+              <source media="(min-width: 1020px)" srcset="img/content/photo-6-desktop.jpg 1x, img/content/photo-6-desktop@2x.jpg 2x"/>
+              <source media="(min-width: 700px)" srcset="img/content/photo-6-tablet.jpg 1x, img/content/photo-6-tablet@2x.jpg 2x"/><img src="img/content/photo-6-mobile.jpg" srcset="img/content/photo-6-mobile@2x.jpg 2x" alt="Фотография пользователя" title="Фотография пользователя" class="post__img"/>
+            </picture></a>
+            <div class="post__content-wrap">
+              <header class="post__header">
+                <cite class="post__author">Надежда
+                </cite><time datetime="2016-12-20 08:00" class="post__time">(45 часов назад)</time>
+              </header>
+              <p class="post__text">Всем GM и взаимные лайки!
+              </p>
+              <footer class="post__footer">
+                <button type="button" class="post__like-btn">
+                  <svg class="post__like-icon svg-icon-heart">
+                    <use xlink:href="img/svg-sprite.svg#icon-heart"></use>
+                  </svg>
+                </button><span class="post__like-text">Нравится: 2560</span>
+              </footer>
+            </div>
           </article>
         </div>
       </div>
     </section>
     <div class="container">
-      <p class="text">Затмите их&nbsp;всех! Выкладывайте все, что накопилось в&nbsp;телефоне!</p>
+      <div class="descr descr--inner">
+        <p class="descr__text">Затмите их&nbsp;всех!<br>Выкладывайте все, что накопилось в&nbsp;телефоне!
+        </p>
+      </div>
     </div>
     <form class="editor">
       <div class="editor__inner">
-        <div class="editor__img-wrap"><img src="https://placebear.com/200/300" alt="Ваша фотография" title="Ваша фотография" class="editor__img"/>
+        <div class="editor__img-wrap">
+          <picture>
+            <source media="(min-width: 1020px)" srcset="img/content/photo-7-desktop.jpg 1x, img/content/photo-7-desktop@2x.jpg 2x"/>
+            <source media="(min-width: 700px)" srcset="img/content/photo-7-tablet.jpg 1x, img/content/photo-7-tablet@2x.jpg 2x"/><img src="img/content/photo-7-mobile.jpg" srcset="img/content/photo-7-mobile@2x.jpg 2x" alt="Ваша фотография" title="Ваша фотография" class="editor__img"/>
+          </picture>
         </div>
-        <div class="editor__tools">
-          <div class="editor__tool"><input type="radio" name="tool" id="tool-crop" checked="checked" class="editor__input"/>
-            <label for="tool-crop" class="editor__label editor__item editor__item--crop">Кадрировать
-              <svg class="tools__icon svg-icon-editor-crop">
-                <use xlink:href="img/svg-sprite.svg#icon-editor-crop"></use>
-              </svg>
-            </label>
-            <div class="editor__control editor__control--crop">
-              <div class="editor__scale">
-                <div class="editor__toggle">
-                </div>
-              </div>
+        <div class="editor__col">
+          <div class="editor__tools">
+            <div class="editor__tool editor__tool--crop"><input type="radio" name="tool" id="tool-crop" checked="checked" class="editor__input"/>
+              <label for="tool-crop" class="editor__label">Кадрировать<span class="editor__tool-icon-wrap">
+                <svg class="editor__tool-icon svg-icon-editor-crop">
+                  <use xlink:href="img/svg-sprite.svg#icon-editor-crop"></use>
+                </svg></span><span class="editor__scale-wrap editor__scale-wrap--crop"><span class="editor__scale"><span class="editor__toggle"></span></span></span>
+              </label>
             </div>
-          </div>
-          <div class="editor__tool"><input type="radio" name="tool" id="tool-fill" class="editor__input"/>
-            <label for="tool-fill" class="editor__label editor__item editor__item--fill">Заполнить
-              <svg class="tools__icon svg-icon-editor-fill">
-                <use xlink:href="img/svg-sprite.svg#icon-editor-fill"></use>
-              </svg>
-            </label>
-            <div class="editor__control editor__control--fill">
-              <div class="editor__scale">
-                <div class="editor__toggle">
-                </div>
-              </div>
+            <div class="editor__tool editor__tool--fill"><input type="radio" name="tool" id="tool-fill" class="editor__input"/>
+              <label for="tool-fill" class="editor__label">Заполнить<span class="editor__tool-icon-wrap">
+                <svg class="editor__tool-icon svg-icon-editor-fill">
+                  <use xlink:href="img/svg-sprite.svg#icon-editor-fill"></use>
+                </svg></span><span class="editor__scale-wrap editor__scale-wrap--fill"><span class="editor__scale"><span class="editor__toggle"></span></span></span>
+              </label>
             </div>
-          </div>
-          <div class="editor__tool"><input type="radio" name="tool" id="tool-contrast" class="editor__input"/>
-            <label for="tool-contrast" class="editor__label editor__item editor__item--contrast">Контраст
-              <svg class="tools__icon svg-icon-editor-contrast">
-                <use xlink:href="img/svg-sprite.svg#icon-editor-contrast"></use>
-              </svg>
-            </label>
-            <div class="editor__control editor__control--contrast">
-              <div class="editor__scale">
-                <div class="editor__toggle">
-                </div>
-              </div>
+            <div class="editor__tool editor__tool--contrast"><input type="radio" name="tool" id="tool-contrast" class="editor__input"/>
+              <label for="tool-contrast" class="editor__label">Контраст<span class="editor__tool-icon-wrap">
+                <svg class="editor__tool-icon svg-icon-editor-contrast">
+                  <use xlink:href="img/svg-sprite.svg#icon-editor-contrast"></use>
+                </svg></span><span class="editor__scale-wrap editor__scale-wrap--contrast"><span class="editor__scale"><span class="editor__toggle"></span></span></span>
+              </label>
             </div>
           </div>
           <div class="editor__btn-wrap">
-            <button type="submit" class="btn btn--editor">Запостить
+            <button type="submit" class="editor__btn btn btn--small btn--c-brand">Запостить
             </button>
-            <button type="reset" class="btn btn--editor">Отмена
+            <button type="reset" class="editor__btn btn btn--small btn--c-mono">Отмена
             </button>
           </div>
         </div>
@@ -375,12 +411,12 @@
           </div>
         </div>
         <div class="page-footer__col"> 
-          <div class="socials"><a href="#" title="Pink на Facebook" class="socials__item socials__item--fb">Facebook
-            <svg class="socials__icon socials__icon--fb svg-icon-facebook">
-              <use xlink:href="img/svg-sprite.svg#icon-facebook"></use>
-            </svg></a><a href="#" title="Pink в Twitter" class="socials__item socials__item--tw">Twitter
+          <div class="socials"><a href="#" title="Pink в Twitter" class="socials__item socials__item--tw">Twitter
             <svg class="socials__icon socials__icon--tw svg-icon-twitter">
               <use xlink:href="img/svg-sprite.svg#icon-twitter"></use>
+            </svg></a><a href="#" title="Pink на Facebook" class="socials__item socials__item--fb">Facebook
+            <svg class="socials__icon socials__icon--fb svg-icon-facebook">
+              <use xlink:href="img/svg-sprite.svg#icon-facebook"></use>
             </svg></a><a href="#" title="Pink на Youtube" class="socials__item socials__item--yt">Youtube
             <svg class="socials__icon socials__icon--yt svg-icon-youtube">
               <use xlink:href="img/svg-sprite.svg#icon-youtube"></use>
