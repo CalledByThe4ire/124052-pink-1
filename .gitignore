@@ -1,5 +1,6 @@
 node_modules/
 .DS_Store
+.publish/
 Thumbs.db
 .idea
 *.sublime*
@@ -7,6 +8,7 @@ Thumbs.db
 *.psd
 *.ai
 css/*.css
+tmp/
 build/
 svg-sprite.scss
 .jsbeautifyrc

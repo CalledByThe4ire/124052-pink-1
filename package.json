@@ -6,7 +6,7 @@
   "author": "Яна Крикливая",
   "repository": {
     "type": "git",
-    "url": "git@github.com:htmlacademy-adaptive/124052-pink.git"
+    "url": "git@github.com:MammaSonnim/124052-pink-1.git"
   },
   "bugs": {
     "url": "https://github.com/htmlacademy-adaptive/124052-pink/issues"
@@ -23,6 +23,7 @@
     "foldero": "^0.1.1",
     "gulp": "3.9.1",
     "gulp-concat": "^2.6.0",
+    "gulp-gh-pages": "^0.5.4",
     "gulp-if": "^2.0.0",
     "gulp-imagemin": "^2.4.0",
     "gulp-jade": "^1.1.0",
@@ -46,6 +47,7 @@
   "scripts": {
     "test": "editorconfig-tools check jade/**/*.jade; gulp styletest",
     "build": "gulp --production",
+    "deploy": "gulp deploy --production && gulp deploy --production",
     "start": "gulp"
   },
   "engines": {
