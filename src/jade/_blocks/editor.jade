@@ -59,8 +59,8 @@ mixin editor
                   +e.SVG.tool-icon(class=item.svgClass)
                     use(xlink:href="img/svg-sprite.svg#" + item.svgID)
                 +e.SPAN(class="scale-wrap--" + item.name)
-                  +e.scale
-                    +e.toggle
+                  +e.scale.js-scale
+                    +e.toggle.js-thumb
 
         +e.btn-wrap
           +e.BUTTON.btn.btn--small.--c-brand(type="submit") Запостить

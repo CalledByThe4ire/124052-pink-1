@@ -6,4 +6,6 @@
 
   document.getElementById("map") && mapHandler();
 
+  document.querySelector('.js-scale') && scaleHandler();
+
 })();
