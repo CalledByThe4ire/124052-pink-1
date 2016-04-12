@@ -47,7 +47,7 @@
   "scripts": {
     "test": "editorconfig-tools check jade/**/*.jade; gulp styletest",
     "build": "gulp --production",
-    "deploy": "gulp deploy --production && gulp deploy --production",
+    "deploy": "gulp --production && gulp deploy --production",
     "start": "gulp"
   },
   "engines": {
